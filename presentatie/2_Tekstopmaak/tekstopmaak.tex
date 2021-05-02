@@ -1,0 +1,75 @@
+%&tekstopmaak
+\documentclass[../presentatie.tex]{subfiles}
+
+\begin{document}
+\section{Tekstopmaak}
+
+\begin{frame}{$ \text{\LaTeX}\supset\text{Word} $}
+	%\frametitle{$ \text{\LaTeX}\supset\text{Word} $}
+	\begin{enumerate}
+		\item Tekst vet / schuin
+		\item Tekstgrootte
+		\item Tekstkleur
+		\item Lijntje
+		\item Extra ruimte
+		\item Kader
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Teksteffecten}
+	
+	\renewcommand{\arraystretch}{1.5}%
+	\begin{tabularx}{0.5\textwidth}{ll}
+		\toprule
+		Resultaat {\global\showcount=1\relax}& Code\\
+		\midrule
+		\showlatex{\textbf{Tekst}}{\\textbf\{Tekst\}}\\
+		\showlatex{\textit{Tekst}}{\\textit\{Tekst\}}\\
+		\showlatex{\textsc{Tekst}}{\\textsc\{Tekst\}}\\
+		\showlatex{\underline{Tekst}}{\\underline\{Tekst\}}\\
+		%\showlatex{\large{Tekst}}{\\large\{Tekst\}}\\
+		\bottomrule
+	\end{tabularx}%
+	\begin{tabularx}{0.5\textwidth}{ll}
+		\toprule
+		Resultaat {\global\showcount=5\relax}& Code\\
+		\midrule
+		\showlatex{\texttt{Tekst}}{\\texttt\{Tekst\}}\\
+		%\showlatex{\textsl{Tekst}}{\\textsl\{Tekst\}}\\
+		\showlatex{{\tiny Tekst}}{\{\\tiny Tekst\}}\\
+		\showlatex{{\LARGE Tekst}}{\{\\LARGE Tekst\}}\\
+		{\global\showcount=9\relax}\showlatex{\textcolor{red}{Tekst}}{\\textcolor\{red\}\{Tekst\}}\\
+		%\showlatex{{\Large Tekst}}{\{\\Large Tekst\}}\\
+		\bottomrule
+	\end{tabularx}%
+	\par\addvspace{0.5\baselineskip}
+	\unless\ifishandout
+		\only<2>{\textbf{bf} = \textbf{b}old\textbf{f}ace}%
+		\only<3>{\textbf{it} = \textbf{it}alics}%
+		\only<4>{\textbf{sc} = \textbf{s}mall\textbf{c}aps}%
+		\only<6>{\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}
+	\fi
+	\only<9->{\Huge Huge, \huge huge, \LARGE LARGE, \Large Large, \large large, \normalsize normalsize, \small small, \footnotesize footnotesize, \scriptsize scriptsize, \tiny tiny}
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{Teksteffecten}
+%	
+%	\hll|\{\\fontsize\{50\}\{60\}\\selectfont Hi!\}|
+%	\par\addvspace{10px}
+%	
+%	{\centering {\fontsize{150}{130}\selectfont Hi!}}
+%\end{frame}
+
+\begin{frame}
+	\begin{enumerate}
+		\item Speciale tekens
+		\item Lijsten
+		\item Pagina layout
+		\item Inhoudstafel
+	\end{enumerate}
+\end{frame}
+
+
+\end{document}

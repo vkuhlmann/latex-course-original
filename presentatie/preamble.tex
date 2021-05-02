@@ -1,0 +1,212 @@
+\newif\ifishandout
+\ishandoutfalse
+
+\ifishandout
+\documentclass[handout,aspectratio=32]{beamer}
+\else
+\documentclass[aspectratio=32]{beamer}
+\fi
+
+\usepackage[tabsize=4]{highlightlatex}
+
+\setbeamertemplate{caption}[numbered]
+
+\usetheme{Dresden}
+\usecolortheme{dolphin}
+\useoutertheme{miniframes}
+
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,amsthm,commath,mathtools}
+\usepackage{enumerate}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{soul}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{environ}
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+% Source: https://tex.stackexchange.com/questions/41683/why-is-it-that-coloring-in-soul-in-beamer-is-not-visible
+\let\UL\ul
+\makeatletter
+\renewcommand\ul{
+	\let\set@color\beamerorig@set@color
+	\let\reset@color\beamerorig@reset@color
+	\UL
+}
+
+\let\ST\st
+\makeatletter
+\def\st#1{
+	\begingroup
+	\let\set@color\beamerorig@set@color
+	\let\reset@color\beamerorig@reset@color
+	\def\SOUL@uleverysyllable{%
+		\rlap{%
+			%\color{red}
+			\the\SOUL@syllable
+			\SOUL@setkern\SOUL@charkern}%
+		\SOUL@ulunderline{%
+			\phantom{\the\SOUL@syllable}}%
+	}%
+	\ST{#1}%
+	\endgroup
+}
+\makeatother
+% https://tex.stackexchange.com/questions/71051/strikeout-in-different-color-appears-behind-letters-not-on-top-of-them
+
+\setulcolor{red}
+\setstcolor{red}
+
+% Override if you want. Else you can delete it.
+%\colorlet{curlyBrackets}{red!50!blue}
+%\colorlet{squareBrackets}{blue!50!white}
+%\colorlet{codeBackground}{gray!10!white}
+%\colorlet{comment}{green!40!black}
+
+\updatehighlight{
+	name = default,
+	color = {blue!90!black},
+	add = {
+		\knowncommand, \figref, \textcolor, \maketitle
+	},
+	name = structure,
+	add = {
+	},
+}
+
+\updatehighlight{
+	name = greenDollar,
+	style = {\itshape\color{green!70!black}},
+	add = {
+		% The dollar sign is provided an extra time just to
+		% calm down TeXstudio's code highlighting.
+		$, $
+	},
+	name = accentA,
+	color = green!60!black,
+	add = {
+		\inAccA
+	},
+	%
+	name = accentB,
+	color = red!60!black,
+	add = {
+		\inAccB, \includegraphics
+	},
+	%
+	name = accentC,
+	color = orange!100!black,
+	add = {
+		\inAccC
+	}
+}
+
+\lstset{tabsize=4}
+\def\defaultgobble{8}
+
+%\hllconfigure{
+%	gobbletabs=3,
+%}
+
+\def\Zphantomconceal#1#2{%
+	\only<#2->{\rlap{#1}}\phantom{#1}%
+	%\only<#2->{#3}\unless\ifishandout\only<-#1>{\phantom{#3}}\fi
+}
+
+\def\phantomconceal#1#2{%
+	\Zphantomconceal{#1}{#2}%
+}
+
+\newcommand\hideformula[2][2]{%
+	%\hll|$| \only<2->{\hll|\\sqrt\{2\}|}\only<-1>{??} \hll|$|
+	\hll|$| \phantomconceal{\hll|#2|}{#1} \hll|$|
+}
+
+\newcommand\hidelatex[2][2]{%
+	\phantomconceal{\hll|#2|}{#1}
+}%
+
+\newcount\showcount
+
+%\newcommand\showformula[2]{%
+%	#1 & %
+%	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+%}
+%
+%\newcommand\showformula[2]{%
+%	\global\showcount=\numexpr\showcount + 1\relax
+%	\showformula*{#1}{#2}%
+%}
+
+\makeatletter
+
+\def\showformula@i#1#2{%
+	#1 & %
+	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+}
+
+%\def\showformula{%
+%	\@ifstar{%
+%		\global\showcount=\numexpr\showcount + 1\relax
+%		\showformula@i
+%	}{%
+%		\showformula@i
+%	}%
+%}
+
+\def\showformula#1#2{
+	#1 & \global\showcount=\numexpr\showcount + 1\relax
+	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+}
+
+\def\showformulaa#1#2{
+	#1 & %
+	\expandafter\hideformula\expandafter[\the\showcount]{#2}%
+}
+
+\def\showlatex#1#2{
+	#1 & \global\showcount=\numexpr\showcount + 1\relax
+	\expandafter\hidelatex\expandafter[\the\showcount]{#2}%
+}
+
+\def\showlatexx#1#2{
+	#1 & %
+	\expandafter\hidelatex\expandafter[\the\showcount]{#2}%
+}
+
+\makeatother
+
+\newlength{\naturalwidth}
+\newlength{\minimumwidth}
+\newbox\naturalsizebox
+\newcommand{\atleastwidth}[2][2cm]{%
+	\savebox\naturalsizebox{#2}%
+	\settowidth\naturalwidth{#2}%
+	\naturalwidth=\wd\naturalsizebox
+	\minimumwidth=\dimexpr #1\relax
+	\leavevmode%(\the\naturalwidth, \the\minimumwidth)%
+	\ifdim\naturalwidth<\minimumwidth\relax
+	\makebox[\minimumwidth][l]{\usebox{\naturalsizebox}}%
+	\else
+	\usebox{\naturalsizebox}%
+	\fi
+}
+
+\newcommand{\atleastwidthr}[2][2cm]{%
+	\savebox\naturalsizebox{#2}%
+	\settowidth\naturalwidth{#2}%
+	\naturalwidth=\wd\naturalsizebox
+	\minimumwidth=\dimexpr #1\relax
+	\leavevmode%(\the\naturalwidth, \the\minimumwidth)%
+	\ifdim\naturalwidth<\minimumwidth\relax
+	\makebox[\minimumwidth][r]{\usebox{\naturalsizebox}}%
+	\else
+	\usebox{\naturalsizebox}%
+	\fi
+}

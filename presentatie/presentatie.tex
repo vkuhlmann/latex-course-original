@@ -1,0 +1,76 @@
+% !TeX program = pdflatex
+\input{preamble.tex}
+
+\title{\LaTeX{} cursus}
+\author{Vincent Kuhlmann}
+\date{2 May 2021}
+
+\begin{document}
+
+\section{Inleiding}
+
+\begin{frame}
+	\titlepage
+	\centering
+\end{frame}
+
+%\begin{frame}
+%	\LaTeX{} vs Word, Tekstopmaak, Lijsten, Formules, Afbeeldingen, Diagrammen, Installatie
+%\end{frame}
+
+\begin{frame}
+	\frametitle{Agenda}
+	
+	\begin{itemize}
+		\item Inleiding
+		\item Tekstopmaak
+		\item Documentstructuur
+		\item $ \langle $Uitproberen!$ \rangle $
+		\item Afbeeldingen
+		\item Formules
+		\item $ \mathbf\langle $Uitproberen!$ \rangle $
+		\item Goed om te weten
+		\item Fanciness
+	\end{itemize}
+\end{frame}
+
+\subfile{1_Inleiding/inleiding.tex}
+
+\subfile{2_Tekstopmaak/tekstopmaak.tex}
+
+\subfile{3_Documentstructuur/documentstructuur.tex}
+
+\subfile{4_Afbeeldingen/afbeeldingen.tex}
+
+\subfile{5_Formules/formules.tex}
+
+\begin{frame}{Diagrammen}
+	\begin{enumerate}
+		\item Punten en lijnen
+		\item Punten en lijn decoraties
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Meer}
+	Zie bijlages
+	\begin{enumerate}
+		\item Installatie
+		\item Herhalende elementen
+		\item Bibliografie
+		\item Versiebeheer
+	\end{enumerate}
+\end{frame}
+
+
+% The name allows us to modify what we had set for it.
+%\updatehighlight{
+%	name = accentB,
+%	% Removes all commands and keywords from it
+%	clear,
+%	name = accentA,
+%	add = {
+%		\inAccB	
+%	}
+%}
+	
+\end{document}
