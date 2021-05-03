@@ -11,8 +11,9 @@
 
 \title{Test}
 \begin{document}
-	\tableofcontents
-	\newpage
+%	\tableofcontents
+%	\newpage
+	\setcounter{secnumdepth}{0}
 	
 	\section{AA}
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -28,4 +29,39 @@
 	%Cras aliquet, metus scelerisque scelerisque eleifend, urna mauris sodales dui, ac porttitor ipsum leo mattis nulla.
 	\subsubsection{GG}
 	%Praesent iaculis, ex lobortis mollis molestie, metus orci tempus est, et mollis ante ipsum sed sem.
+	
+	\newpage
+	\meaning\theenumi
+	
+	\meaning\theenumii
+
+	\meaning\theenumiii
+	
+	\meaning\theenumiv
+	
+	
+	\meaning\labelitemi
+	
+	\meaning\labelitemii
+	
+	\meaning\labelitemiii
+	
+	\meaning\labelitemiv
+	
+	\begin{itemize}
+		\item aaa
+		\begin{itemize}
+			\item bbb
+			\item ccc
+			\begin{itemize}
+				\item ddd
+				\begin{itemize}
+					\item eee
+%					\begin{itemize}
+%						\item fff
+%					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
 \end{document}
