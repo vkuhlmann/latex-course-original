@@ -17,6 +17,7 @@
 
 \usepackage{subfiles}
 \usepackage{amsmath,amssymb,amsthm,commath,mathtools}
+\usepackage{esint}
 \usepackage{enumerate}
 \usepackage{subcaption}
 \usepackage{graphicx}
@@ -74,7 +75,8 @@
 	color = {blue!90!black},
 	add = {
 		\knowncommand, \figref, \textcolor, \maketitle, \subsubsection,
-		\textasciigrave, \textasciiacute
+		\textasciigrave, \textasciiacute, \tag, \middle, \mathbb, \abs,
+		\mathcal, \middle
 	},
 	name = structure,
 	add = {
@@ -242,9 +244,11 @@
 %}
 
 \newcommand{\addtorecentlist}[1]{%
-	\let\do\relax
-	\expandafter\gdef\expandafter\recentlist\expandafter{\recentlist\do{#1}}%
-	\addtocounter{recentcount}{1}%
+	\bgroup
+		\let\do\relax
+		\expandafter\gdef\expandafter\recentlist\expandafter{\recentlist\do{#1}}%
+		\addtocounter{recentcount}{1}%
+	\egroup
 	%
 	%\xdef\recentlist{\recentlist\do{#1}}%
 }
@@ -277,6 +281,59 @@
 	\recentlist
 }
 
+\newcommand{\recentpopfront}[1][1]{%
+	\typeout{recentpopfront, before: \meaning\recentlist}
+	\setcounter{recentskipremaining}{#1}%
+	\let\origrecentlist\recentlist
+	\clearrecentlist
+	\def\do##1{%
+		\ifnum\value{recentskipremaining}>0\relax
+			\addtocounter{recentskipremaining}{-1}%
+		\else		
+			\addtorecentlist{##1}%
+		\fi
+	}%
+	\origrecentlist
+	\typeout{recentpopfront, after: \meaning\recentlist}
+}
+
+\newsavebox\printrecentbox
+\savebox\printrecentbox{}
+\newsavebox\scratchbox
+
+% \AtBeginDocument{
+% \setbox\scratchbox\printrecentbox
+% }
+
+\newcommand{\saveprintrecentbox}{%
+	\bgroup
+		\savebox\printrecentbox{\printrecentlist}%
+		\global\setbox\printrecentbox\box\printrecentbox
+	\egroup
+	% \setbox\scratchbox\printrecentbox
+	% \global\setbox\printrecentbox\scratchbox
+	% \ifdim\wd\printrecentbox>0.9\textwidth
+	% 	\savebox\printrecentbox{\adjustbox{right=0.9\textwidth}{\printrecentlist}}%
+	% \else
+	% 	\savebox\printrecentbox{\adjustbox{left=0.9\textwidth}{\printrecentlist}}%
+	% \fi
+}
+
+\newcommand{\shrinkrecentbox}[1]{%
+	{\loop
+		%\clearrecentlist
+		%\saveprintrecentbox
+		%(SavedEmptyBox)
+		%\iffalse
+
+
+		\ifdim\wd\printrecentbox>\dimexpr #1\relax
+		%
+		\recentpopfront[1]%
+		\saveprintrecentbox
+	\repeat}%
+}
+
 % Based on miniframes code
 \setbeamertemplate{headline}
 {%
@@ -294,7 +351,21 @@
 		leftskip=.3cm,rightskip=.3cm plus1fil
 		]{subsection in head/foot}
 		\usebeamerfont{subsection in head/foot}%\insertsubsectionhead
-		\adjustbox{right=0.9\textwidth}{\printrecentlist}
+		% \savebox\printrecentbox{\printrecentlist}%
+		% \ifdim\wd\printrecentbox>0.9\textwidth
+		% 	\adjustbox{right=0.9\textwidth}{\printrecentlist}%
+		% \else
+		% 	\adjustbox{left=0.9\textwidth}{\printrecentlist}%
+		% \fi
+		\saveprintrecentbox
+		\ifdim\wd\printrecentbox>0.9\textwidth
+			%(Shrinking box)
+			%\PackageError{debug}{Width is \the\wd\printrecentbox}{}%
+			\shrinkrecentbox{0.6\textwidth}%
+		\else
+			%(Not shrinking box)
+		\fi
+		\usebox\printrecentbox
 		%\textbullet\ Hey
 	\end{beamercolorbox}%
 	%

@@ -125,7 +125,7 @@
 					\begin{bluebox}
 						\setlength{\parindent}{15pt}
 						Hallo!
-						Hoet gaat het?
+						Hoe gaat het?
 					\end{bluebox}
 				}
 			\end{column}
@@ -504,30 +504,47 @@
 
 	\addtorecentlist{\textbf{speciale tekens}}
 
-	\begin{frame}
+	\begin{frame}[t]
 		\frametitle{Speciale tekens}
 		
-		\begin{columns}
-			\begin{column}{0.5\textwidth}
-				\useblock{specSymb}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\textbf{Hey},
-				\textbackslash textbf,
-				% Opmerking
-				Wel 90% {van} de
-				'respondenten'
-				
-				Wel 90\% {van} de
-				`respondenten'
-				
-				Daarom \&, \$, \{van\},
-				\textasciitilde,
-				\textasciigrave respondenten
-				'
-			\end{column}
-		\end{columns}
-		
+		\begin{onlyenv}<1>
+			\begin{columns}[t]
+				\begin{column}{0.5\textwidth}
+					%\raisebox{\baselineskip}{\useblock{specSymb}}
+					\adjustbox{valign=t}{\useblock{specSymb}}
+				\end{column}
+				\begin{column}{0.5\textwidth}
+					\textbf{Hey},
+					\textbackslash textbf,
+					% Opmerking
+					Wel 90% {van} de
+					'respondenten'
+				\end{column}
+			\end{columns}
+		\end{onlyenv}
+
+		\begin{onlyenv}<2>
+			\begin{columns}
+				\begin{column}{0.5\textwidth}
+					\useblock{specSymb}
+				\end{column}
+				\begin{column}{0.5\textwidth}
+					\textbf{Hey},
+					\textbackslash textbf,
+					% Opmerking
+					Wel 90% {van} de
+					'respondenten'
+					
+					Wel 90\% {van} de
+					`respondenten'
+					
+					Daarom \&, \$, \{van\},
+					\textasciitilde,
+					\textasciigrave respondenten
+					'
+				\end{column}
+			\end{columns}
+		\end{onlyenv}
 	\end{frame}
 
 %	\begin{frame}
