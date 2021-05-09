@@ -1,0 +1,71 @@
+%&goedomteweten
+\documentclass[../presentatie.tex]{subfiles}
+
+\begin{document}
+
+\section{Extra's}
+
+\clearrecentlist
+    
+\begin{frame}{Extra's}
+    TODO Extra's
+\end{frame}
+
+\begin{saveblock}{code}
+	\begin{highlightblock}[gobble=8,linewidth=0.5\textwidth,framexleftmargin=0.25em]
+        Code
+	\end{highlightblock}
+\end{saveblock}
+	
+\begin{savebox}{files}
+    \begin{highlightlatex}[linewidth=15em]
+        thesis.tex
+        section1.tex
+        section2.tex
+        ...
+    \end{highlightlatex}
+\end{savebox}
+
+\begin{savebox}{}
+    \begin{latexlight}[linewidth=14em]
+        % File: thesis.tex
+        \documentclass
+            [a4paper]{article}
+        \usepackage{subfiles}
+        
+        \begin{document}
+            ...
+            \subfile{section1.tex}
+            \subfile{section2.tex}
+        \end{document}
+    \end{latexlight}
+\end{lrbox}
+
+\begin{lrbox}{\codeboxC}
+    \begin{latexlight}[linewidth=15em]
+        % File: section1.tex
+        % !TEX root=section1.tex
+        \documentclass
+            [thesis.tex]{subfiles}
+        \begin{document}
+            \section{Section 1}
+            ...
+        \end{document}
+    \end{latexlight}
+\end{lrbox}
+
+\begin{frame}{Subfiles}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \usebox\codebox
+            
+            \par\bigskip		
+            \usebox\codeboxC
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \usebox\codeboxB
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}
