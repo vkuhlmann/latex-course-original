@@ -1,0 +1,21 @@
+document.addEventListener("keydown", e => {
+  if (e.code == "KeyB") {
+    e.preventDefault();
+        e.stopPropagation();
+        onPressB();
+  }
+});
+
+function locateBEl() {
+    //let el = document.querySelector(`[data-annotation-id="12120R"] a`)
+    let styleMatch = "transform: matrix(3.37883, 0, 0, 3.37883, 0, 0); transform-origin: -189.673px -2.989px 0px; left: 189.673px; top: 2.989px; width: 36.136px; height: 8.966px;"
+    let el = document.querySelector(`[class="linkAnnotation"][style="${styleMatch}"] a`);
+    return el;
+}
+
+onPressB = () => {
+    let el = locateBEl();
+    el.click();
+};
+
+

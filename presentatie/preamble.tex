@@ -11,6 +11,10 @@
 
 \setbeamertemplate{caption}[numbered]
 
+\usecolortheme{rose}
+%\useinnertheme[shadow]{rounded}
+\useinnertheme{rounded}
+
 \usetheme{Dresden}
 \usecolortheme{dolphin}
 \useoutertheme{miniframes}
@@ -30,8 +34,13 @@
 \usepackage[dutch]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyvrb}
-\usepackage{hyperref}
 \usepackage{marvosym}
+\usepackage{csquotes}
+\usepackage[style=numeric]{biblatex}
+\usepackage{hyperref}
+\usepackage{xkeyval}
+
+\addbibresource{\subfix{assets/fakebib.bib}}
 
 % Source: https://tex.stackexchange.com/questions/41683/why-is-it-that-coloring-in-soul-in-beamer-is-not-visible
 \let\UL\ul
@@ -77,7 +86,9 @@
 	add = {
 		\knowncommand, \figref, \textcolor, \maketitle, \subsubsection,
 		\textasciigrave, \textasciiacute, \tag, \middle, \mathbb, \abs,
-		\mathcal, \middle
+		\mathcal, \middle, \dfrac, \subfile, \autoref, \eqref, \cites,
+		\tableofcontents, \printbibliography, \fullcite, \parencite,
+		\addbibresource, \DeclareLanguageMapping, \textcite
 	},
 	name = structure,
 	add = {
@@ -373,4 +384,56 @@
 	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
 	\end{beamercolorbox}
 }
+
+\makeatletter
+
+\NewEnviron{colC}[2][]{%
+	\def\setpadd{}%
+	\if\relax #1\relax
+	\else
+		%\def\setpadd{padding={0pt {\dimexpr ((#1)-\height)\relax} {0pt} {0pt}}}%
+		\def\setpadd{%
+			set depth={\dimexpr (#1)-\height\relax}%
+		}
+	\fi
+	% \def\setparboxargs{}%
+	% \if\relax #1\relax
+	% \else
+	% 	\def\setparboxargs{[t][\dimexpr #1\relax][]}%
+	% \fi
+	%
+	\expandafter\adjustbox\expandafter{\setpadd,
+		%margin=0pt,padding=0pt,
+	%padding={0pt {\dimexpr (0.4\textheight-\height)/2\relax} {0pt} {\dimexpr (0.4\textheight-\height)/2\relax}},
+		fbox=1pt 0pt 0pt,
+		valign=M
+	}%
+	{%
+		\parbox{\dimexpr #2-2pt\relax}{%
+			\BODY
+		}%
+	}%
+}
+
+\NewEnviron{colT}[2][]{%
+	\def\setpadd{}%
+	\if\relax #1\relax
+	\else
+		\def\setpadd{%
+			set depth={\dimexpr (#1)-\height\relax}%
+		}%
+	\fi
+	%
+	\expandafter\adjustbox\expandafter{\setpadd,
+		fbox=1pt 0pt 0pt,
+		valign=T
+	}%
+	{%
+		\parbox{\dimexpr #2-2pt\relax}{%
+			\BODY
+		}%
+	}%
+}
+
+\makeatother
 

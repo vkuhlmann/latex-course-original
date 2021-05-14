@@ -36,23 +36,6 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{\LaTeX{} vs Word}
-
-        Onder de motorkap: groot verschil.
-        
-        Word: Visueel, \LaTeX: Code (tekst).
-    \end{frame}
-
-    \begin{frame}    
-        \begin{itemize}
-            \item Complex $\leftrightarrow $ \Lightning UI (Knoppen)
-            \item Betekenis $\leftrightarrow$ \Lightning Eindresultaat
-            \item Uitbreidbaar $\leftrightarrow$ \Lightning UI (Knoppen)
-        \end{itemize}
-    \end{frame}
-    
-
-	\begin{frame}
 		\frametitle{\LaTeX{} vs Word}
 		
 		\bgroup
@@ -64,60 +47,338 @@
 		\egroup
 	\end{frame}
 
-%    \begin{frame}
-%	\frametitle{\LaTeX{} vs Word}
-%	
-%	\begin{columns}
-%			\begin{column}{0.5\textwidth}
-%				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocWordSnippet.png}
-%			\end{column}
-%			\begin{column}{0.5\textwidth}
-%				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocLaTeXSnippet.png}
-%			\end{column}
-%		\end{columns}
-%	\end{frame}
-
+    \begin{saveblock}{basicDocCode}
+        \begin{highlightblock}[linewidth=\textwidth,gobble=12]
+            \title{My document}
+            \author{Vincent Kuhlmann}
+            \date{3 May 2021}
+            
+            \begin{document}
+            \maketitle		
+            \section{Lorem ipsum}
+            Lorem ipsum dolor sit amet, consectetuer ...
     
+            \begin{align}
+                f(x) = \dfrac{1}{\sigma\sqrt{2\pi}} e^{
+                    -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+            \end{align}
+        \end{highlightblock}
+    \end{saveblock}
+
     \begin{frame}
         \frametitle{\LaTeX{} vs Word}
 
-        \only<-1>{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkader2.png}}
-        \unless\ifishandout
-        \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkaderRand.png}}
-        \fi
+        Onder de motorkap: groot verschil.
+        
+        Word: Visueel, \LaTeX: Code (tekst).
 
+        \pause
+        \medskip
+
+        \begin{columns}[t]%
+            \begin{column}{0.6\textwidth}
+                \adjustbox{max height=0.6\textheight}{
+                    \useblock{basicDocCode}
+                }
+            \end{column}%
+            \begin{column}{0.4\textwidth}%
+                \adjustbox{fbox=0.5pt 0pt 0pt,margin=-30pt 0pt 0pt 0pt,set height=0pt}{%
+                    \includegraphics[width=1.6\linewidth,height=0.9\textheight,keepaspectratio]{assets/basicDocLaTeXSnippet.png}%
+                }
+            \end{column}%
+        \end{columns}
     \end{frame}
 
-	\begin{saveblock}{basicDocCode}
-		\begin{highlightblock}[linewidth=\textwidth,gobble=12]
-			\title{My document}
-			\author{Vincent Kuhlmann}
-			\date{3 May 2021}
-			
-			\begin{document}
-			\maketitle		
-			\section{Lorem ipsum}
-			Lorem ipsum dolor sit amet, consectetuer ...
+    % \begin{frame}%
+    %     \begin{colT}[0.8\textheight]{0.5\textwidth}
+    %         aa
+    %     \end{colT}\hfil
+    %     \begin{colT}[0.8\textheight]{0.5\textwidth}
+    %         % bb
 
-			\begin{align}
-				f(x) = \dfrac{1}{\sigma\sqrt{2\pi}} e^{
-					-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
-			\end{align}
-		\end{highlightblock}
-	\end{saveblock}
+    %         %     \vspace{3cm}
 
-	\addtorecentlist{tekst}
+    %         % cc
+    %         \begin{colC}{\linewidth}
+    %             bb
 
-	\begin{frame}
-		\frametitle{\LaTeX{} vs Word}
-		
-		Andere aanpak: Tekst!
-		\pause
-		\bigskip
-		\useblock{basicDocCode}
-	\end{frame}
+    %             \vspace{3cm}
 
-    \addtorecentlist{veel}
+    %             cc
+    %         \end{colC}
+    %     \end{colT}
+    % \end{frame}
+
+    % \begin{frame}
+    %     \parbox[t]{0.5\textwidth}{
+    %         aa
+    %     }\hfil
+    %     \parbox[t][0.8\textheight][c]{0.5\textwidth}{
+    %         bb
+
+    %         \vspace{3cm}
+
+    %         cc
+    %     }
+    % \end{frame}
+
+    % \newsavebox\testbox
+
+    % \begin{frame}
+    %     \global\setbox\testbox=\hbox{
+    %     \begin{columns}
+    %         \begin{column}{0.5\textwidth}
+    %             aa
+    %         \end{column}
+    %         \begin{column}{0.5\textwidth}
+    %             bb
+
+    %             \vspace{3cm}
+
+    %             cc
+    %         \end{column}
+    %     \end{columns}
+    %     }%
+    %     \fbox{\usebox\testbox}
+    % \end{frame}
+
+    % \begin{frame}
+
+    %     \the\ht\testbox, \the\wd\testbox, \the\dp\testbox, \the\textheight, \the\textwidth
+    % \end{frame}
+
+    \begin{frame}
+        \frametitle{Tekst vs Visueel}
+
+        
+
+        \begin{columns}
+            \begin{column}[t]{0.35\textwidth}
+                % \adjustbox{
+                %     raise={-\height},set height=0cm,
+                %     set depth=0.5\textheight
+                % }{%
+                %     \parbox{\linewidth}{%
+                %         %\setlength\parskip{0pt}
+                %         \begin{itemize}\setlength{\itemsep}{10pt}
+                %             \item Websites \& Apps
+                            
+                %             \only<3->{\textbf{Complex}}
+                            
+                            
+                %             \only<4->{\item Wikipedia}
+                            
+                %             \only<5->{\textbf{Consistent}}
+
+
+                %             \only<5->{\item WhatsApp}
+                            
+                %             \only<6->{\textbf{Uitbreidbaar}}
+                %         \end{itemize}%           
+                %     }%
+                % }
+                \begin{itemize}
+                    \item Websites \& Apps
+                            
+                    \uncover<3->{\textbf{Complex}}                    
+                    
+                    \uncover<4->{\item Wikipedia}
+                    
+                    \uncover<5->{\textbf{Consistent}}
+
+
+                    \uncover<6->{\item WhatsApp}
+                    
+                    \uncover<7->{\textbf{Uitbreidbaar}}
+                \end{itemize}
+            \end{column}
+            \begin{column}[t]{0.65\textwidth}
+                \adjustbox{
+                    raise={-\height},set height=0cm,
+                    set depth=0.9\textheight
+                }{%
+                    \unless\ifishandout
+                    \only<1>{
+                        \includegraphics[
+                            width=\linewidth,height=0.8\textheight,keepaspectratio
+                        ]{assets/websiteVisual.png}
+                    }
+                    \only<2-3>{
+                        \adjustbox{
+                            trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
+                        }{%
+                            \includegraphics[
+                                width=\linewidth,height=0.8\textheight,keepaspectratio
+                            ]{assets/websiteVisual.png}%
+                        }
+                    }
+                    \fi
+                    \only<4>{
+                        \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual}
+                    }
+                    \only<4>{
+
+                    }
+                }
+            \end{column}
+        \end{columns}
+
+        % \begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    	% 	%\adjustbox{padding={0pt {\dimexpr (0.5\textheight-\height)/2\relax} {0pt} {\dimexpr (0.5\textheight-\height)/2\relax}},bgcolor=blue!5!white}{
+    	% 		Websites\& Apps
+    	% 	%}
+        %     & \adjustbox{}{
+    	% 		\includegraphics[width=\linewidth,height=]{assets/websiteVisual.png}
+    	% 	}\\
+    	% 	\adjustbox{}{
+    	% 		Wikipedia
+    	% 	} & \adjustbox{}{
+    	% 		\LaTeX
+    	% 	}\\
+        %     \adjustbox{}{
+        %         WhatsApp
+        %     }
+    	% \end{tabular}
+    \end{frame}
+
+    \begin{saveblock}{ninglinspoFragment1}
+        \begin{Verbatim}[tabsize=4,gobble=8]
+        {{Infobox rivier
+                | naam          = Ninglinspo
+                | afbeelding    = Ninglinspo - arrivée d
+                | onderschrift  = De Ninglinspo niet ver
+                | lengte        = 15
+                | hoogte        = 420
+                | hoogtemonding = 270
+                | verhang       = 
+                | debiet        = 
+        \end{Verbatim}
+    \end{saveblock}
+
+    \begin{saveblock}{ninglinspoFragment2}
+        \begin{Verbatim}[tabsize=4,gobble=8]
+        De oorspronkelijke naam is eigenlijk de "Doulneu
+        een Els. Er werd reeds gesproken over de rivier
+        charter van [[Sigibert III]].
+        <ref>informatiebord aan de monding van de Ningli
+        \end{Verbatim}
+    \end{saveblock}
+
+    \begin{frame}
+        \frametitle{Tekst vs Visueel}
+
+        % \begin{columns}
+        %    \begin{column}{0.45\textwidth}
+        %\centering
+        \adjustbox{
+            trim=0pt 0pt 5em 0pt,
+            max height=0.9\textheight,max width=0.5\linewidth,
+            %fbox=1pt 0pt 2pt,
+            cframe=green!50!white 0.5pt 0pt 2pt,
+            valign=M
+        }{
+            \useblock{ninglinspoFragment1}
+        }%
+        %\hspace{2pt}%
+        \adjustbox{
+            cframe=blue!50!white 0.5pt 0pt 0pt,
+            valign=M
+        }{%
+            \includegraphics[
+                trim=7pt 0pt 7pt 0pt,clip,
+                height=0.5\textheight,width=0.5\linewidth,keepaspectratio]{assets/1_Inleiding/wikipediaInfobox.png}%
+        }
+        \vspace{5pt}
+
+        \adjustbox{
+            trim=0pt 0pt 5em 0pt,
+            max height=0.9\textheight, max width=0.5\linewidth,
+            %fbox=1pt 0pt 2pt,
+            cframe=green!50!white 0.5pt 0pt 2pt,
+            valign=M
+        }{
+            \useblock{ninglinspoFragment2}
+        }%
+        \adjustbox{
+            cframe=blue!50!white 0.5pt 0pt 0pt,
+            valign=M
+        }{%
+            \includegraphics[height=0.5\textheight,width=0.5\linewidth,keepaspectratio]{assets/1_Inleiding/wikipediaHyperAndFootnotes.png}%
+        }
+    \end{frame}
+
+    % \begin{frame}
+    %     \frametitle{Tekst vs Visueel}
+
+    %     \begin{columns}
+    %         \begin{column}{0.35\textwidth}
+    %             \adjustbox{set depth=0.5\textheight-\height
+    %             }{%
+    %                 \parbox{\linewidth}{%
+    %                     \begin{itemize}\setlength{\itemsep}{10pt}
+    %                         \item Websites \& Apps
+                            
+    %                         \only<3->{\textbf{Complex}}
+                            
+                            
+    %                         \only<4->{\item Wikipedia}
+                            
+    %                         \only<5->{\textbf{Consistent}}
+
+
+    %                         \only<5->{\item WhatsApp}
+                            
+    %                         \only<6->{\textbf{Uitbreidbaar}}
+    %                     \end{itemize}%           
+    %                 }%
+    %             }
+    %         \end{column}
+    %         \begin{column}{0.65\textwidth}
+    %             \unless\ifishandout
+    %             \only<1>{
+    %                 \includegraphics[
+    %                     width=\linewidth,height=0.8\textheight,keepaspectratio
+    %                 ]{assets/websiteVisual.png}
+    %             }
+    %             \only<2>{
+    %                 \adjustbox{
+    %                     trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
+    %                 }{
+    %                     \includegraphics[
+    %                         width=\linewidth,height=0.8\textheight,keepaspectratio
+    %                     ]{assets/websiteVisual.png}
+    %                 }
+    %             }
+    %             \fi
+    %             \only<3>{
+    %                 \includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]{assets/wikipediaVisual}
+    %             }
+    %             \only<4>{
+
+    %             }
+    %         \end{column}
+    %     \end{columns}
+
+    %     % \begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    % 	% 	%\adjustbox{padding={0pt {\dimexpr (0.5\textheight-\height)/2\relax} {0pt} {\dimexpr (0.5\textheight-\height)/2\relax}},bgcolor=blue!5!white}{
+    % 	% 		Websites\& Apps
+    % 	% 	%}
+    %     %     & \adjustbox{}{
+    % 	% 		\includegraphics[width=\linewidth,height=]{assets/websiteVisual.png}
+    % 	% 	}\\
+    % 	% 	\adjustbox{}{
+    % 	% 		Wikipedia
+    % 	% 	} & \adjustbox{}{
+    % 	% 		\LaTeX
+    % 	% 	}\\
+    %     %     \adjustbox{}{
+    %     %         WhatsApp
+    %     %     }
+    % 	% \end{tabular}
+    % \end{frame}
+
+
+    \addtorecentlist{complex}
 
     \begin{frame}
         \frametitle{Websites \& Apps: Tekst vs Visueel}
@@ -131,15 +392,28 @@
                 \only<2->{\includegraphics[width=\linewidth]{assets/websiteSource.png}}
             \end{column}
             \begin{column}{0.45\textwidth}
-                \only<3->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Tekst = Veel informatie}}
+                \only<1->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Complex} $\leftrightarrow $ \Lightning{} UI (Knoppen)}
                 \begin{itemize}
                     \item Aanpassen aan schermgroottes
                     \item Interactiviteit
                     \item Dynamische inhoud
-                    \item Herhalende elementen
+                    \item Precisie over vormgeving
                 \end{itemize}
+
+                \medskip
+                \only<3->{
+                    \LaTeX{} ook:
+                    \begin{itemize}
+                        \item Formules
+                        \item Diagrammen
+                        \item Precisie over vormgeving
+                    \end{itemize}
+                }
             \end{column}
         \end{columns}
+        % \vspace{10pt}
+
+        % \LaTeX{} ook: formules, diagrammen, precisie over vormgeving.
     \end{frame}
 
     \begin{frame}
@@ -255,96 +529,106 @@
         \end{columns}
     \end{frame}
 
-    \addtorecentlist{minimalistisch}
+    % \begin{saveblock}{ninglinspoFragment1}
+    %     \begin{Verbatim}[tabsize=4,gobble=8]
+    %     {{Infobox rivier
+    %             | naam          = Ninglinspo
+    %             | afbeelding    = Ninglinspo - arrivée d
+    %             | onderschrift  = De Ninglinspo niet ver
+    %             | lengte        = 15
+    %             | hoogte        = 420
+    %             | hoogtemonding = 270
+    %             | verhang       = 
+    %             | debiet        = 
+    %     \end{Verbatim}
+    % \end{saveblock}
+
+    % \begin{saveblock}{ninglinspoFragment2}
+    %     \begin{Verbatim}[tabsize=4,gobble=8]
+    %     De oorspronkelijke naam is eigenlijk de "Doulneu
+    %     een Els. Er werd reeds gesproken over de rivier
+    %     charter van [[Sigibert III]].
+    %     <ref>informatiebord aan de monding van de Ningli
+    %     \end{Verbatim}
+    % \end{saveblock}
+
+    % \begin{frame}
+    %     \frametitle{Wikipedia: Tekst vs Visueel}
+
+    %     % \begin{columns}
+    %     %    \begin{column}{0.45\textwidth}
+    %     %\centering
+    %     \adjustbox{
+    %         trim=0pt 0pt 5em 0pt,
+    %         max height=0.9\textheight,max width=0.5\linewidth,
+    %         %fbox=1pt 0pt 2pt,
+    %         cframe=green!50!white 0.5pt 0pt 2pt,
+    %         valign=M
+    %     }{
+    %         \useblock{ninglinspoFragment1}
+    %     }%
+    %     %\hspace{2pt}%
+    %     \adjustbox{
+    %         cframe=blue!50!white 0.5pt 0pt 0pt,
+    %         valign=M
+    %     }{%
+    %         \includegraphics[
+    %             trim=7pt 0pt 7pt 0pt,clip,
+    %             height=0.5\textheight,width=0.5\linewidth,keepaspectratio]{assets/1_Inleiding/wikipediaInfobox.png}%
+    %     }
+    %     \vspace{5pt}
+
+    %     \adjustbox{
+    %         trim=0pt 0pt 5em 0pt,
+    %         max height=0.9\textheight, max width=0.5\linewidth,
+    %         %fbox=1pt 0pt 2pt,
+    %         cframe=green!50!white 0.5pt 0pt 2pt,
+    %         valign=M
+    %     }{
+    %         \useblock{ninglinspoFragment2}
+    %     }%
+    %     \adjustbox{
+    %         cframe=blue!50!white 0.5pt 0pt 0pt,
+    %         valign=M
+    %     }{%
+    %         \includegraphics[height=0.5\textheight,width=0.5\linewidth,keepaspectratio]{assets/1_Inleiding/wikipediaHyperAndFootnotes.png}%
+    %     }
+    % \end{frame}
+
+    \addtorecentlist{consistent}
     
     \begin{frame}
         \frametitle{Wikipedia: Tekst vs Visueel}
         \begin{columns}
-            \begin{column}{0.6\textwidth}
+            \begin{column}{0.5\textwidth}
                 \centering
                 \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{assets/wikipediaVisual}
             \end{column}
-            \begin{column}{0.45\textwidth}
-                \only<2->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Tekst = Minimalistische informatie}}
+            % \begin{column}{0.4\textwidth}
+            %     \adjustbox{max height=0.9\textheight,max width=\linewidth}{
+            %         \useblock{ninglinspoFragment1}
+            %     }
+            % \end{column}
+            \begin{column}{0.5\textwidth}
+                \only<1->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Consistent} $\leftrightarrow $ \Lightning{} Eindresultaat}
                 \begin{itemize}
                     \item Focus op betekenis
-                    \item Stijl komt achteraf \textrightarrow{} Consistent en flexibel
+                    \item Stijl komt achteraf
                 \end{itemize}
-            \end{column}
-        \end{columns}
-    \end{frame}
 
-    \addtorecentlist{simpel}
-    
-    \begin{frame}
-        \frametitle{WhatsApp: Tekst vs Visueel}
-        \begin{columns}
-            \begin{column}{0.5\textwidth}
-                %\adjustbox{set height=4cm,left=\textwidth,bgcolor=gray,margin=10pt}{}
-                \includegraphics[width=\linewidth]{assets/whatsappStyles2.png}
-                
-                \bigskip
-                
-                %\includegraphics[width=\linewidth]{whatsappStylesResultCropped.jpg}
-                \includegraphics[width=\linewidth]{assets/whatsappStylesResult2.png}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \only<2->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Tekst = Simpele informatie}}
-                \begin{itemize}
-                    \item Inzichtelijk
-                    \item Beperk aantal knoppen op het scherm
-                    \item Eenvoud voor programmeur
-                \end{itemize}
-            \end{column}
-        \end{columns}
-    \end{frame}
-    
-    \begin{frame}
-        \begin{columns}
-            \begin{column}{0.5\textwidth}\centering
-                \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{assets/teletekst.png}
-            \end{column}
-            \begin{column}{0.5\textwidth}\centering
-                \includegraphics[width=\linewidth]{assets/commandPrompt.png}
-                
                 \medskip
-                \includegraphics[trim={0px 90px 0px 5px},clip,width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/consoleOutput.png}
+                \only<2->{\LaTeX{} ook:
+                \begin{itemize}
+                    \item Nummeringen
+                    \item Inhoudsopgave: paragrafen, figuren, index
+                    \item Definieer environments voor herhalende onderdelen
+                \end{itemize}
+                }
             \end{column}
         \end{columns}
     \end{frame}
 
-    \addtorecentlist{\LaTeX}
-
-    \begin{frame}
-        \frametitle{\LaTeX: Tekst vs Visueel}
-        
-        \begin{itemize}
-        	\item Veel informatie
-        	\begin{itemize}
-        		\item Formules
-        		\item Diagrammen
-        		\item {\setul{1pt}{1pt}\setulcolor{green}\ul{Fanciness}} {\setul{0pt}{1pt}\st{Fancyness}}
-        	\end{itemize}
-        
-        	\item Minimalistische informatie
-        	\begin{itemize}
-        		\item Herhalende elementen
-        		\item Consistentie
-        	\end{itemize}
-        	
-        	\item Simpele informatie
-        	\begin{itemize}
-        		\item Veel packages voor allerlei aanpassingen, allerlei \adjustbox{scale={1}{-1},valign=b}{\setul{1pt}{1pt}\setulcolor{blue}\ul{Fanciness}}.
-        	\end{itemize}
-        	
-            %\item \textfrak{\so{S{ch}u{tz}vorri{ch}tung}}
-        \end{itemize}
-    
-    	\pause
-    	Maar: \"F\textsl{\H{a}nc}\^{\i}\~ne\c{s}s is vaak DIY, en kost al snel veel moeite!
-    \end{frame}
-
-	\begin{saveblock}{repeatel}
+    \begin{saveblock}{repeatel}
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
 			\begin{lemma}
 				Lorem ipsum dolor sit
@@ -369,17 +653,135 @@
 			\end{column}
 		\end{columns}
 	\end{frame}
-    
+
     \begin{frame}
-        \frametitle{Word: Tekst vs Visueel}
-        
-        \begin{itemize}
-            \item Gaat kopiëren van een tabel wel goed? Blijft de opmaak dan goed behouden?
-            \item Waar komt die witruimte opeens vandaan?
-            \item Waarom wil Word de volgende regel opeens in bold?
-        \end{itemize}
+        \frametitle{\LaTeX{} vs Word}
+    
+        \only<-1>{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkader2.png}}
+        \unless\ifishandout
+        \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkaderRand.png}}
+        \fi
     
     \end{frame}
+
+    % \begin{frame}    
+    %     \begin{itemize}
+    %         \item Complex $\leftrightarrow $ \Lightning UI (Knoppen)
+    %         \item Consistent $\leftrightarrow$ \Lightning Eindresultaat
+    %         \item Uitbreidbaar $\leftrightarrow$ \Lightning UI (Knoppen)
+    %     \end{itemize}
+    % \end{frame}
+
+    %    \begin{frame}
+%	\frametitle{\LaTeX{} vs Word}
+%	
+%	\begin{columns}
+%			\begin{column}{0.5\textwidth}
+%				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocWordSnippet.png}
+%			\end{column}
+%			\begin{column}{0.5\textwidth}
+%				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocLaTeXSnippet.png}
+%			\end{column}
+%		\end{columns}
+%	\end{frame}
+
+% \addtorecentlist{tekst}
+
+% \begin{frame}
+%     \frametitle{\LaTeX{} vs Word}
+    
+%     Andere aanpak: Tekst!
+%     \pause
+%     \bigskip
+%     \useblock{basicDocCode}
+% \end{frame}
+
+    \addtorecentlist{uitbreidbaar}
+    
+    \begin{frame}
+        \frametitle{WhatsApp: Tekst vs Visueel}
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                %\adjustbox{set height=4cm,left=\textwidth,bgcolor=gray,margin=10pt}{}
+                \includegraphics[width=\linewidth]{assets/whatsappStyles2.png}
+                
+                \bigskip
+                
+                %\includegraphics[width=\linewidth]{whatsappStylesResultCropped.jpg}
+                \includegraphics[width=\linewidth]{assets/whatsappStylesResult2.png}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \only<1->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Uitbreidbaar} $\leftrightarrow $ \Lightning{} UI (knoppen)}
+                \begin{itemize}
+                    %\item Inzichtelijk
+                    %\item Beperk aantal knoppen op het scherm
+                    \item Eenvoud voor programmeur
+                \end{itemize}
+                \medskip
+
+                Ook in \LaTeX:
+                \begin{itemize}
+                    \item Packages voor allerlei aanpassingen
+                \end{itemize}
+            \end{column}
+        \end{columns}
+    \end{frame}
+    
+    % \begin{frame}
+    %     \begin{columns}
+    %         \begin{column}{0.5\textwidth}\centering
+    %             \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{assets/teletekst.png}
+    %         \end{column}
+    %         \begin{column}{0.5\textwidth}\centering
+    %             \includegraphics[width=\linewidth]{assets/commandPrompt.png}
+                
+    %             \medskip
+    %             \includegraphics[trim={0px 90px 0px 5px},clip,width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/consoleOutput.png}
+    %         \end{column}
+    %     \end{columns}
+    % \end{frame}
+
+    % \addtorecentlist{\LaTeX}
+
+    % \begin{frame}
+    %     \frametitle{\LaTeX: Tekst vs Visueel}
+        
+    %     \begin{itemize}
+    %     	\item Veel informatie
+    %     	\begin{itemize}
+    %     		\item Formules
+    %     		\item Diagrammen
+    %     		\item {\setul{1pt}{1pt}\setulcolor{green}\ul{Fanciness}} {\setul{0pt}{1pt}\st{Fancyness}}
+    %     	\end{itemize}
+        
+    %     	\item Minimalistische informatie
+    %     	\begin{itemize}
+    %     		\item Herhalende elementen
+    %     		\item Consistentie
+    %     	\end{itemize}
+        	
+    %     	\item Simpele informatie
+    %     	\begin{itemize}
+    %     		\item Veel packages voor allerlei aanpassingen, allerlei \adjustbox{scale={1}{-1},valign=b}{\setul{1pt}{1pt}\setulcolor{blue}\ul{Fanciness}}.
+    %     	\end{itemize}
+        	
+    %         %\item \textfrak{\so{S{ch}u{tz}vorri{ch}tung}}
+    %     \end{itemize}
+    
+    % 	\pause
+    % 	Maar: \"F\textsl{\H{a}nc}\^{\i}\~ne\c{s}s is vaak DIY, en kost al snel veel moeite!
+    % \end{frame}
+    
+    % \begin{frame}
+    %     \frametitle{Word: Tekst vs Visueel}
+        
+    %     \begin{itemize}
+    %         \item Gaat kopiëren van een tabel wel goed? Blijft de opmaak dan goed behouden?
+    %         \item Waar komt die witruimte opeens vandaan?
+    %         \item Waarom wil Word de volgende regel opeens in bold?
+    %     \end{itemize}
+    
+    % \end{frame}
     
     %\begin{frame}
     %	\LaTeX{} $ \simeq $ Word
@@ -463,7 +865,7 @@
         \end{highlightblock}
     \end{saveblock}
 
-    \addtorecentlist{Simpel document}
+    \addtorecentlist{simpel document}
     
     \begin{frame}
         \frametitle{Simpel document}

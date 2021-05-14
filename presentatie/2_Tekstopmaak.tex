@@ -90,7 +90,88 @@
 				\only<6>{\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}
 			}}
 		\fi
-		\only<9->{\Huge Huge, \huge huge, \LARGE LARGE, \Large Large, \large large, \normalsize normalsize, \small small, \footnotesize footnotesize, \scriptsize scriptsize, \tiny tiny}
+		\only<9->{\Huge Huge, \huge huge, \LARGE LARGE, \Large Large, \large large, \normalsize
+		normalsize, \small small, \footnotesize footnotesize, \scriptsize scriptsize, \tiny tiny}
+	\end{frame}
+
+	\colorlet{curlyBrackets}{red}
+
+	\begin{saveblock}{braces}
+		\begin{highlightblock}[
+			linewidth=\textwidth,gobble=12,
+			framexleftmargin=0.25em,xleftmargin=0.25em
+		]
+			Lorem ipsum \tiny dolor sit amet, consectetur adipiscing
+			elit. Phasellus elementum, lacus quis tempus
+			scelerisque, elit diam vulputate ex, semper elementum
+			massa odio in ante.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{braces2}
+		\begin{highlightblock}[
+			linewidth=\textwidth,gobble=12,
+			framexleftmargin=0.25em,xleftmargin=0.25em
+		]
+			Lorem {ipsum \tiny dolor sit ame}t, consectetur
+			adipiscing elit. Phasellus {elementum}, lacus quis
+			tempus scelerisque, {elit diam vulputate ex, semper}
+			elementum massa odio in ante.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\colorlet{curlyBrackets}{red!50!blue}
+
+	\addtorecentlist{\{\}}
+
+	\begin{frame}
+		% \begin{columns}
+		% 	\begin{column}{0.5\textwidth}
+		% 		\useblock{braces}
+		% 	\end{column}
+		% 	\begin{column}{0.5\textwidth}
+		% 		\only<-1>{
+		% 			\bgroup
+		% 			Lorem ipsum \tiny dolor sit amet, consectetur adipiscing elit.
+		% 			Phasellus elementum, lacus quis tempus scelerisque, elit diam
+		% 			vulputate ex, semper elementum massa odio in ante.
+		% 			\egroup
+		% 		}
+		% 	\end{column}
+		% \end{columns}
+		\adjustbox{set depth=0.4\textheight-\height}{%
+			\unless\ifishandout
+				\only<1>{%
+					\useblock{braces}%
+				}%
+			\fi
+			\only<2->{%
+				\useblock{braces2}%
+			}%
+		}
+
+		\medskip
+
+		\adjustbox{set depth=0.4\textheight-\height}{%
+			\parbox{\linewidth}{%
+				\unless\ifishandout
+				\only<-1>{%
+					\bgroup
+						Lorem ipsum \tiny dolor sit amet, consectetur adipiscing
+						elit. Phasellus elementum, lacus quis tempus
+						scelerisque, elit diam vulputate ex, semper elementum
+						massa odio in ante.
+					\egroup
+				}%
+				\fi
+				\only<2->{%
+					Lorem {ipsum \tiny dolor sit ame}t, consectetur adipiscing
+					elit. Phasellus {elementum}, lacus quis tempus
+					scelerisque, {elit diam vulputate ex, semper} elementum
+					massa odio in ante.
+				}%
+			}
+		}
 	\end{frame}
 
 %	\updatehighlight{
@@ -490,11 +571,11 @@
 			\textbf{Hey},
 			\textbackslash textbf,
 			% Opmerking
-			Wel 90% {van} de
-			'respondenten'
+			Wel 90% {van}
+			de 'respondenten'
 			
-			Wel 90\% {van} de
-			~\textasciigrave~respondenten'
+			Wel 90\% {van}
+			de ~\textasciigrave~respondenten'
 			
 			Daarom \&, \$, \{van\},
 			\textasciitilde,
@@ -518,13 +599,13 @@
 					\textbf{Hey},
 					\textbackslash textbf,
 					% Opmerking
-					Wel 90% {van} de
-					'respondenten'
+					Wel 90% {van}
+					de 'respondenten'
 				\end{column}
 			\end{columns}
 		\end{onlyenv}
 
-		\begin{onlyenv}<2>
+		\begin{onlyenv}<2->
 			\begin{columns}
 				\begin{column}{0.5\textwidth}
 					\useblock{specSymb}
@@ -533,16 +614,24 @@
 					\textbf{Hey},
 					\textbackslash textbf,
 					% Opmerking
-					Wel 90% {van} de
-					'respondenten'
+					Wel 90% {van}
+					de 'respondenten'
 					
-					Wel 90\% {van} de
-					`respondenten'
+					Wel 90\% {van}
+					de `respondenten'
 					
 					Daarom \&, \$, \{van\},
 					\textasciitilde,
 					\textasciigrave respondenten
 					'
+
+					\only<3->{
+						\medskip
+						\adjustbox{scale=1.2}{
+						\Huge
+						'resp.. `resp..
+						}
+					}
 				\end{column}
 			\end{columns}
 		\end{onlyenv}
