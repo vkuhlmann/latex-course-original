@@ -72,13 +72,13 @@
 	\end{tabularx}%
 	\par\addvspace{0.5\baselineskip}
 	\unless\ifishandout
-		\only<4>{
-			\es{$ 3\leq 6 $}: \hll|$ 3\\leq 6 $|\extraslistsep
-			\es{$ 3 < 6 $}: \hll|$ 3 < 6 $|\extraslistsep
-			\es{$ 6 > 3 $}: \hll|$ 6 > 3 $|\extraslistsep\\
-			\es{$ 3\ll 6000 $}: \hll|$ 3\\ll 6000 $|\extraslistsep
-			\es{$ 6000\gg 3 $}: \hll|$ 6000\\gg 3 $|
-		}%
+		% \only<4>{
+		% 	\es{$ 3\leq 6 $}: \hll|$ 3\\leq 6 $|\extraslistsep
+		% 	\es{$ 3 < 6 $}: \hll|$ 3 < 6 $|\extraslistsep
+		% 	\es{$ 6 > 3 $}: \hll|$ 6 > 3 $|\extraslistsep\\
+		% 	\es{$ 3\ll 6000 $}: \hll|$ 3\\ll 6000 $|\extraslistsep
+		% 	\es{$ 6000\gg 3 $}: \hll|$ 6000\\gg 3 $|
+		% }%
 		\only<10->{
 			\hll|$ x^22 $|\,: \es{$ x^22 $}
 			\only<11->{\extraslistsep\hll|$ x^\{22\} $|\,: \es{$ x^{22} $}}
@@ -475,8 +475,8 @@
 \begin{saveblock}{leftRight}
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
 		\begin{align*}
-			&f(\sum_{i=1}^{n}x_i)\\
-			&f\left(\sum_{i=1}^{n}x_i\right)
+			&f(\sum~~_{i=1}^{n}x_i)\\
+			&f\left(\sum~~_{i=1}^{n}x_i\right)
 		\end{align*}
 	\end{highlightblock}
 \end{saveblock}
@@ -493,7 +493,7 @@
 \begin{saveblock}{leftRight}
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
 		\begin{align*}
-			A &= \left\{x^2\;\middle|\; x\in\mathbb{Z}\right\}\\
+			A &= \left\{x^2\;\middle~~|\; x\in\mathbb{Z}\right\}\\
 			A &= \left\{x^2\;|\; x\in\mathbb{Z}\right\}\\
 			A &= \left\{x^2\mid x\in\mathbb{Z}\right\}
 		\end{align*}
@@ -505,7 +505,7 @@
 
 	\begin{align*}
 		A &= \left\{x^2\;\middle|\; x\in\mathbb{Z}\right\}\\
-		A &= \{x^2\;|\; x\in\mathbb{Z}\}\\
+		A &= \left\{x^2\;|\; x\in\mathbb{Z}\right\}\\
 		A &= \left\{x^2\mid x\in\mathbb{Z}\right\}
 	\end{align*}
 \end{frame}

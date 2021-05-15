@@ -29,20 +29,31 @@ Mailtje
 14:54 - 15:14; Tekstopmaak (20 min)
 15:15 - 15:35; Documentstructuur (20 min)
 
+2021-05-15
 
+(07:45 - 07:55) + (08:00 - 08:11); Formules (20 min)
+08:45 - 08:51; Bibliografie (6 min)
 
-cases
-\mathbb{}
+sin vs \sin
+
+cross-references
+biber
+
 
 booktabs
 
-\abs{}, \norm{} -- commath? Mathtools?
+hyperref
 
-\cdot
+extra's: sidecap, listoffigures
 
+\abs{}, \norm{} -- commath
 
 frames, vs code, dump
 
+stackrel, \abs
 
+graphicx
 
-
+underbrace, \arrow, \mapsto
+\Aboxed
+\DeclareMathOperator

@@ -150,95 +150,42 @@
     \begin{frame}
         \frametitle{Tekst vs Visueel}
 
-        
+        \parbox[c][0.8\textheight]{0.35\textwidth}{
+            \begin{itemize}
+                \item<1-> Websites \& Apps
+                \par\uncover<3->{\textbf{Complex}}                    
+                
+                \item<4-> Wikipedia
+                \par\uncover<5->{\textbf{Consistent}}
 
-        \begin{columns}
-            \begin{column}[t]{0.35\textwidth}
-                % \adjustbox{
-                %     raise={-\height},set height=0cm,
-                %     set depth=0.5\textheight
-                % }{%
-                %     \parbox{\linewidth}{%
-                %         %\setlength\parskip{0pt}
-                %         \begin{itemize}\setlength{\itemsep}{10pt}
-                %             \item Websites \& Apps
-                            
-                %             \only<3->{\textbf{Complex}}
-                            
-                            
-                %             \only<4->{\item Wikipedia}
-                            
-                %             \only<5->{\textbf{Consistent}}
-
-
-                %             \only<5->{\item WhatsApp}
-                            
-                %             \only<6->{\textbf{Uitbreidbaar}}
-                %         \end{itemize}%           
-                %     }%
-                % }
-                \begin{itemize}
-                    \item Websites \& Apps
-                            
-                    \uncover<3->{\textbf{Complex}}                    
-                    
-                    \uncover<4->{\item Wikipedia}
-                    
-                    \uncover<5->{\textbf{Consistent}}
-
-
-                    \uncover<6->{\item WhatsApp}
-                    
-                    \uncover<7->{\textbf{Uitbreidbaar}}
-                \end{itemize}
-            \end{column}
-            \begin{column}[t]{0.65\textwidth}
+                \item<6-> WhatsApp
+                \par\uncover<7->{\textbf{Uitbreidbaar}}
+            \end{itemize}
+        }%
+        \parbox[c]{0.65\textwidth}{
+            \unless\ifishandout
+            \only<1>{
+                \includegraphics[
+                    width=\linewidth,height=0.8\textheight,keepaspectratio
+                ]{assets/websiteVisual.png}
+            }
+            \only<2-3>{
                 \adjustbox{
-                    raise={-\height},set height=0cm,
-                    set depth=0.9\textheight
+                    trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
                 }{%
-                    \unless\ifishandout
-                    \only<1>{
-                        \includegraphics[
-                            width=\linewidth,height=0.8\textheight,keepaspectratio
-                        ]{assets/websiteVisual.png}
-                    }
-                    \only<2-3>{
-                        \adjustbox{
-                            trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
-                        }{%
-                            \includegraphics[
-                                width=\linewidth,height=0.8\textheight,keepaspectratio
-                            ]{assets/websiteVisual.png}%
-                        }
-                    }
-                    \fi
-                    \only<4>{
-                        \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual}
-                    }
-                    \only<4>{
-
-                    }
+                    \includegraphics[
+                        width=\linewidth,height=0.8\textheight,keepaspectratio
+                    ]{assets/websiteVisual.png}%
                 }
-            \end{column}
-        \end{columns}
+            }
+            \fi
+            \only<4>{
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual}
+            }
+            \only<4>{
 
-        % \begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
-    	% 	%\adjustbox{padding={0pt {\dimexpr (0.5\textheight-\height)/2\relax} {0pt} {\dimexpr (0.5\textheight-\height)/2\relax}},bgcolor=blue!5!white}{
-    	% 		Websites\& Apps
-    	% 	%}
-        %     & \adjustbox{}{
-    	% 		\includegraphics[width=\linewidth,height=]{assets/websiteVisual.png}
-    	% 	}\\
-    	% 	\adjustbox{}{
-    	% 		Wikipedia
-    	% 	} & \adjustbox{}{
-    	% 		\LaTeX
-    	% 	}\\
-        %     \adjustbox{}{
-        %         WhatsApp
-        %     }
-    	% \end{tabular}
+            }
+        }
     \end{frame}
 
     \begin{saveblock}{ninglinspoFragment1}

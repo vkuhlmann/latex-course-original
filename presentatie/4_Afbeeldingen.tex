@@ -7,14 +7,14 @@
 
 \clearrecentlist
 
-\begin{frame}{Afbeeldingen}
-	\begin{enumerate}
-		\item \hll|\\includegraphics|
-		\item Figure
-		\item Nummering
-		\item Naast elkaar (subfigure)
-	\end{enumerate}
-\end{frame}
+% \begin{frame}{Afbeeldingen}
+% 	\begin{enumerate}
+% 		\item \hll|\\includegraphics|
+% 		\item Figure
+% 		\item Nummering
+% 		\item Naast elkaar (subfigure)
+% 	\end{enumerate}
+% \end{frame}
 
 \addtorecentlist{\textbackslash includegraphics}
 
@@ -94,7 +94,7 @@
 	\end{highlightblock}
 \end{saveblock}
 
-\addtorecentlist{as paragraph}
+\addtorecentlist{als alinea}
 \begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
 	\vspace{-28px}
 	\penExCode{exinclgraph}
@@ -135,7 +135,7 @@
 \begin{saveblock}{exinclgraph}
 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
 		Een pingu~\"i~n zie je in \figref{fig:pinguin}.
-		\begin{figure}[h!]
+		\begin{figure}[h]
 			\centering
 			\includegraphics[height=2cm]{pinguin.jpg}
 			\caption{Een schattige pingu~\"i~n. Deze foto is van
@@ -151,12 +151,66 @@
 	
 	\begin{penExResult}[3cm]
 		Een pinguïn zie je in Figuur~\ref{fig:pinguin}.
-		\begin{figure}[h!]
+		\begin{figure}[h]
 			\centering
 			\includegraphics[height=2cm]{assets/pinguin.jpg}
 			\caption{Een schattige pinguïn. Deze foto is van het internet.}\label{fig:pinguin}
 		\end{figure}
 	\end{penExResult}
+\end{frame}
+
+\addtorecentlist{htbp}
+
+\begin{frame}
+	\frametitle{Figuurplaatsing}
+
+	% Een figuur wordt ergens verderop geplaatst. Soms is het dus handig om een figuur
+	% een paragraaf of twee the plaatsen voor de plek waar je hem gebruikt!
+	
+	\begin{itemize}
+		\item h \textsc{(here)}: Figuur mag hier.
+		\item t \textsc{(top)}: Figuur mag bovenaan een pagina.
+		\item b \textsc{(bottom)}: Figuur mag onderaan een pagina.
+		\item p \textsc{(page)}: Figuur mag op aparte pagina voor figuren.
+		\item H \textsc{(here)}: Geen floating, altijd hier. (\hll|\\usepackage\{float\}|)
+	\end{itemize}
+
+	\medskip
+	Te laat in output? Verplaats \hll|figure| naar voren in je bestand.
+\end{frame}
+
+\begin{saveblock}{subfigure}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}[b]{0.45\textwidth}
+				\includegraphics[width=\textwidth]{AA}
+				\caption{BB}
+				\label{fig:dphiExample}
+			\end{subfigure}\qquad
+			\begin{subfigure}[b]{0.45\textwidth}
+				\includegraphics[width=\textwidth]{CC}
+				\caption{CC}
+				\label{fig:fitExample}
+			\end{subfigure}
+			\caption{Multiple images next to eachother!}
+		\end{figure}
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{subfigure}
+
+\begin{frame}
+	\frametitle{Subfigure \hll|(\\usepackage\{subcaption\})|}
+
+	\useblock{subfigure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Subfigure \hll|(\\usepackage\{subcaption\})|}
+
+	\centering
+	\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{assets/4_Abeeldingen/outdir/subfigure}
 \end{frame}
 
 \end{document}
