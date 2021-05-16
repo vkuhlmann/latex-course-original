@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage[dutch]{babel}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,subcaption}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+
+\geometry{
+	paperwidth=9cm,
+	paperheight=7.5cm,
+	margin=0.0cm,
+    paperheight=4.5cm
+}
+
+\begin{document}
+
+Blokje: \rule{5pt}{5pt}
+
+Lijntje: \rule{5cm}{0.5pt}
+
+Horizontale lijn: \hrule
+
+Rood lijntje: \textcolor{red}{\rule{5cm}{0.5pt}}
+
+Stippellijntje: Mijn naam is \leaders\hbox{.}\hskip 4cm\relax{}
+
+Geavanceerd: Mijn naam is \leaders\hbox{%
+    \rule{4pt}{0.5pt}\kern 2pt\relax
+    \rule{8pt}{0.5pt}\kern 2pt\relax}%
+\hskip 4cm\relax{}
+
+Ruit: \adjustbox{rotate=45}{\rule{5pt}{5pt}}
+
+\end{document}

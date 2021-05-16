@@ -53,8 +53,10 @@
 	
 	%\addtorecentlist{\hll|\\textbf|}
 	\addtorecentlist{\textbf{\textbackslash textbf}}
+
+	\def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
 	
-	\begin{frame}
+	\begin{frame}<1,2,10>
 		\frametitle{Teksteffecten}
 		
 		\renewcommand{\arraystretch}{1.5}%
@@ -77,18 +79,24 @@
 			%\showlatex{\textsl{Tekst}}{\\textsl\{Tekst\}}\\
 			\showlatex{{\tiny Tekst}}{\{\\tiny Tekst\}}\\
 			\showlatex{{\LARGE Tekst}}{\{\\LARGE Tekst\}}\\
-			{\global\showcount=9\relax}\showlatex{\textcolor{red}{Tekst}}{\\textcolor\{red\}\{Tekst\}}\\
+			{\global\showcount=9\relax}\showlatex{\textcolor{red}{Tekst}}{\\textcolor\{red\}\{Tekst\}}\only<10->{\footnote{\hll|\\usepackage\{xcolor\}|}}\\
 			%\showlatex{{\Large Tekst}}{\{\\Large Tekst\}}\\
 			\bottomrule
 		\end{tabularx}%
 		\par\addvspace{0.5\baselineskip}
 		\unless\ifishandout
-			\only<-8>{\adjustbox{raise={-\height},set depth=20pt}{
-				\only<2>{\textbf{bf} = \textbf{b}old\textbf{f}ace}%
-				\only<3>{\textbf{it} = \textbf{it}alics}%
-				\only<4>{\textbf{sc} = \textbf{s}mall\textbf{c}aps}%
-				\only<6>{\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}
-			}}
+		%
+			\only<2>{\textbf{bf} = \textbf{b}old\textbf{f}ace%
+			\extraslistsep\textbf{it} = \textbf{it}alics%
+			\extraslistsep\textbf{sc} = \textbf{s}mall\textbf{c}aps%
+			\extraslistsep\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}%
+		%
+			% \only<-8>{\adjustbox{raise={-\height},set depth=20pt}{
+			% 	\only<2>{\textbf{bf} = \textbf{b}old\textbf{f}ace}%
+			% 	\only<3>{\textbf{it} = \textbf{it}alics}%
+			% 	\only<4>{\textbf{sc} = \textbf{s}mall\textbf{c}aps}%
+			% 	\only<6>{\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}
+			% }}
 		\fi
 		\only<9->{\Huge Huge, \huge huge, \LARGE LARGE, \Large Large, \large large, \normalsize
 		normalsize, \small small, \footnotesize footnotesize, \scriptsize scriptsize, \tiny tiny}
@@ -193,58 +201,58 @@
 		\end{highlightblock}
 	\end{saveblock}
 
-	\addtorecentlist{\textbf{\textbackslash\textbackslash}}
+	% \addtorecentlist{\textbf{\textbackslash\textbackslash}}
 
-	\begin{frame}
-		\frametitle{Alinea's en regels}
+	% \begin{frame}
+	% 	\frametitle{Alinea's en regels}
 		
-		\begin{columns}
-			\begin{column}{0.5\textwidth}
-				\useblock{paragraphs}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\only<2->{
-					\begin{bluebox}
-						\setlength{\parindent}{15pt}
-						Hallo!
-						Hoe gaat het?
-					\end{bluebox}
-				}
-			\end{column}
-		\end{columns}
+	% 	\begin{columns}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\useblock{paragraphs}
+	% 		\end{column}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\only<2->{
+	% 				\begin{bluebox}
+	% 					\setlength{\parindent}{15pt}
+	% 					Hallo!
+	% 					Hoe gaat het?
+	% 				\end{bluebox}
+	% 			}
+	% 		\end{column}
+	% 	\end{columns}
 	
-		\pause
-		\pause
+	% 	\pause
+	% 	\pause
 		
-		\medskip
-		Nieuwe regel in je code? Wordt genegeerd. Een nieuwe regel kan je forceren met \hll|\\\\|.
-		\medskip
+	% 	\medskip
+	% 	Nieuwe regel in je code? Wordt genegeerd. Een nieuwe regel kan je forceren met \hll|\\\\|.
+	% 	\medskip
 	
-		\pause
+	% 	\pause
 	
-		\begin{columns}
-			\begin{column}{0.5\textwidth}
-				\useblock{paragraphs2}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\only<5->{
-					\bgroup
-					%\setlength{\parskip}{6pt}
-					\begin{bluebox}
-						\setlength{\parindent}{15pt}
-						Hallo!\\
-						Hoe gaat het?
-					\end{bluebox}
-					\egroup
-				}
-			\end{column}
-		\end{columns}
+	% 	\begin{columns}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\useblock{paragraphs2}
+	% 		\end{column}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\only<5->{
+	% 				\bgroup
+	% 				%\setlength{\parskip}{6pt}
+	% 				\begin{bluebox}
+	% 					\setlength{\parindent}{15pt}
+	% 					Hallo!\\
+	% 					Hoe gaat het?
+	% 				\end{bluebox}
+	% 				\egroup
+	% 			}
+	% 		\end{column}
+	% 	\end{columns}
 	
-		\pause
-		\pause
+	% 	\pause
+	% 	\pause
 		
-		Huh?
-	\end{frame}
+	% 	Huh?
+	% \end{frame}
 
 	\begin{saveblock}{paragraphs}
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
@@ -268,7 +276,7 @@
 	\addtorecentlist{\textbf{witregel}}
 
 	\begin{frame}
-		\frametitle{Alinea's en regels}
+		\frametitle{Alinea's}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -292,32 +300,6 @@
 
 	\begin{saveblock}{paragraphs}
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
-			\noindent Lorem ipsum dolor
-			sit amet, ... ornare sit
-			amet.
-			
-			In ipsum ante, sollicitudin
-			... sit amet augue.
-		\end{highlightblock}
-	\end{saveblock}
-
-	\addtorecentlist{\textbf{\textbackslash noindent}}
-
-	\begin{frame}
-		\frametitle{Alinea's en regels}
-		
-		\begin{columns}
-			\begin{column}{0.5\textwidth}
-				\useblock{paragraphs}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\only<2->{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/paragraphsNoIndent.pdf}}
-			\end{column}
-		\end{columns}
-	\end{frame}
-
-	\begin{saveblock}{paragraphs}
-		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
 			...
 			\usepackage{parskip}
 			\begin{document}			
@@ -333,7 +315,7 @@
 	\addtorecentlist{\textbf{parskip}}
 
 	\begin{frame}
-		\frametitle{Alinea's en regels}
+		\frametitle{Alinea's}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -345,6 +327,32 @@
 %				\only<2->{\scriptsize{Zonder parskip:}
 %				
 %				\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/doubleParagraph.pdf}}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{saveblock}{paragraphs}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			\noindent Lorem ipsum dolor
+			sit amet, ... ornare sit
+			amet.
+			
+			In ipsum ante, sollicitudin
+			... sit amet augue.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\addtorecentlist{\textbf{\textbackslash noindent}}
+
+	\begin{frame}
+		\frametitle{Alinea's}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\useblock{paragraphs}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\only<2->{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/paragraphsNoIndent.pdf}}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -364,7 +372,7 @@
 	\addtorecentlist{\textbf{\textbackslash vspace}}
 	
 	\begin{frame}
-		\frametitle{Alinea's en regels}
+		\frametitle{Alinea's}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -378,7 +386,6 @@
 		\par\tiny{(Steeds parskip vanaf nu)}
 	
 	\end{frame}
-
 
 	
 %	\begin{frame}
@@ -402,7 +409,7 @@
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
 			Dit zijn de ingredi~\"e~nten:
 			\begin{enumerate}
-				\item Wortels				
+				\item Wortels
 				\item Uien
 				
 				Lipsum dolor sit amet.
@@ -420,14 +427,15 @@
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
-				Dit zijn de ingrediënten:
-				\begin{enumerate}
-					\item Wortels
-					\item Uien
+				% Dit zijn de ingrediënten:
+				% \begin{enumerate}
+				% 	\item Wortels
+				% 	\item Uien
 					
-					Lipsum dolor sit amet.
-					\item Aardappelen
-				\end{enumerate}
+				% 	Lipsum dolor sit amet.
+				% 	\item Aardappelen
+				% \end{enumerate}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstEnum.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -459,19 +467,20 @@
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
-				Dit zijn de ingrediënten:
-				\begin{enumerate}
-					\item Wortels
-					\begin{enumerate}
-						\item Kopen
-						\item Raspen
-						\item Fijnsnijden
-					\end{enumerate}
-					\item Uien
+				% Dit zijn de ingrediënten:
+				% \begin{enumerate}
+				% 	\item Wortels
+				% 	\begin{enumerate}
+				% 		\item Kopen
+				% 		\item Raspen
+				% 		\item Fijnsnijden
+				% 	\end{enumerate}
+				% 	\item Uien
 					
-					Lipsum dolor sit amet.
-					\item Aardappelen
-				\end{enumerate}
+				% 	Lipsum dolor sit amet.
+				% 	\item Aardappelen
+				% \end{enumerate}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstEnumEnum.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -505,19 +514,20 @@
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
-				Dit zijn de ingrediënten:
-				\begin{itemize}
-					\item Wortels
-					\begin{enumerate}
-						\item Kopen
-						\item Raspen
-						\item Fijnsnijden
-					\end{enumerate}
-					\item Uien
+				% Dit zijn de ingrediënten:
+				% \begin{itemize}
+				% 	\item Wortels
+				% 	\begin{enumerate}
+				% 		\item Kopen
+				% 		\item Raspen
+				% 		\item Fijnsnijden
+				% 	\end{enumerate}
+				% 	\item Uien
 					
-					Lipsum dolor sit amet.
-					\item Aardappelen
-				\end{itemize}
+				% 	Lipsum dolor sit amet.
+				% 	\item Aardappelen
+				% \end{itemize}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstItemEnum.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -549,92 +559,241 @@
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}				
-				Dit zijn de ingrediënten:
-				\begin{itemize}
-					\item Wortels
-					\begin{itemize}
-						\item[\textbullet] Kopen
-						\item[\textbullet] Raspen
-						\item[\textbullet] Fijnsnijden
-					\end{itemize}
-					\item Uien
+				% Dit zijn de ingrediënten:
+				% \begin{itemize}
+				% 	\item Wortels
+				% 	\begin{itemize}
+				% 		\item[\textbullet] Kopen
+				% 		\item[\textbullet] Raspen
+				% 		\item[\textbullet] Fijnsnijden
+				% 	\end{itemize}
+				% 	\item Uien
 					
-					Lipsum dolor sit amet.
-					\item Aardappelen
-				\end{itemize}
+				% 	Lipsum dolor sit amet.
+				% 	\item Aardappelen
+				% \end{itemize}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstItemItem.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
 
-	\begin{saveblock}{specSymb}
-		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
-			\textbf{Hey},
-			\textbackslash textbf,
-			% Opmerking
-			Wel 90% {van}
-			de 'respondenten'
+	\addtorecentlist{\textbackslash textbackslash}
+
+	\begin{frame}
+		\frametitle{Speciale tekens}
+
+		\begingroup
+		\renewcommand{\arraystretch}{1}
+		\begin{tabularx}{0.45\textwidth}{ll}
+			\toprule
+			Code & Resultaat\\
+			\midrule
+			\hll|\\\{| & \{\only<2->{\hskip-10pt\relax\adjustbox{padding=-30px 0px 0px 0px,left=2ex,set height=8pt,set depth=136pt,cfbox=red 1pt,left=0pt,set depth=0pt,set height=0pt}{}}\\
+			\hll|\\\}| & \}\\
+			\hll|\\\%| & \%\\
+			\hll|\\\_| & \_\\
+			\hll|\\textasciicircum| & \textasciicircum\\
+			\hll|\\\$| & \$\\
+			\hll|\\textbackslash| & \textbackslash\\
+			\hll|\\\&| & \&\\
+			\hll|\\\#| & \#\\
+			\hll|\\textgreater| & \textgreater\\
+			\hll|\\textless| & \textless\\
+			\bottomrule
+		\end{tabularx}%
+		\hfil
+		\begin{tabularx}{0.5\textwidth}{ll}
+			\toprule
+			Code & Resultaat\\
+			\midrule
+			\hll|\{| & Begin groep\\
+			\hll|\}| & Eindig groep\\
+			\hll|\%| & Comment\\%\footnote{verschijnt niet in output}\\
+			\hll|\_| & Betekenis voor wiskunde\\
+			\hll|^| & Betekenis voor wiskunde\\
+			\hll|\$| & Wiskundemodus\\
+			\hll|\\| & Commando\\
+			\hll|\&| & Kolomscheiding\\
+			\hll|\#| & Parameter\\
+			\hll|>| & >\\
+			\hll|<| & <\\
+			\bottomrule
+		\end{tabularx}
+		\endgroup
+
+		% \begin{tabularx}{\textwidth}{lll}
+		% 	\toprule
+		% 	Resultaat {\global\showcount=1\relax}& Code & Zonder escapen\\
+		% 	\midrule
+		% 	\{ & \hll|\\\{| & Begin groep\\
+		% 	\} & \hll|\\\}| & Eindig groep\\
+		% 	\% & \hll|\\\%| & Comment: komt niet in output\\
+		% 	\_ & \hll|\\\_| & Betekenis voor wiskunde\\
+		% 	\^ & \hll|\\\^| & Betekenis voor wiskunde\\
+		% 	\$ & \hll|\\\$| & Wiskundemodus\\
+		% 	%\showlatex{\textbf{Tekst}}{\\textbf\{Tekst\}}\\
+		% 	%\showlatex{\textit{Tekst}}{\\textit\{Tekst\}}\\
+		% 	%\showlatex{\textsc{Tekst}}{\\textsc\{Tekst\}}\\
+		% 	%\showlatex{\underline{Tekst}}{\\underline\{Tekst\}}\\
+		% 	\bottomrule
+		% \end{tabularx}%
+	\end{frame}
+
+	% \begin{saveblock}{specSymb}
+	% 	\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+	% 		\textbf{Hey},
+	% 		\textbackslash textbf,
+	% 		% Opmerking
+	% 		Wel 90% {van}
+	% 		de 'respondenten'
 			
-			Wel 90\% {van}
-			de ~\textasciigrave~respondenten'
+	% 		Wel 90\% {van}
+	% 		de ~\textasciigrave~respondenten'
 			
-			Daarom \&, \$, \{van\},
-			\textasciitilde,
-			\textasciigrave respondenten
-			'
+	% 		Daarom \&, \$, \{van\},
+	% 		\textasciitilde,
+	% 		\textasciigrave respondenten
+	% 		'
+	% 	\end{highlightblock}
+	% \end{saveblock}
+
+	% \addtorecentlist{\textbf{speciale tekens}}
+
+	% \begin{frame}[t]
+	% 	\frametitle{Speciale tekens}
+		
+	% 	\begin{onlyenv}<1>
+	% 		\begin{columns}[t]
+	% 			\begin{column}{0.5\textwidth}
+	% 				%\raisebox{\baselineskip}{\useblock{specSymb}}
+	% 				\adjustbox{valign=t}{\useblock{specSymb}}
+	% 			\end{column}
+	% 			\begin{column}{0.5\textwidth}
+	% 				\textbf{Hey},
+	% 				\textbackslash textbf,
+	% 				% Opmerking
+	% 				Wel 90% {van}
+	% 				de 'respondenten'
+	% 			\end{column}
+	% 		\end{columns}
+	% 	\end{onlyenv}
+
+	% 	\begin{onlyenv}<2->
+	% 		\begin{columns}
+	% 			\begin{column}{0.5\textwidth}
+	% 				\useblock{specSymb}
+	% 			\end{column}
+	% 			\begin{column}{0.5\textwidth}
+	% 				\textbf{Hey},
+	% 				\textbackslash textbf,
+	% 				% Opmerking
+	% 				Wel 90% {van}
+	% 				de 'respondenten'
+					
+	% 				Wel 90\% {van}
+	% 				de `respondenten'
+					
+	% 				Daarom \&, \$, \{van\},
+	% 				\textasciitilde,
+	% 				\textasciigrave respondenten
+	% 				'
+
+	% 				\only<3->{
+	% 					\medskip
+	% 					\adjustbox{scale=1.2}{
+	% 					\Huge
+	% 					'resp.. `resp..
+	% 					}
+	% 				}
+	% 			\end{column}
+	% 		\end{columns}
+	% 	\end{onlyenv}
+	% \end{frame}
+
+
+	\addtorecentlist{\textasciigrave \leaders\hbox{.}\hskip 10pt\textquotesingle}
+
+	%\def\showbig#1#2{\adjustbox{scale=3}{\adjustbox{scale=1.2}{#1}: #2}\par}
+	\def\showbig#1#2{\adjustbox{scale=2.5}{\large #1: #2}\par}
+	\begin{frame}{Aanhalingstekens}
+		\begingroup\setlength\parskip{15pt}
+
+		\showbig{\texttt{ \textquotesingle LaTeX\textquotesingle{} }}{'LaTeX'}
+		\showbig{\texttt{ \textasciigrave LaTeX\textquotesingle{} }}{`LaTeX'}
+		\showbig{\texttt{\textasciigrave\textasciigrave LaTeX\textquotesingle\textquotesingle}}{``LaTeX''}
+
+		%\adjustbox{scale=3}{\adjustbox{scale=1.2}{\hll|'LaTeX'|}: 'LaTeX'}%\adjustbox{scale=1.2}{\Huge `LaTeX'}
+
+		%\adjustbox{scale=3}{\adjustbox{scale=1.2}{\hll|`LaTeX'|}: `LaTeX'}
+
+		%\hll|`LaTeX'|: \adjustbox{scale=1.2}{\Huge `LaTeX'}
+
+		%\hll|``LaTeX''|: \adjustbox{scale=1.2}{\Huge `LaTeX'}
+
+		%\hll|``LaTeX" ee|: \adjustbox{scale=1.2}{\Huge ``LaTeX" ee}
+		\endgroup
+	\end{frame}
+
+	\begin{saveblock}{newlinewhitespace}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+			Hallo ik
+			ben \textellipsis.
 		\end{highlightblock}
 	\end{saveblock}
 
-	\addtorecentlist{\textbf{speciale tekens}}
+	\begin{saveblock}{newlinewhitespace2}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+			Hallo ik%
+			ben \textellipsis.
+		\end{highlightblock}
+	\end{saveblock}
 
-	\begin{frame}[t]
-		\frametitle{Speciale tekens}
-		
-		\begin{onlyenv}<1>
-			\begin{columns}[t]
-				\begin{column}{0.5\textwidth}
-					%\raisebox{\baselineskip}{\useblock{specSymb}}
-					\adjustbox{valign=t}{\useblock{specSymb}}
-				\end{column}
-				\begin{column}{0.5\textwidth}
-					\textbf{Hey},
-					\textbackslash textbf,
-					% Opmerking
-					Wel 90% {van}
-					de 'respondenten'
-				\end{column}
-			\end{columns}
-		\end{onlyenv}
+	\newlength\atleastlength
+	\setlength\atleastlength{15em}
 
-		\begin{onlyenv}<2->
-			\begin{columns}
-				\begin{column}{0.5\textwidth}
-					\useblock{specSymb}
-				\end{column}
-				\begin{column}{0.5\textwidth}
-					\textbf{Hey},
-					\textbackslash textbf,
-					% Opmerking
-					Wel 90% {van}
-					de 'respondenten'
-					
-					Wel 90\% {van}
-					de `respondenten'
-					
-					Daarom \&, \$, \{van\},
-					\textasciitilde,
-					\textasciigrave respondenten
-					'
+	\newenvironment{noindentlist}{
+		\begin{list}{\textbullet}{
+			\leftmargin=0pt\relax
+			\itemindent=0pt\relax
+			\setlength{\itemsep}{2pt}
+		}
+	}{
+		\end{list}
+	}
 
-					\only<3->{
-						\medskip
-						\adjustbox{scale=1.2}{
-						\Huge
-						'resp.. `resp..
-						}
-					}
-				\end{column}
-			\end{columns}
-		\end{onlyenv}
+	\begin{frame}{Spaties}
+
+		\begin{noindentlist}
+			\item<+-> \atleastwidth[\atleastlength]{\texttt{a\textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace b\textvisiblespace c}}
+			a    b c.
+			
+			\item<+-> \leavevmode\atleastwidth[\atleastlength]{\texttt{a\hll|\\|\textvisiblespace
+			\hll|\\|\textvisiblespace
+			\hll|\\|\textvisiblespace
+			\hll|\\|\textvisiblespace b\textvisiblespace c}}
+			a\ \ \ \ b c.
+
+			\item<+-> \atleastwidth[\atleastlength]{\hll|a\\quad b c\\,d\\;e|}
+			a\quad b c\,d\;e
+
+			\item<.-> \atleastwidth[\atleastlength]{\hll|a\\hspace\{2cm\}b|}
+			a\hspace{2cm}b
+			
+			\item<+-> \atleastwidth[\atleastlength]{\hll|Ik kan \\LaTeX schrijven!|}
+			Ik kan \LaTeX schrijven!
+	
+			\item<.-> \atleastwidth[\atleastlength]{\hll|Vincent is lid van de \\TeX niCie.|}
+			Vincent is lid van de \TeX niCie.
+	
+			\item<+-> \atleastwidth[\atleastlength]{\hll|Ik kan \\LaTeX\{\}|\hll|\ schrijven!|}
+			Ik kan \LaTeX{} schrijven!
+
+			\item<+-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{\useblock{newlinewhitespace}}} Hallo ik
+			ben \textellipsis.
+
+			\item<.-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{\useblock{newlinewhitespace2}}} Hallo ik%
+			ben \textellipsis.
+		\end{noindentlist}
 	\end{frame}
 
 %	\begin{frame}

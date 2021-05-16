@@ -26,6 +26,18 @@
         \end{highlightblock}
     \end{saveblock}
 
+	\begin{saveblock}{baseDocumentPreamble}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,frame=t]
+			\documentclass{article}
+
+			\usepackage[utf8]{inputenc}
+
+            \title{My document}
+            \author{Vincent Kuhlmann}
+            \date{1 May 2021}
+        \end{highlightblock}
+    \end{saveblock}
+
     \begin{saveblock}{baseDocumentPart4}
         \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,frame=b]
             \begin{document}
@@ -36,9 +48,50 @@
             \end{document}
         \end{highlightblock}
     \end{saveblock}
+
+	\begin{saveblock}{baseDocumentPartDocument}
+        \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,frame=b]
+            \begin{document}
+            \maketitle
+            \section{Introduction}
+    
+            Hallo iedereen!
+            \end{document}
+        \end{highlightblock}
+    \end{saveblock}
+
+	\makeatletter
+
+	\newsavebox\preamblebox
+	\savebox\preamblebox{%
+		\useblock{baseDocumentPreamble}\hskip 2pt\relax
+		%\the\ht\@codebox@baseDocumentPreamble\relax
+		\textcolor{red!70!black}{\rule{1pt}{\ht\@codebox@baseDocumentPreamble - 2pt}\;%
+		\adjustbox{set depth=\dimexpr(\ht\@codebox@baseDocumentPreamble) / 2\relax,valign=B}{Preamble}}%
+		% \adjustbox{height=\dimexpr \ht\@codebox@baseDocumentPreamble\relax}{%
+		% 	\}%
+		% }%
+	}
+
+	\newsavebox\documentbox
+	\savebox\documentbox{%
+		\useblock{baseDocumentPartDocument}\hskip 2pt\relax
+		%\the\ht\@codebox@baseDocumentPreamble\relax
+		\textcolor{red!70!black}{%
+			\adjustbox{raise=10pt}{%
+				\rule{1pt}{\ht\@codebox@baseDocumentPartDocument - 26pt}\;%
+			}%
+			\adjustbox{set depth=\dimexpr(\ht\@codebox@baseDocumentPartDocument) / 2\relax,valign=B}{Document}%
+		}%
+		% \adjustbox{height=\dimexpr \ht\@codebox@baseDocumentPreamble\relax}{%
+		% 	\}%
+		% }%
+	}
+
+	\makeatother
     
    	\addtorecentlist{preamble}
-    \begin{frame}
+    \begin{frame}<1>
         \frametitle{Simpel document}
     
         \begin{columns}
@@ -47,25 +100,34 @@
                 %     %\vspace{2.1cm+10pt}
                 %     A\,\vrule width 1pt height 1em\relax
                 % }
-                %\rlap{\adjustbox{valign=T}{\useblock{baseDocument}}}
-                \useblock{baseDocumentPart1}\vspace{-5px}
-                \useblock{baseDocumentPart2}\vspace{-5px}
-                \useblock{baseDocumentPart3}
-                \useblock{baseDocumentPart4}
+                % \rlap{\adjustbox{valign=T}{\useblock{baseDocument}}}
+                % \useblock{baseDocumentPart1}\vspace{-5px}
+                % \useblock{baseDocumentPart2}\vspace{-5px}
+                % \useblock{baseDocumentPart3}
+				% \begingroup\useblock{baseDocumentPreamble}\makeatletter \adjustbox{
+				% 	height=\dimexpr \ht\@codebox@baseDocumentPreamble\relax}{\}}
+				% \endgroup
+
+				\usebox\preamblebox
+
+				\usebox\documentbox
+                %\useblock{baseDocumentPart4}
 
                 %\vbox{\smash{A\vrule width 1pt depth 5cm\relax}}\useblock{baseDocument}
             \end{column}
             \begin{column}{0.5\textwidth}
-                \only<2->{
-                    \begin{itemize}
-                        \item Preamble: Documentclass
-                        \item Preamble: \hll|\\usepackage|'s
-                        \item Preamble: Configuratie
-                        \item Document
-                    \end{itemize}
-                }
+                % \only<2->{
+                %     \begin{itemize}
+                %         % \item Preamble: Documentclass
+                %         % \item Preamble: \hll|\\usepackage|'s
+                %         % \item Preamble: Configuratie
+				% 		\item Preamble
+                %         \item Document
+                %     \end{itemize}
+                % }
                 \only<1,3>{
-                    \includegraphics[width=\linewidth]{assets/basicDocumentOutput.png}
+                    %\includegraphics[width=\linewidth]{assets/basicDocumentOutput.png}
+					\includegraphics[width=\linewidth]{assets/3_Documentstructuur/simpleDocCropped.pdf}
                 }
             \end{column}
         \end{columns}
@@ -86,10 +148,11 @@
 				
 				Hallo iedereen!
 			\end{document}
+			~~
+			~~
 		\end{highlightblock}
 	\end{saveblock}
 
-	\addtorecentlist{geometry}
     \begin{frame}
         \frametitle{Pagina marges}
         \begin{columns}
@@ -107,9 +170,18 @@
         \end{columns}
     \end{frame}
 
+	\lstset{
+		alsoletter={$@_!|?4$},
+	}
+
+	\updatehighlight{
+		name=accentC,
+		add={a4paper,geometry,{margin=2.5cm}}
+	}
+
     \begin{saveblock}{baseDocument}
 		\begin{highlightblock}[linewidth=0.65\textwidth,gobble=12]
-			\documentclass[a4paper]{article}
+			\documentclass[~~a4paper~~]{article}
 			\usepackage[utf8]{inputenc}
 			\usepackage[margin=2.5cm]{geometry}
 			
@@ -123,9 +195,11 @@
 				
 				Hallo iedereen!
 			\end{document}
+			~~
 		\end{highlightblock}
 	\end{saveblock}
 
+	\addtorecentlist{geometry}
     \begin{frame}
 		\frametitle{Pagina marges}
 		\begin{columns}
@@ -143,11 +217,21 @@
 		\end{columns}
 	\end{frame}
 
+	\updatehighlight{
+		name=accentC,
+		remove={a4paper,geometry,{margin=2.5cm}},
+		add={{left=-0.5cm}}
+	}
+
+	\lstset{
+		alsoletter={$@_!|?$},
+	}
+
     \begin{saveblock}{baseDocument}
 		\begin{highlightblock}[linewidth=0.65\textwidth,gobble=12]
 			\documentclass[a4paper]{article}
 			\usepackage[utf8]{inputenc}
-			\usepackage[margin=2.5cm,left=-0.5cm]
+			\usepackage[~~marg~~in=2.5cm,left=-0.5cm]
 			{geometry}
 			
 			\title{My document}
@@ -181,6 +265,8 @@
 	\end{frame}
 
 	\updatehighlight{
+		name=accentC,
+		remove={{left=-0.5cm}},
 		name=accentB,
 		add={\section},
 %		name=accentC,
@@ -204,6 +290,7 @@
 			
 			\section{FF}
 			\subsubsection{GG}
+			~~
 		\end{highlightblock}
 	\end{saveblock}
 
@@ -238,6 +325,14 @@
 				\section{AA}
 				...
 			\end{document}
+			~~
+			~~
+			~~
+			~~
+			~~
+			~~
+			~~
+			~~
 		\end{highlightblock}
 	\end{saveblock}
 
@@ -256,6 +351,15 @@
 		\end{columns}
 	\end{frame}
 
+	\updatehighlight{
+		name=accentB,
+		remove={\tableofcontents},
+		add={\newpage},
+		%
+		name=default,
+		add={\tableofcontents}
+	}
+
 	\begin{saveblock}{tableOfContents}
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
 			\begin{document}
@@ -266,6 +370,13 @@
 				\section{AA}
 				...
 			\end{document}
+				~~
+				~~
+				~~
+				~~
+				~~
+				~~
+				~~
 		\end{highlightblock}
 	\end{saveblock}
 
@@ -283,6 +394,15 @@
 		\end{columns}
 	\end{frame}
 
+	\updatehighlight{
+		name=accentB,
+		remove={\newpage},
+		add={babel,dutch},
+		%
+		name=default,
+		add={\newpage}
+	}
+
 	\begin{saveblock}{tableOfContents}
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
 			...
@@ -296,6 +416,10 @@
 				\section{AA}
 				...
 			\end{document}
+			~~
+			~~
+			~~
+			~~
 		\end{highlightblock}
 	\end{saveblock}
 	
@@ -316,34 +440,40 @@
 
 	\updatehighlight{
 		name=accentB,
+		remove={babel,dutch},
+	}
+
+	\updatehighlight{
+		name=accentB,
 		add={\section},
 	}
 
-	\addtorecentlist{\textbackslash section*}
+	\addtorecentlist{secnumdepth}
 
-	\begin{frame}
-		\frametitle{Genummerd}
+	% \begin{frame}
+	% 	\frametitle{Genummerd}
 		
-		\begin{columns}
-			\begin{column}{0.5\textwidth}
-				\useblock{sectionCommands}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/sectioncommands.pdf}
-			\end{column}
-		\end{columns}
-	\end{frame}
+	% 	\begin{columns}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\useblock{sectionCommands}
+	% 		\end{column}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/sectioncommands.pdf}
+	% 		\end{column}
+	% 	\end{columns}
+	% \end{frame}
 
 	\begin{saveblock}{partialNumbered}
 		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			\setcounter{secnumdepth}{3}
 			\section{AA}
 			Lorem ipsum dolor sit amet,
 			consectetur adipiscing elit.
 			
-			\section*{BB}
-			\subsection*{CC}
+			\section{BB}
+			\subsection{CC}
 			\subsubsection{DD}
-			\subsection*{EE}
+			\subsection{EE}
 			Nullam a risus at arcu
 			lobortis viverra vel
 			volutpat diam.
@@ -352,28 +482,13 @@
 			\subsubsection{GG}
 		\end{highlightblock}
 	\end{saveblock}
-
+	
 	\begin{frame}
-		\frametitle{Deels genummerd}
+		\frametitle{Gedeeltelijke nummering}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
 				\useblock{partialNumbered}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
-			\end{column}
-		\end{columns}
-	\end{frame}
-
-	\addtorecentlist{secnumdepth}
-
-	\begin{frame}
-		\frametitle{Genummerd}
-		
-		\begin{columns}
-			\begin{column}{0.5\textwidth}
-				\useblock{sectionCommands}
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/sectioncommands.pdf}
@@ -402,7 +517,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Deels genummerd}
+		\frametitle{Gedeeltelijke nummering}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -435,7 +550,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Deels genummerd}
+		\frametitle{Gedeeltelijke nummering}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -468,7 +583,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Ongenummerd}
+		\frametitle{Gedeeltelijke nummering}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -478,5 +593,60 @@
 				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedSecnumdepth0.pdf}
 			\end{column}
 		\end{columns}
+	\end{frame}
+
+	\addtorecentlist{\textbackslash section*}
+
+	% \begin{frame}
+	% 	\frametitle{Genummerd}
+		
+	% 	\begin{columns}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\useblock{sectionCommands}
+	% 		\end{column}
+	% 		\begin{column}{0.5\textwidth}
+	% 			\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/sectioncommands.pdf}
+	% 		\end{column}
+	% 	\end{columns}
+	% \end{frame}
+
+	\begin{saveblock}{partialNumbered}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			\section{AA}
+			Lorem ipsum dolor sit amet,
+			consectetur adipiscing elit.
+			
+			\section*{BB}
+			\subsection*{CC}
+			\subsubsection{DD}
+			\subsection*{EE}
+			Nullam a risus at arcu
+			lobortis viverra vel
+			volutpat diam.
+			
+			\section{FF}
+			\subsubsection{GG}
+			~~
+		\end{highlightblock}
+	\end{saveblock}
+
+	\addtorecentlist{hyperref}
+	\begin{frame}
+		\frametitle{Gedeeltelijke nummering}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\useblock{partialNumbered}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Mijn favoriete package: \hll|\\usepackage[bookmarksnumbered]\{hyperref\}|}
+
+	\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio]{assets/3_Documentstructuur/hyperref2.png}
+
 	\end{frame}
 \end{document}

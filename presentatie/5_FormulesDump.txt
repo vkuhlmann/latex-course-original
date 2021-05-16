@@ -1,0 +1,33 @@
+		% \begin{frame}{Formules}
+% 	\begin{enumerate}
+% 		\item Inline
+% 		\item Superscript, subscript, summation
+% 		\item Equation
+% 		\item Align
+% 		\item Nummering
+% 		\item Displaystyle vs textstyle
+% 		\item (Larger)
+% 	\end{enumerate}
+% \end{frame}
+        
+        % \only<4>{
+		% 	\es{$ 3\leq 6 $}: \hll|$ 3\\leq 6 $|\extraslistsep
+		% 	\es{$ 3 < 6 $}: \hll|$ 3 < 6 $|\extraslistsep
+		% 	\es{$ 6 > 3 $}: \hll|$ 6 > 3 $|\extraslistsep\\
+		% 	\es{$ 3\ll 6000 $}: \hll|$ 3\\ll 6000 $|\extraslistsep
+		% 	\es{$ 6000\gg 3 $}: \hll|$ 6000\\gg 3 $|
+		% }%
+		% \only<10->{
+		% 	\hll|$ x^22 $|\,: \es{$ x^22 $}
+		% 	\only<11->{\extraslistsep\hll|$ x^\{22\} $|\,: \es{$ x^{22} $}}
+		% 	\only<12->{\extraslistsep\hll|$ \{x + 3^\{2\}\} \{\} + 9 $|\,: \es{$ {x + 3^{2}} {} + 9 $}}
+		% }%
+
+
+        		% \only<4>{
+		% 	\es{$ 3\leq 6 $}: \hll|$ 3\\leq 6 $|\extraslistsep
+		% 	\es{$ 3 < 6 $}: \hll|$ 3 < 6 $|\extraslistsep
+		% 	\es{$ 6 > 3 $}: \hll|$ 6 > 3 $|\extraslistsep\\
+		% 	\es{$ 3\ll 6000 $}: \hll|$ 3\\ll 6000 $|\extraslistsep
+		% 	\es{$ 6000\gg 3 $}: \hll|$ 6000\\gg 3 $|
+		% }%

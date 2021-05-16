@@ -7,6 +7,8 @@ import json
 import threading
 import snippet
 import time
+import ssl
+import pathlib
 
 loop = None
 thr = None
@@ -37,7 +39,16 @@ def stopSockets():
 
 def runSockets():
     asyncio.set_event_loop(loop)
-    start_server = websockets.serve(socketListen, None, 6501)
+    #ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+    # localhost_crt = pathlib.Path(__file__).with_name("cert/server.crt")
+    # localhost_pem = pathlib.Path(__file__).with_name("cert/server.pem")
+    localhost_crt = pathlib.Path(__file__).parent / "cert/server.crt"
+    localhost_pem = pathlib.Path(__file__).parent / "cert/server.pem"
+
+    ssl_context.load_cert_chain(localhost_crt, localhost_pem)
+
+    start_server = websockets.serve(socketListen, None, 6501, ssl=ssl_context)
 
     res = asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_until_complete(asyncio.wait([

@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage[dutch]{babel}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,subcaption}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\geometry{
+	paperwidth=9cm,
+	paperheight=7.5cm,
+	margin=0.0cm,
+    paperheight=5.5cm
+}
+
+\begin{document}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{c c p{2cm}}
+        \toprule
+        Getal 1 & Getal 2 & Notitie\\
+        \cmidrule(lr){1-2}\cmidrule(lr){3-3}
+        88 & 94 & Twee grote getallen\\
+        89 & 12 & Een grote en een kleintje\\
+        96 & 18 & Weer zo\\
+        32 & 98 & Iets minder schreef\\
+        \midrule
+        \multicolumn{2}{c}{527} & Totale som\\
+        \bottomrule
+    \end{tabular}
+    \caption{Een tabel!}
+\end{table}
+
+\end{document}
+
+
+

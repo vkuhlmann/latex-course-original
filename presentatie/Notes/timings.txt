@@ -34,13 +34,38 @@ Mailtje
 (07:45 - 07:55) + (08:00 - 08:11); Formules (20 min)
 08:45 - 08:51; Bibliografie (6 min)
 
+17:11 - 17:21; Inleiding (10 min)
+
+
+2021-05-16
+
+09:25 - 09:35; Tekstopmaak (10 min)
+10:52 - 10:58; Documentstructuur (6 min)
+
+16:24 - 16:33; Inleiding
+16:33 - 16:50; Tekstopmaak
+16:50 - 17:01; Documentstructuur
+17:01 - 17:10; Afbeeldingen
+17:10 - 17:31; Formules
+; Bibliografie
+
+
+
+
 sin vs \sin
 
 cross-references
 biber
 
+\textwidth
 
-booktabs
+footnote
+
+appendix
+
+includepdf
+
+arraystretch
 
 hyperref
 
@@ -57,3 +82,11 @@ graphicx
 underbrace, \arrow, \mapsto
 \Aboxed
 \DeclareMathOperator
+
+texorpdfstring
+
+
+
+
+
+

@@ -6,27 +6,22 @@
 \section{Formules}
 
 \clearrecentlist
-    
-% \begin{frame}{Formules}
-% 	\begin{enumerate}
-% 		\item Inline
-% 		\item Superscript, subscript, summation
-% 		\item Equation
-% 		\item Align
-% 		\item Nummering
-% 		\item Displaystyle vs textstyle
-% 		\item (Larger)
-% 	\end{enumerate}
-% \end{frame}
-
-
 
 \begin{saveblock}{formDocFrag}
-	\begin{highlightblock}[gobble=8,linewidth=25em,framexleftmargin=0.25em]
+	\begin{highlightblock}[gobble=8,linewidth=25em,linewidth=\textwidth]
 		De trigonometrische identiteit
 		is $ \sin^2(\theta) + \cos^2(\theta) = 1 $.
 	\end{highlightblock}
 \end{saveblock}
+
+\begin{saveblock}{mathPackages}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth]
+		\usepackage{amsmath,amssymb}
+		\usepackage{commath,mathtools}
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\$ \$}
 
 \begin{frame}{Formules}
 	\centering
@@ -36,17 +31,24 @@
 	
 	\vspace{10pt}
 	\begin{center}%
-		\adjustbox{set height=2cm,margin=2px}{%
-			\only<2->{\useblock{formDocFrag}}%
-		}%
+		\uncover<2->{\useblock{formDocFrag}}%
+		% \adjustbox{set height=2cm,margin=2px}{%
+		% 	\only<2->{\useblock{formDocFrag}}%
+		% }%
 	\end{center}
-	
+
+	\begin{center}
+		\only<3->{\useblock{mathPackages}}
+	\end{center}
 \end{frame}
 
 \def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
 \def\es#1{\adjustbox{scale=0.8}{#1}}
 
-\begin{frame}{Formules}%
+\addtorecentlist{\textasciicircum}
+\addtorecentlist{\_}
+
+\begin{frame}{Formules: Basis}%
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.5\textwidth}{ll}
 		\toprule
@@ -72,23 +74,15 @@
 	\end{tabularx}%
 	\par\addvspace{0.5\baselineskip}
 	\unless\ifishandout
-		% \only<4>{
-		% 	\es{$ 3\leq 6 $}: \hll|$ 3\\leq 6 $|\extraslistsep
-		% 	\es{$ 3 < 6 $}: \hll|$ 3 < 6 $|\extraslistsep
-		% 	\es{$ 6 > 3 $}: \hll|$ 6 > 3 $|\extraslistsep\\
-		% 	\es{$ 3\ll 6000 $}: \hll|$ 3\\ll 6000 $|\extraslistsep
-		% 	\es{$ 6000\gg 3 $}: \hll|$ 6000\\gg 3 $|
-		% }%
 		\only<10->{
 			\hll|$ x^22 $|\,: \es{$ x^22 $}
 			\only<11->{\extraslistsep\hll|$ x^\{22\} $|\,: \es{$ x^{22} $}}
-			\only<12->{\extraslistsep\hll|$ \{x + 3^\{2\}\} \{\} + 9 $|\,: \es{$ {x + 3^{2}} {} + 9 $}}
+			%\only<12->{\extraslistsep\hll|$ \{x + 3^\{2\}\} \{\} + 9 $|\,: \es{$ {x + 3^{2}} {} + 9 $}}
 		}%
 	\fi
 \end{frame}
 
-
-\begin{frame}{Formules}%
+\begin{frame}{Formules: Symbolen}%
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.6\textwidth}{ll}
 		\toprule
@@ -112,63 +106,112 @@
 		%\showformula{$ f(\{3, 6\}) $}{f(\\\{3, 6\\\})}\\
 		\bottomrule
 	\end{tabularx}%
-	\par\addvspace{0.5\baselineskip}
-	\unless\ifishandout
-		% \only<4>{
-		% 	\es{$ 3\leq 6 $}: \hll|$ 3\\leq 6 $|\extraslistsep
-		% 	\es{$ 3 < 6 $}: \hll|$ 3 < 6 $|\extraslistsep
-		% 	\es{$ 6 > 3 $}: \hll|$ 6 > 3 $|\extraslistsep\\
-		% 	\es{$ 3\ll 6000 $}: \hll|$ 3\\ll 6000 $|\extraslistsep
-		% 	\es{$ 6000\gg 3 $}: \hll|$ 6000\\gg 3 $|
-		% }%
-		% \only<10->{
-		% 	\hll|$ x^22 $|\,: \es{$ x^22 $}
-		% 	\only<11->{\extraslistsep\hll|$ x^\{22\} $|\,: \es{$ x^{22} $}}
-		% 	\only<12->{\extraslistsep\hll|$ \{x + 3^\{2\}\} \{\} + 9 $|\,: \es{$ {x + 3^{2}} {} + 9 $}}
-		% }%
-	\fi
+	% \par\addvspace{0.5\baselineskip}
+	% \unless\ifishandout
+	% \fi
 \end{frame}
 
+\addtorecentlist{\textbackslash varphi}
+\addtorecentlist{\textbackslash mathcal}
+\addtorecentlist{\textbackslash mathbb}
 
+\addtorecentlist{\textbackslash vec}
+
+\begin{frame}<7>{Formules: Vectoren}
+	\renewcommand{\arraystretch}{1.5}%
+	\begin{tabularx}{0.42\textwidth}{ll}
+		\toprule
+		Formule & Code\\
+		\midrule
+		$ \vec{x} $&\uncover<2->{\hll|$ \\vec\{x\}| \hll|$|}\\
+		$ \mathbf{x} $&\uncover<4->{\hll|$ \\mathbf\{x\}| \hll|$|}\\
+		$ \norm{\vec{x}} $& \uncover<6->{\hll|$ \\norm\{\\vec\{x\}\}| \hll|$|}\\
+		\bottomrule
+	\end{tabularx}%
+	\begin{tabularx}{0.58\textwidth}{ll}
+		\toprule
+		Formule & Code\\
+		\midrule
+		$ \vec{F}_{\text{tot}} $& \uncover<3->{\hll|$ \\vec\{F\}_\{\\text\{tot\}\}| \hll|$|}\\
+		$ \hat{\imath} + 6\,\hat{k} $ & \uncover<5->{\hll|$ \\hat\{\\imath\}| \hll|+ 6\\,\\hat\{k\}| \hll|$|}\\
+		$ \nabla\times\mathbf{A} $ & \uncover<7->{\hll|$ \\nabla\\times\\mathbf\{A\}| \hll|$|}\\
+		\bottomrule
+	\end{tabularx}%
+
+	\medskip
+	\centering\adjustbox{scale=2}{$ \vec{F}_{tot} $, $ \vec{F}_{\text{tot}} $}
+
+	%\hll|\\dif|: \hll|\\usepackage\{commath\}|
+\end{frame}
+
+\begin{saveblock}{integr}
+	\begin{highlightblock}[gobble=8]
+		\dod{\sin(x)}{x}, \dpd{f(x,y)}{x}, \partial~~_x f
+		
+		\int~~_{0}^{\infty}e^{-x}\dif x = 1
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\textbackslash int}
+\addtorecentlist{\textbackslash dod}
 
 \begin{frame}
-	
+	{Formules: Integraalrekening}
+
+	\hll|\\usepackage\{commath\}|
+
+	\useblock{integr}
+
 	\begin{align*}
-		\nabla\times(\nabla\times\mathbf{A}) = \nabla(\nabla\cdot \mathbf{A}) - \nabla^2\mathbf{A}
+		\dod{\sin(x)}{x}, \dpd{f(x,y)}{x}, \partial_x f
+	\end{align*}
+	\begin{align*}
+		\int_{0}^{\infty}e^{-x}\dif x = 1
 	\end{align*}
 \end{frame}
 
-\begin{frame}
+
+
+% \begin{frame}
 	
-	\begin{equation*}
-		\alpha,\beta,\gamma,\delta,\epsilon,\zeta,\eta,\theta,\iota,\kappa,\lambda,
-		\mu,\nu,\xi,o,\pi,\rho,\sigma,\tau,\upsilon,\phi,\chi,\psi,\omega
-	\end{equation*}
-	\begin{equation*}
-		A,B,\Gamma,\Delta,E,Z,H,\Theta,I,K,\Lambda,
-		M,N,\Xi,O,\Pi,P,\Sigma,T,\Upsilon,\Phi,\chi,\Psi,\Omega
-	\end{equation*}
-	\begin{equation*}
-		\varDelta,\varepsilon,\varGamma,\varkappa,\varLambda,%\varnothing,
-		\varOmega,\varPhi,\varphi,\varPi,\varpi,%\varpropto,
-		\varPsi,\varrho,
-		\varSigma,\varsigma,\varTheta,\vartheta,%\vartriangle,
-		\varUpsilon,\varXi
-	\end{equation*}
+% 	\begin{align*}
+% 		\nabla\times(\nabla\times\mathbf{A}) = \nabla(\nabla\cdot \mathbf{A}) - \nabla^2\mathbf{A}
+% 	\end{align*}
+% \end{frame}
+
+% \begin{frame}
+	
+% 	\begin{equation*}
+% 		\alpha,\beta,\gamma,\delta,\epsilon,\zeta,\eta,\theta,\iota,\kappa,\lambda,
+% 		\mu,\nu,\xi,o,\pi,\rho,\sigma,\tau,\upsilon,\phi,\chi,\psi,\omega
+% 	\end{equation*}
+% 	\begin{equation*}
+% 		A,B,\Gamma,\Delta,E,Z,H,\Theta,I,K,\Lambda,
+% 		M,N,\Xi,O,\Pi,P,\Sigma,T,\Upsilon,\Phi,\chi,\Psi,\Omega
+% 	\end{equation*}
+% 	\begin{equation*}
+% 		\varDelta,\varepsilon,\varGamma,\varkappa,\varLambda,%\varnothing,
+% 		\varOmega,\varPhi,\varphi,\varPi,\varpi,%\varpropto,
+% 		\varPsi,\varrho,
+% 		\varSigma,\varsigma,\varTheta,\vartheta,%\vartriangle,
+% 		\varUpsilon,\varXi
+% 	\end{equation*}
 
 	
-	\begin{equation}
-		\mathbb{P}, \mathcal{C}
-	\end{equation}
+% 	\begin{equation}
+% 		\mathbb{P}, \mathcal{C}
+% 	\end{equation}
 	
-	\begin{equation}
-		\forall, \exists, \lnot, \land, \lor, \wedge, \hat{\imath}, \hat{n}, \vec{F}_{\text{tot}},
-		\frac{\partial f}{\partial x}, \frac{\dif f}{\dif y}, %\left A\dfrac{2}{3}\middle B\right C
-	\end{equation}
-	% \DeclareMathOperator{\test}{test}
-\end{frame}
+% 	\begin{equation}
+% 		\forall, \exists, \lnot, \land, \lor, \wedge, \hat{\imath}, \hat{n}, \vec{F}_{\text{tot}},
+% 		\frac{\partial f}{\partial x}, \frac{\dif f}{\dif y}, %\left A\dfrac{2}{3}\middle B\right C
+% 	\end{equation}
+% 	% \DeclareMathOperator{\test}{test}
+% \end{frame}
 
-\begin{frame}{Wiskundige relaties}
+\addtorecentlist{\textbackslash neq}
+
+\begin{frame}{Formules: Wiskundige relaties}
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.5\textwidth}{ll}
 		\toprule
@@ -191,9 +234,55 @@
 		\showformulaa{$ a\gg b $}{a \\gg b}\\
 		\showformulaa{$ a\simeq b $}{a \\simeq b}\\
 		\showformulaa{$ a\approx b $}{a \\approx b}\\
-		{}&{}\\
+		\showformulaa{$ a\stackrel{*}{=} b $}{a \\stackrel\{*\}\{=\} b}\\
+		%{}&{}\\
 		\bottomrule
 	\end{tabularx}%
+\end{frame}
+
+\begin{saveblock}{pijltjes}
+	\begin{highlightblock}[gobble=8]
+		\DeclareMathOperator{\Image}{Image}
+
+		a \iff b, a\implies b, a\mapsto b
+		\lim_{x\to 0}\frac{\sin(x)}{x} = 1
+		\Image(f) = \mathbb{R}_{\geq 0}
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{x\textbackslash to 0}
+
+\begin{frame}
+	{Formules: Pijltjes en operatoren}
+
+	\consumeblock{pijltjes}
+
+	\vspace{-10pt}
+	\begin{align*}
+		a \iff b, a\implies b, a\mapsto b
+	\end{align*}
+	\begin{align*}
+		\lim_{x\to 0}\frac{\sin(x)}{x} = 1
+	\end{align*}
+	\begin{align*}
+		\Image(f) = \mathbb{R}_{\geq 0}
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		Zo veel! En nog veel meer :-)
+	\end{center}		
+
+	\begin{center}
+		CTAN symbolenlijst:\par
+		\url{http://mirrors.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}
+	\end{center}
+	
+	\begin{center}
+		Detexify:\par
+		\url{http://detexify.kirelabs.org/classify.html}
+	\end{center}
 \end{frame}
 
 %\begin{frame}{Formules}
@@ -229,7 +318,7 @@
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
 		framexleftmargin=0.25em,xleftmargin=0.25em]
 		De trigonometrische identiteit is
-		$ \sin^2(\theta) + \cos^2(\theta) = 1. $
+		$ \sin^2(\theta) + \cos^2(\theta) = 1 $.
 
 		De trigonometrische identiteit is 
 		\begin{equation}
@@ -390,7 +479,7 @@
 		De verdubbelingsformule herschrijven we nu als
 		\begin{align*}
 			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-			&= 2\cos^2(\theta)-1. \tag{Alt. verd. form.}
+			&= 2\cos^2(\theta)-1. \tag{$ * $}
 		\end{align*}
 	\end{highlightblock}
 \end{saveblock}
@@ -490,25 +579,25 @@
 	\end{align*}
 \end{frame}
 
-\begin{saveblock}{leftRight}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
-		\begin{align*}
-			A &= \left\{x^2\;\middle~~|\; x\in\mathbb{Z}\right\}\\
-			A &= \left\{x^2\;|\; x\in\mathbb{Z}\right\}\\
-			A &= \left\{x^2\mid x\in\mathbb{Z}\right\}
-		\end{align*}
-	\end{highlightblock}
-\end{saveblock}
+% \begin{saveblock}{leftRight}
+% 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
+% 		\begin{align*}
+% 			A &= \left\{x^2\;\middle~~|\; x\in\mathbb{Z}\right\}\\
+% 			A &= \left\{x^2\;|\; x\in\mathbb{Z}\right\}\\
+% 			A &= \left\{x^2\mid x\in\mathbb{Z}\right\}
+% 		\end{align*}
+% 	\end{highlightblock}
+% \end{saveblock}
 
-\begin{frame}
-	\useblock{leftRight}
+% \begin{frame}
+% 	\useblock{leftRight}
 
-	\begin{align*}
-		A &= \left\{x^2\;\middle|\; x\in\mathbb{Z}\right\}\\
-		A &= \left\{x^2\;|\; x\in\mathbb{Z}\right\}\\
-		A &= \left\{x^2\mid x\in\mathbb{Z}\right\}
-	\end{align*}
-\end{frame}
+% 	\begin{align*}
+% 		A &= \left\{x^2\;\middle|\; x\in\mathbb{Z}\right\}\\
+% 		A &= \left\{x^2\;|\; x\in\mathbb{Z}\right\}\\
+% 		A &= \left\{x^2\mid x\in\mathbb{Z}\right\}
+% 	\end{align*}
+% \end{frame}
 
 \begin{saveblock}{leftRight}
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
@@ -586,41 +675,41 @@
 	\end{align*}
 \end{frame}
 
-\begin{saveblock}{matrix}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
-		\begin{align*}
-			I_n = \begin{pmatrix}
-				1 & 0 & \cdots & 0\\
-				0 & 1 & \cdots & 0\\
-				\vdots & \vdots & \ddots & \vdots\\
-				0 & 0 & \cdots & 1
-			\end{pmatrix}
-		\end{align*}
-	\end{highlightblock}
-\end{saveblock}
+% \begin{saveblock}{matrix}
+% 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
+% 		\begin{align*}
+% 			I_n = \begin{pmatrix}
+% 				1 & 0 & \cdots & 0\\
+% 				0 & 1 & \cdots & 0\\
+% 				\vdots & \vdots & \ddots & \vdots\\
+% 				0 & 0 & \cdots & 1
+% 			\end{pmatrix}
+% 		\end{align*}
+% 	\end{highlightblock}
+% \end{saveblock}
 
-\begin{frame}
-	\useblock{matrix}
+% \begin{frame}
+% 	\useblock{matrix}
 
-	\begin{align*}
-		I_n = \begin{pmatrix}
-			1 & 0 & \cdots & 0\\
-			0 & 1 & \cdots & 0\\
-			\vdots & \vdots & \ddots & \vdots\\
-			0 & 0 & \cdots & 1
-		\end{pmatrix}
-	\end{align*}
-\end{frame}	
+% 	\begin{align*}
+% 		I_n = \begin{pmatrix}
+% 			1 & 0 & \cdots & 0\\
+% 			0 & 1 & \cdots & 0\\
+% 			\vdots & \vdots & \ddots & \vdots\\
+% 			0 & 0 & \cdots & 1
+% 		\end{pmatrix}
+% 	\end{align*}
+% \end{frame}	
 
 
-\begin{frame}
+% \begin{frame}
 	
-	\begin{align*}
-		\int_{x=0}^{x=\infty}e^{-x}\dif x\\
-		\iint_{S}\textbf{v}\cdot\dif \textbf{S}\\
-		\oint_{l}f\left(\textbf{r}\right)\dif\textbf{r}\\
-		\oiint_{l}f\left(\textbf{r}\right)\dif\textbf{r}\quad \mbox{esint}
-	\end{align*}
-\end{frame}
+% 	\begin{align*}
+% 		\int_{x=0}^{x=\infty}e^{-x}\dif x\\
+% 		\iint_{S}\textbf{v}\cdot\dif \textbf{S}\\
+% 		\oint_{l}f\left(\textbf{r}\right)\dif\textbf{r}\\
+% 		\oiint_{l}f\left(\textbf{r}\right)\dif\textbf{r}\quad \mbox{esint}
+% 	\end{align*}
+% \end{frame}
 
 \end{document}

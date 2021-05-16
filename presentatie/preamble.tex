@@ -37,10 +37,14 @@
 \usepackage{marvosym}
 \usepackage{csquotes}
 \usepackage[style=numeric]{biblatex}
+\usepackage{textcomp}
+%\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xkeyval}
 
 \addbibresource{\subfix{assets/fakebib.bib}}
+
+\DeclareMathOperator{\Image}{Image}
 
 % Source: https://tex.stackexchange.com/questions/41683/why-is-it-that-coloring-in-soul-in-beamer-is-not-visible
 \let\UL\ul
@@ -89,7 +93,8 @@
 		\mathcal, \middle, \dfrac, \subfile, \autoref, \eqref, \cites,
 		\tableofcontents, \printbibliography, \fullcite, \parencite,
 		\addbibresource, \DeclareLanguageMapping, \textcite, \intertext,
-		\sum
+		\sum, \dif, \norm, \text, \dod, \dpd, \int, \partial,
+		\DeclareMathOperator
 	},
 	name = structure,
 	add = {
