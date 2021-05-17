@@ -21,8 +21,6 @@ Mailtje
 - Mogelijk startdocument voor Overleaf / presentatie
 
 
-
-
 2021-05-13
 
 14:38 - 14:53; Inleiding (15 min)
@@ -42,12 +40,44 @@ Mailtje
 09:25 - 09:35; Tekstopmaak (10 min)
 10:52 - 10:58; Documentstructuur (6 min)
 
-16:24 - 16:33; Inleiding
-16:33 - 16:50; Tekstopmaak
-16:50 - 17:01; Documentstructuur
-17:01 - 17:10; Afbeeldingen
-17:10 - 17:31; Formules
+16:24 - 16:33; Inleiding (9 min)
+16:33 - 16:50; Tekstopmaak (17 min)
+16:50 - 17:01; Documentstructuur (11 min)
+17:01 - 17:10; Afbeeldingen (9 min)
+17:10 - 17:31; Formules (21 min)
 ; Bibliografie
+
+2021-05-17
+
+07:32 - 07:44; Inleiding (12 min)
+07:44 - 08:02; Tekstopmaak (16 min)
+08:03 - 08:19; Documentstructuur (19 min)
+08:19 - 08:28; Afbeeldingen (9 min)
+08:31 - 08:51; Formules (20 min)
+08:51 - 09:01; Bibliografie (10 min)
+
+14:01 - 14:09; Inleiding (8 min)
+14:09 - 14:21; Tekstopmaak (12 min)
+14:21 - 14:30; Documentstructuur (9 min)
+14:34 - 15:00; Afbeeldingen en formules (26 min)
+15:01 - 15:14; Bibliografie en goed om te weten (13 min)
+
+
+17:05 - 17:50; Deel 1.
+17:50 - 18:05; Oefenen.
+18:05 - 18:35; Deel 2.
+18:35 - 18:50; Oefenen.
+18:50 - 19:00; Deel 3.
+
+
+
+
+
+Tussenbladen maken.
+Oefeningen maken.
+Cheatsheet maken.
+Geometry page maken.
+
 
 
 
@@ -75,11 +105,11 @@ extra's: sidecap, listoffigures
 
 frames, vs code, dump
 
-stackrel, \abs
+\abs
 
 graphicx
 
-underbrace, \arrow, \mapsto
+underbrace, \arrow
 \Aboxed
 \DeclareMathOperator
 

@@ -443,3 +443,17 @@
 
 \makeatother
 
+\newlength\atleastlength
+
+
+\newenvironment{noindentlist}{
+	\begin{list}{\textbullet}{
+		\leftmargin=0pt\relax
+		\itemindent=0pt\relax
+		\setlength{\itemsep}{2pt}
+	}
+}{
+	\end{list}
+}
+
+

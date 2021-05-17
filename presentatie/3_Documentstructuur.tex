@@ -649,4 +649,53 @@
 	\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio]{assets/3_Documentstructuur/hyperref2.png}
 
 	\end{frame}
+
+
+	\begin{saveblock}{packages}
+		\begin{highlightblock}[linewidth=0.45\textwidth,gobble=12]
+			\documentclass[a4paper]
+			{article}
+
+			\usepackage[margin=2.5cm]
+			{geometry}
+			\usepackage{parskip}
+			\usepackage{xcolor}
+			\usepackage{hyperref}
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{sectioncommands}
+		\begin{highlightblock}[linewidth=0.45\textwidth,gobble=12]
+			\setcounter{secnumdepth}
+			{1}
+
+			\section{AA}
+			\subsection{BB}
+			\subsubsection{CC}
+			\subsection*{BB}
+			\tableofcontents
+			\newpage
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{tekstopmaak}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			Lorem \textbf{ipsum}
+			\underline{dolor} \emph{sit}
+			amet.
+
+			Fusce \textcolor{red}
+			{ac risus} ...
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{frame}
+		\parbox{0.45\textwidth}{
+			\useblock{packages}
+			\useblock{sectioncommands}
+		}\hfil
+		\parbox{0.45\textwidth}{
+			\useblock{tekstopmaak}
+		}
+	\end{frame}
 \end{document}

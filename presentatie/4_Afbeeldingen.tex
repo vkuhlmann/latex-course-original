@@ -179,6 +179,30 @@
 	Te laat in output? Verplaats \hll|figure| naar voren in je bestand.
 \end{frame}
 
+\begin{saveblock}{keepaspectratio}
+	\begin{highlightblock}[gobble=8]
+		\includegraphics[
+			width=0.9\linewidth,height=5cm,keepaspectratio
+		]{assets/pinguin.jpg}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Dimensies}
+	\begin{noindentlist}\setlength{\itemsep}{20pt}
+		\item Hele regelbreedte\\
+		\atleastwidth[15em]{\hll|\\includegraphics[width=\\linewidth]\{assets/pinguin.jpg\}|}
+		
+		
+		\item 90\% regelbreedte\\
+		\atleastwidth[15em]{\hll|\\includegraphics[width=0.9\\linewidth]\{assets/pinguin.jpg\}|}
+		
+		\item Maximaal 90\% regelbreedte en maximaal 5 cm hoog
+		\useblock{keepaspectratio}
+		%\atleastwidth[15em]{\hll|\\includegraphics[width=0.9\\linewidth,height=5cm,
+		%keepaspectratio]\{assets/pinguin.jpg\}|}
+	\end{noindentlist}
+\end{frame}
+
 \begin{saveblock}{subfigure}
 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
 		\begin{figure}[htbp]
@@ -193,7 +217,7 @@
 				\caption{CC}
 				\label{fig:fitExample}
 			\end{subfigure}
-			\caption{Multiple images next to eachother!}
+			\caption{Meerdere afbeeldingen naast elkaar!}
 		\end{figure}
 	\end{highlightblock}
 \end{saveblock}

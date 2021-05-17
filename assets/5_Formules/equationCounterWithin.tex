@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage[dutch]{babel}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb}
+
+\geometry{
+	paperwidth=9cm,
+	paperheight=7.5cm,
+	margin=0.0cm,
+	paperheight=3cm,
+	paperheight=2cm,
+    %paperwidth=4cm,
+    %paperheight=4cm
+}
+
+\counterwithin{equation}{section}
+
+\begin{document}
+    \setcounter{section}{3}
+    \setcounter{equation}{6}
+    De verdubbelingsformule herschrijven we nu als
+    \begin{align}
+        \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\nonumber\\
+        &= 2\cos^2(\theta)-1.
+    \end{align}
+\end{document}

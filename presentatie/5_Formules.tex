@@ -611,39 +611,63 @@
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}{Delimiter point}
-	\useblock{leftRight}
-
-	\begin{align*}
-		\left.\left[x^2\right]\right|_{x=0}^{x=2} = 4,\quad
-		\abs{x} = \left\{\begin{array}{ll}
-			x & \mbox{if $ x \geq 0$}\\
-			-x & \mbox{if $ x < 0$}
-		\end{array}\right.
-	\end{align*}
-\end{frame}
-
 \begin{saveblock}{leftRight}
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
 		\begin{align*}
-			\abs{x} = \begin{cases}
-				x & \mbox{if $ x \geq 0$}\\
-				-x & \mbox{if $ x < 0$}
-			\end{cases}
+			\left.\left[x^2\right]\right~~|_{x=0}^{x=2} = 4
 		\end{align*}
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}
+\begin{frame}{Delimiter point}
 	\useblock{leftRight}
-	
+
 	\begin{align*}
-		\abs{x} = \begin{cases}
-			x & \mbox{if $ x \geq 0$}\\
-			-x & \mbox{if $ x < 0$}
-		\end{cases}
+		\left.\left[x^2\right]\right|_{x=0}^{x=2} = 4,
+		% \quad
+		% \abs{x} = \left\{\begin{array}{ll}
+		% 	x & \mbox{if $ x \geq 0$}\\
+		% 	-x & \mbox{if $ x < 0$}
+		% \end{array}\right.
 	\end{align*}
 \end{frame}
+
+% \begin{saveblock}{leftRight}
+% 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
+% 		\begin{align*}
+% 			\abs{x} = \begin{cases}
+% 				x & \mbox{if $ x \geq 0$}\\
+% 				-x & \mbox{if $ x < 0$}
+% 			\end{cases}
+% 		\end{align*}
+% 	\end{highlightblock}
+% \end{saveblock}
+
+% \begin{frame}
+% 	\useblock{leftRight}
+	
+% 	\begin{align*}
+% 		\abs{x} = \begin{cases}
+% 			x & \mbox{if $ x \geq 0$}\\
+% 			-x & \mbox{if $ x < 0$}
+% 		\end{cases}
+% 	\end{align*}
+% \end{frame}
+
+% \begin{saveblock}{matrix}
+% 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
+% 		\begin{align*}
+% 			R(\theta) = \begin{pmatrix}
+% 				\cos(\theta) & -\sin(\theta)\\
+% 				\sin(\theta) & \cos(\theta)
+% 			\end{pmatrix},\quad
+% 			A = \left~~|\begin{matrix}
+% 				4 & 3\\
+% 				-1 & 2
+% 			\end{matrix}\right)
+% 		\end{align*}
+% 	\end{highlightblock}
+% \end{saveblock}
 
 \begin{saveblock}{matrix}
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,framexleftmargin=0.25em]
@@ -652,10 +676,10 @@
 				\cos(\theta) & -\sin(\theta)\\
 				\sin(\theta) & \cos(\theta)
 			\end{pmatrix},\quad
-			A = \left~~|\begin{matrix}
-				4 & 3\\
-				-1 & 2
-			\end{matrix}\right)
+			\abs{x} = \begin{cases}
+				x & \mbox{if $ x \geq 0$}\\
+				-x & \mbox{if $ x < 0$}
+			\end{cases}
 		\end{align*}
 	\end{highlightblock}
 \end{saveblock}
@@ -668,10 +692,14 @@
 			\cos(\theta) & -\sin(\theta)\\
 			\sin(\theta) & \cos(\theta)
 		\end{pmatrix},\quad
-		A = \left|\begin{matrix}
-			4 & 3\\
-			-1 & 2
-		\end{matrix}\right)
+		\abs{x} = \begin{cases}
+			x & \mbox{if $ x \geq 0$}\\
+			-x & \mbox{if $ x < 0$}
+		\end{cases}
+		% A = \left|\begin{matrix}
+		% 	4 & 3\\
+		% 	-1 & 2
+		% \end{matrix}\right)
 	\end{align*}
 \end{frame}
 
@@ -709,6 +737,12 @@
 % 		\iint_{S}\textbf{v}\cdot\dif \textbf{S}\\
 % 		\oint_{l}f\left(\textbf{r}\right)\dif\textbf{r}\\
 % 		\oiint_{l}f\left(\textbf{r}\right)\dif\textbf{r}\quad \mbox{esint}
+% 	\end{align*}
+% \end{frame}
+
+% \begin{frame}
+% 	\begin{align*}
+		
 % 	\end{align*}
 % \end{frame}
 

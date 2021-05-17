@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage[dutch]{babel}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+
+\geometry{
+	paperwidth=9cm,
+	paperheight=7.5cm,
+	margin=0.0cm,
+	paperheight=3cm,
+	paperheight=2cm,
+    %paperwidth=4cm,
+    paperheight=3cm
+}
+
+\counterwithin{equation}{section}
+
+\begin{document}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat mi sed nisl ultrices
+    tempor. 
+
+    \adjustbox{
+        cframe=blue!50!white 1pt 6pt 3pt,
+        bgcolor=blue!10!white,
+    }{%
+        \parbox{\dimexpr\linewidth - 20pt\relax}{
+            Quisque porta feugiat tortor tristique porta.
+            Morbi fermentum egestas felis finibus tincidunt.
+        }%
+    }
+\end{document}
