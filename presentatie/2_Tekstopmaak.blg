@@ -1,0 +1,5 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is '2_Tekstopmaak.blg'
+[188] biber-MSWIN64:340> INFO - === 
+[746] Utils.pm:411> ERROR - Cannot find '2_Tekstopmaak.bcf'!
+[746] Biber.pm:132> INFO - ERRORS: 1
