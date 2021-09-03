@@ -1,0 +1,106 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{inputslide}[2021/09/03 inputslide v0.1.0]
+
+%% Copyright (c) 2021 Vincent Kuhlmann
+
+\RequirePackage{xkeyval}
+\RequirePackage{graphicx}
+\RequirePackage{pdfpages}
+\RequirePackage{etoolbox}
+\RequirePackage{adjustbox}
+\RequirePackage{xcolor}
+\RequirePackage{xstring}
+
+\let\bracechar={
+\iffalse}\fi
+
+\def\inputslide#1#2{%
+    \IfFileExists{#1}{%
+        \begingroup
+        \expandafter\let\expandafter\inputentrance\csname fi\endcsname
+        %\newbool{usingframe}%
+        % \def\afterframeend{%
+        %     %\csname iffalse\endcsname
+        % }%
+        \def\inputexit{%
+            \csname iffalse\endcsname
+        }%
+        %
+        % \AtBeginEnvironment{frame}{%
+        % }%
+        % \AfterEndEnvironment{frame}{%
+        %     \csname afterframeend\endcsname
+        % }%
+        \let\documentclass\inputexit
+        %
+        \expandafter\let\expandafter\@inputslide@orig@end\csname end \endcsname
+        \def\@inputslide@end####1{%
+            %\typeout{bracechar is \meaning\bracechar}%
+            % \@ifnextchar\brachechar
+            % {\@inputslide@orig@end@i}%{#1}%
+            % {\@inputslide@orig@end}%
+            %
+            % \def\whatsthetoken{%
+            %     \typeout{Next token is \meaning\@the@token}%
+            %     \if\@the@token\bracechar
+            %         \typeout{Brachechar!}%
+            %     \else
+            %         \typeout{Not brachechar!}%
+            %     \fi
+            %     \@inputslide@orig@end
+            %    % \@the@token
+            % }%
+            % \futurelet\@the@token\whatsthetoken
+            %\@inputslide@end@i
+            %
+            % \def\@doafter{}%
+            % \IfStrEq{#1}{frame}{%
+            %     \def\@doafter{\csname iffalse\endcsname}%
+            % }{}%
+            % \@doafter
+            %
+            \@inputslide@orig@end{####1}%
+        }%
+        %\let\@inputslide@end\@inputslide@orig@end
+        % \typeout{Meaning A: \meaning\@inputslide@end}
+        % \typeout{Meaning B: \meaning\@inputslide@orig@end}
+        %
+        % \def\@inputslide@end@i#1{%
+        %     \@inputslide@orig@end{#1}%
+        %     % \typeout{Environment name was #1}%
+        %     % \@inputslide@orig@end\bgroup #1\egroup%
+        %     % %{\@inputslide@orig@end}%
+        %     % \def\@doafter{}%
+        %     % \IfStrEq{#1}{frame}{%
+        %     %     \def\@doafter{\csname iffalse\endcsname}%
+        %     % }{}%
+        %     % \@doafter
+        % }%
+        \expandafter\let\csname end \endcsname\@inputslide@end
+        %\PackageWarning{DEBUG}{end is \expandafter\meaning\csname end\endcsname}%
+        %
+        \def\named####1{%
+            \def\aftercom{}%
+            \IfStrEq{#2}{####1}{%
+            }{%
+                \def\aftercom{\csname iffalse\endcsname}%
+            }%
+            \aftercom
+        }%
+        \expandafter%\iffalse
+        \input{#1}%
+            % \inputentrance%\csname iffalse\endcsname
+            % \begin{frame}
+            %     ccc
+            % \end{frame}
+            % \inputexit
+            %\csname iffalse\endcsname
+        %
+        %\fi
+        \endgroup
+        %\PackageWarning{DEBUG}{Documentclass is \meaning\documentclass}
+    }{%
+        \PackageError{inputslide}{Input file not found.}%
+    }%
+}
