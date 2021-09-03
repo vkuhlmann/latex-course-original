@@ -8,7 +8,7 @@
 \begin{document}
     \clearrecentlist
 
-    \inputentrance\named{mytest}
+    \inputentrance\named{intro-wordcomp-doc}
     \begin{frame}
         \frametitle{\LaTeX{} vs Word}
 
@@ -21,8 +21,8 @@
             \end{column}
         \end{columns}
     \end{frame}
-    \inputexit
 
+    \inputentrance\named{intro-wordcomp-doc-eqfragment}
     \begin{frame}
         \frametitle{\LaTeX{} vs Word}
 
@@ -35,21 +35,21 @@
         \egroup
     \end{frame}
 
-    \inputentrance\named{motorkap}
+    \inputentrance\named{intro-wordcomp-ondermotorkap}
     \begin{saveblock}{basicDocCode}
         \begin{highlightblock}[linewidth=\textwidth,gobble=12]
             \title{My document}
             \author{Vincent Kuhlmann}
             \date{3 May 2021}
-
+            
             \begin{document}
-            \maketitle
+            \maketitle        
             \section{Lorem ipsum}
             Lorem ipsum dolor sit amet, consectetuer ...
-
+    
             \begin{align}
                 f(x) = \dfrac{1}{\sigma\sqrt{2\pi}} e^{
-                        -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+                    -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
             \end{align}
         \end{highlightblock}
     \end{saveblock}
@@ -58,7 +58,7 @@
         \frametitle{\LaTeX{} vs Word}
 
         Onder de motorkap: groot verschil.
-
+        
         Word: Visueel, \LaTeX: Code (tekst).
 
         \pause
@@ -77,16 +77,25 @@
             \end{column}%
         \end{columns}
     \end{frame}
-    \inputexit
 
-    \begin{frame}<1-4>[label=codeoverview]
+    \let\frameselection\somethingundefined
+    
+    \inputentrance\named{intro-visueelcomp}
+    
+    \ifx\frameselection\somethingundefined
+        \def\frameselection{1-4}
+    \fi
+
+    \def\pasteframeselection#1{\begin{frame}<#1>}%
+    \expandafter\pasteframeselection\expandafter{\frameselection}%
+    [label=codeoverview]
         \frametitle{Code vs Visueel}
 
         \parbox[c][0.8\textheight]{0.35\textwidth}{
             \begin{itemize}
                 \item<1-> Websites \& Apps
-                \par\uncover<3->{\textbf{Complex}}
-
+                \par\uncover<3->{\textbf{Complex}}                    
+                
                 \item<4-> Wikipedia
                 \par\uncover<5->{\textbf{Consistent}}
 
@@ -97,58 +106,60 @@
         %\parbox[c]{1pt}{\textcolor{red}{\rule{0.5pt}{0.3\textheight}}}%
         \hfil
         \parbox[c]{0.6\textwidth}{
-        \unless\ifishandout
+            \unless\ifishandout
             \only<1>{
                 \includegraphics[
                     width=\linewidth,height=0.8\textheight,keepaspectratio
                 ]{assets/websiteVisual.png}
             }
             \only<2-3>{
-            \adjustbox{
-            trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
-            }{%
-            \includegraphics[
-                width=\linewidth,height=0.8\textheight,keepaspectratio
-            ]{assets/websiteVisual.png}%
-            }
+                \adjustbox{
+                    trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
+                }{%
+                    \includegraphics[
+                        width=\linewidth,height=0.8\textheight,keepaspectratio
+                    ]{assets/websiteVisual.png}%
+                }
             }
             \only<4-5>{
                 \centering
                 \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual}
                 %\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual2}
             }
-        \fi
-        \only<6-7>{
-            \includegraphics[width=\linewidth]{assets/whatsappStyles2.png}
-
-            \bigskip
-
-            %\includegraphics[width=\linewidth]{whatsappStylesResultCropped.jpg}
-            \includegraphics[width=\linewidth]{assets/whatsappStylesResult2.png}
-        }
+            \fi
+            \only<6-7>{
+                \includegraphics[width=\linewidth]{assets/whatsappStyles2.png}
+                
+                \bigskip
+                
+                %\includegraphics[width=\linewidth]{whatsappStylesResultCropped.jpg}
+                \includegraphics[width=\linewidth]{assets/whatsappStylesResult2.png}
+            }
         }
     \end{frame}
 
+    \inputentrance\named{intro-visueelcomp-wiki-example}
+
     \begin{saveblock}{ninglinspoFragment1}
         \begin{Verbatim}[tabsize=4,gobble=8]
-            {{Infobox rivier
-            | naam          = Ninglinspo
-            | afbeelding    = Ninglinspo - arrivée d
-            | onderschrift  = De Ninglinspo niet ver
-            | lengte        = 15
-            | hoogte        = 420
-            | hoogtemonding = 270
-            | verhang       =
-            | debiet        =
+        {{Infobox rivier
+                | naam          = Ninglinspo
+                | afbeelding    = Ninglinspo - arrivée d
+                | onderschrift  = De Ninglinspo niet ver
+                | lengte        = 15
+                | hoogte        = 420
+                | hoogtemonding = 270
+                | verhang       = 
+                | debiet        = 
         \end{Verbatim}
     \end{saveblock}
 
     \begin{saveblock}{ninglinspoFragment2}
         \begin{Verbatim}[tabsize=4,gobble=8]
-            De oorspronkelijke naam is eigenlijk de "Doulneu
-            een Els. Er werd reeds gesproken over de rivier
-            charter van [[Sigibert III]].
-            <ref>informatiebord aan de monding van de Ningli
+        De oorspronkelijke naam is eigenlijk de "Doulneu
+        een Els. Er werd reeds gesproken over de rivier
+        charter van [[Sigibert III]].
+        <ref>informatiebord aan de monding van de Ningli
         \end{Verbatim}
     \end{saveblock}
 
@@ -197,12 +208,14 @@
 
     \againframe<5>{codeoverview}
 
+    \inputentrance\named{intro-visueelcomp-lemmaproof}
+
     \begin{saveblock}{repeatel}
         \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
             \begin{lemma}
                 Lorem ipsum dolor sit
                 ... eget dolor.
-
+                
                 \begin{proof}
                     Aenean massa. Cum
                     ... quis enim.
@@ -223,64 +236,75 @@
         \end{columns}
     \end{frame}
 
-    \begin{frame}
+    \let\frameselection\somethingundefined
+    
+    \inputentrance\named{intro-visueelcomp-wordugly}
+    
+    \ifx\frameselection\somethingundefined
+        \def\frameselection{1-}
+    \fi
+    
+    \def\pasteframeselection#1{\begin{frame}<#1>}%
+    \expandafter\pasteframeselection\expandafter{\frameselection}%
         \frametitle{Code vs Visueel}
-
+    
         \only<-1>{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkader2.png}}
         \unless\ifishandout
-            \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkaderRand.png}}
+        \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkaderRand.png}}
         \fi
-
+    
     \end{frame}
 
     \againframe<5->{codeoverview}
 
+    \inputentrance\named{intro-overleaf}
     \addtorecentlist{Overleaf}
-
+    
     \begin{frame}
         \frametitle{Overleaf}
-
+    
         %\includegraphics[trim=10px 120px 50px 30px,clip,width=0.95\textwidth]{texnicieWebsiteOverleafTeXstudio.png}
         \includegraphics[width=\textwidth]{assets/overleafDisambiguation.png}
-
+    
         \begin{columns}
             \begin{column}{0.3\textwidth}
                 \includegraphics[width=\linewidth]{assets/overleafCreateBlankProject.png}
             \end{column}
             \begin{column}{0.7\textwidth}
                 Op het einde nog woordje hierover.
-
+                
                 Voor nu: Overleaf.
-
+                
                 \medskip
                 Nu al niet-commerci\"ele variant installeren? \url{a-es2.nl/texnicie}
             \end{column}
         \end{columns}
     \end{frame}
-
+    
+    \inputentrance\named{intro-simpledoc}
     \begin{saveblock}{baseDocument}
         \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
             \documentclass{article}
             \usepackage[utf8]{inputenc}
-
+    
             \title{My document}
             \author{Vincent Kuhlmann}
             \date{1 May 2021}
-
+    
             \begin{document}
             \maketitle
             \section{Introduction}
-
+    
             Hallo iedereen!
             \end{document}
         \end{highlightblock}
     \end{saveblock}
 
     \addtorecentlist{simpel document}
-
+    
     \begin{frame}
         \frametitle{Simpel document}
-
+    
         \begin{columns}
             \begin{column}{0.5\textwidth}
                 \useblock{baseDocument}

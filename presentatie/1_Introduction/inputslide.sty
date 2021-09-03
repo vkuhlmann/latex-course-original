@@ -15,7 +15,15 @@
 \let\bracechar={
 \iffalse}\fi
 
-\def\inputslide#1#2{%
+\def\@inputslide@slidesource{}
+
+\def\SetSlideSource#1{%
+    \def\@inputslide@slidesource{#1}%
+}
+
+\newbool{@inputslide@wasSlideFound}
+
+\newcommand\inputslide[2][\@inputslide@slidesource]{%
     \IfFileExists{#1}{%
         \begingroup
         \expandafter\let\expandafter\inputentrance\csname fi\endcsname
@@ -34,60 +42,40 @@
         % }%
         \let\documentclass\inputexit
         %
-        \expandafter\let\expandafter\@inputslide@orig@end\csname end \endcsname
-        \def\@inputslide@end####1{%
-            %\typeout{bracechar is \meaning\bracechar}%
-            % \@ifnextchar\brachechar
-            % {\@inputslide@orig@end@i}%{#1}%
-            % {\@inputslide@orig@end}%
-            %
-            % \def\whatsthetoken{%
-            %     \typeout{Next token is \meaning\@the@token}%
-            %     \if\@the@token\bracechar
-            %         \typeout{Brachechar!}%
-            %     \else
-            %         \typeout{Not brachechar!}%
-            %     \fi
-            %     \@inputslide@orig@end
-            %    % \@the@token
-            % }%
-            % \futurelet\@the@token\whatsthetoken
-            %\@inputslide@end@i
-            %
-            % \def\@doafter{}%
-            % \IfStrEq{#1}{frame}{%
-            %     \def\@doafter{\csname iffalse\endcsname}%
-            % }{}%
-            % \@doafter
-            %
-            \@inputslide@orig@end{####1}%
-        }%
-        %\let\@inputslide@end\@inputslide@orig@end
-        % \typeout{Meaning A: \meaning\@inputslide@end}
-        % \typeout{Meaning B: \meaning\@inputslide@orig@end}
-        %
-        % \def\@inputslide@end@i#1{%
-        %     \@inputslide@orig@end{#1}%
-        %     % \typeout{Environment name was #1}%
-        %     % \@inputslide@orig@end\bgroup #1\egroup%
-        %     % %{\@inputslide@orig@end}%
-        %     % \def\@doafter{}%
-        %     % \IfStrEq{#1}{frame}{%
-        %     %     \def\@doafter{\csname iffalse\endcsname}%
-        %     % }{}%
-        %     % \@doafter
+        % \expandafter\let\expandafter\@inputslide@orig@end\csname end \endcsname
+        % \def\@inputslide@end####1{%
+        %     \typeout{Environment name was ####1}%
+        %     \@inputslide@orig@end{####1}%
+        %     \def\@doafter{}%
+        %     \IfStrEq{####1}{frame}{%
+        %         \typeout{Hit a frame, skipping!}
+        %         \def\@doafter{\csname iffalse\endcsname}%
+        %     }{}%
+        %     \@doafter
         % }%
-        \expandafter\let\csname end \endcsname\@inputslide@end
+        % \expandafter\let\csname end \endcsname\@inputslide@end
+
+        % BEGIN Based on: https://tex.stackexchange.com/questions/226319/run-a-command-at-end-of-each-frame
+        \patchcmd{\beamer@doseveralframes}%
+            {\beamer@reseteecodes}%
+            {\beamer@reseteecodes
+                \inputexit
+            }%
+            {}{}%
+        % END
+
         %\PackageWarning{DEBUG}{end is \expandafter\meaning\csname end\endcsname}%
         %
         \def\named####1{%
             \def\aftercom{}%
             \IfStrEq{#2}{####1}{%
+                \global\booltrue{@inputslide@wasSlideFound}
             }{%
                 \def\aftercom{\csname iffalse\endcsname}%
             }%
             \aftercom
         }%
+        \global\boolfalse{@inputslide@wasSlideFound}
         \expandafter%\iffalse
         \input{#1}%
             % \inputentrance%\csname iffalse\endcsname
@@ -99,8 +87,14 @@
         %
         %\fi
         \endgroup
+        \ifbool{@inputslide@wasSlideFound}%
+        {}%
+        {%
+            \PackageError{inputslide}{InputSlide could not find slide `#2'}{}%
+        }%
+        \let\frameselection\somethingundefined
         %\PackageWarning{DEBUG}{Documentclass is \meaning\documentclass}
     }{%
-        \PackageError{inputslide}{Input file not found.}%
+        \PackageError{inputslide}{Input file not found}{}%
     }%
 }
