@@ -42,6 +42,41 @@
 %\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xkeyval}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+
+\usepackage{inputslide}
+
+\newbool{english}
+\booltrue{english}
+
+\newcommand{\TeXniCie}{\TeX niCie}
+
+%\newcommand\lang[2]{%
+
+\makeatletter
+\def\lang{%
+	\@ifnextchar,%
+	{\lang@i}%
+	{\lang@ii}%
+}
+
+
+\def\lang@i,#1,#2,{%
+	\ifbool{english}{%
+		#1%
+	}{%
+		#2%
+	}%
+}
+\long\def\lang@ii#1#2{%
+	\ifbool{english}{%
+		#1%
+	}{%
+		#2%
+	}%
+}
+\makeatother
 
 \addbibresource{\subfix{assets/fakebib.bib}}
 

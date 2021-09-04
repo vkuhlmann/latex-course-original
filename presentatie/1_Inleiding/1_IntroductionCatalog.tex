@@ -1,5 +1,5 @@
 %% !TeX program = pdflatex
-\documentclass[presentatie.tex]{subfiles}
+\documentclass[../presentatie.tex]{subfiles}
 
 \csname inputexit\endcsname
 \csname inputentrance\endcsname
@@ -14,10 +14,10 @@
 
         \begin{columns}
             \begin{column}{0.5\textwidth}
-                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocWordSnippet.png}
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/1_Inleiding/basicDocWordSnippet.png}
             \end{column}
             \begin{column}{0.5\textwidth}
-                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocLaTeXSnippet.png}
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/1_Inleiding/basicDocLaTeXSnippet.png}
             \end{column}
         \end{columns}
     \end{frame}
@@ -28,14 +28,20 @@
 
         \bgroup
         \setlength{\fboxsep}{0pt}
-        \fbox{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/basicDocWordSnippetEq.png}}
+        \fbox{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/1_Inleiding/basicDocWordSnippetEq.png}}
         \medskip
 
-        \fbox{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/basicDocLaTeXSnippetEq.png}}
+        \fbox{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/1_Inleiding/basicDocLaTeXSnippetEq.png}}
         \egroup
     \end{frame}
 
+    \let\frameselection\somethingundefined
+
     \inputentrance\named{intro-wordcomp-ondermotorkap}
+    \ifx\frameselection\somethingundefined
+        \def\frameselection{1-2}
+    \fi
+
     \begin{saveblock}{basicDocCode}
         \begin{highlightblock}[linewidth=\textwidth,gobble=12]
             \title{My document}
@@ -54,12 +60,23 @@
         \end{highlightblock}
     \end{saveblock}
 
-    \begin{frame}
+    \ifx\frameselection\somethingundefined
+        \def\frameselection{1-}
+    \fi
+
+    \def\pasteframeselection#1{\begin{frame}<#1>}%
+    \expandafter\pasteframeselection\expandafter{\frameselection}%
         \frametitle{\LaTeX{} vs Word}
 
-        Onder de motorkap: groot verschil.
-        
-        Word: Visueel, \LaTeX: Code (tekst).
+        \ifbool{english}{
+            Inner workings: big difference.
+
+            Word: Edit visually,\\\LaTeX: Edit code (text)
+        }{
+            Onder de motorkap: groot verschil.
+            
+            Word: Visueel, \LaTeX: Code (tekst).
+        }
 
         \pause
         \medskip
@@ -72,7 +89,7 @@
             \end{column}%
             \begin{column}{0.4\textwidth}%
                 \adjustbox{fbox=0.5pt 0pt 0pt,margin=-30pt 0pt 0pt 0pt,set height=0pt}{%
-                    \includegraphics[width=1.6\linewidth,height=0.9\textheight,keepaspectratio]{assets/basicDocLaTeXSnippet.png}%
+                    \includegraphics[width=1.6\linewidth,height=0.9\textheight,keepaspectratio]{assets/1_Inleiding/basicDocLaTeXSnippet.png}%
                 }
             \end{column}%
         \end{columns}
@@ -89,18 +106,24 @@
     \def\pasteframeselection#1{\begin{frame}<#1>}%
     \expandafter\pasteframeselection\expandafter{\frameselection}%
     [label=codeoverview]
-        \frametitle{Code vs Visueel}
+        \frametitle{Code vs \lang,Visual,Visueel,}
 
         \parbox[c][0.8\textheight]{0.35\textwidth}{
             \begin{itemize}
                 \item<1-> Websites \& Apps
-                \par\uncover<3->{\textbf{Complex}}                    
+                \par\uncover<3->{
+                    \textbf{Complex}
+                }
                 
                 \item<4-> Wikipedia
-                \par\uncover<5->{\textbf{Consistent}}
+                \par\uncover<5->{
+                    \textbf{Consistent}
+                }
 
                 \item<6-> WhatsApp
-                \par\uncover<7->{\textbf{Uitbreidbaar}}
+                \par\uncover<7->{
+                    \textbf{\lang,Expandable,Uitbreidbaar,}
+                }
             \end{itemize}
         }\hfil
         %\parbox[c]{1pt}{\textcolor{red}{\rule{0.5pt}{0.3\textheight}}}%
@@ -110,7 +133,7 @@
             \only<1>{
                 \includegraphics[
                     width=\linewidth,height=0.8\textheight,keepaspectratio
-                ]{assets/websiteVisual.png}
+                ]{assets/1_Inleiding/websiteVisual.png}
             }
             \only<2-3>{
                 \adjustbox{
@@ -118,22 +141,22 @@
                 }{%
                     \includegraphics[
                         width=\linewidth,height=0.8\textheight,keepaspectratio
-                    ]{assets/websiteVisual.png}%
+                    ]{assets/1_Inleiding/websiteVisual.png}%
                 }
             }
             \only<4-5>{
                 \centering
-                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual}
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/1_Inleiding/wikipediaVisual}
                 %\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wikipediaVisual2}
             }
             \fi
             \only<6-7>{
-                \includegraphics[width=\linewidth]{assets/whatsappStyles2.png}
+                \includegraphics[width=\linewidth]{assets/1_Inleiding/whatsappStyles2.png}
                 
                 \bigskip
                 
                 %\includegraphics[width=\linewidth]{whatsappStylesResultCropped.jpg}
-                \includegraphics[width=\linewidth]{assets/whatsappStylesResult2.png}
+                \includegraphics[width=\linewidth]{assets/1_Inleiding/whatsappStylesResult2.png}
             }
         }
     \end{frame}
@@ -231,7 +254,7 @@
                 \useblock{repeatel}
             \end{column}
             \begin{column}{0.5\textwidth}
-                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/latexRepeatEl.pdf}
+                \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/1_Inleiding/latexRepeatEl.pdf}
             \end{column}
         \end{columns}
     \end{frame}
@@ -248,9 +271,9 @@
     \expandafter\pasteframeselection\expandafter{\frameselection}%
         \frametitle{Code vs Visueel}
     
-        \only<-1>{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkader2.png}}
+        \only<-1>{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/1_Inleiding/wordkader2.png}}
         \unless\ifishandout
-        \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/wordkaderRand.png}}
+        \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/1_Inleiding/wordkaderRand.png}}
         \fi
     
     \end{frame}
@@ -264,19 +287,42 @@
         \frametitle{Overleaf}
     
         %\includegraphics[trim=10px 120px 50px 30px,clip,width=0.95\textwidth]{texnicieWebsiteOverleafTeXstudio.png}
-        \includegraphics[width=\textwidth]{assets/overleafDisambiguation.png}
+        \lang{
+            \begin{list}{}{
+                \itemindent-\leftmargin
+		        \setlength{\itemsep}{2pt}
+            }
+                \item\textbf{LaTeX} is the programming language.
+                \item\textbf{Overleaf} is a website where you can write and
+                    compile LaTeX.
+                \item\textbf{Visual Studio code} is a desktop app where you can
+                    write and compile LaTeX.
+                \item\textbf{MiKTeX} does compilation for Visual Studio code.
+            \end{list}
+        }{
+            \includegraphics[width=\textwidth]{assets/overleafDisambiguation.png}
+        }
     
         \begin{columns}
             \begin{column}{0.3\textwidth}
-                \includegraphics[width=\linewidth]{assets/overleafCreateBlankProject.png}
+                \includegraphics[width=\linewidth]{assets/1_Inleiding/overleafCreateBlankProject.png}
             \end{column}
             \begin{column}{0.7\textwidth}
-                Op het einde nog woordje hierover.
-                
-                Voor nu: Overleaf.
+                \lang{%
+                    For now: Overleaf.
+                }{%
+                    Op het einde nog woordje hierover.
+                    
+                    Voor nu: Overleaf.
+                }
                 
                 \medskip
-                Nu al niet-commerci\"ele variant installeren? \url{a-es2.nl/texnicie}
+                \lang{%
+                    Want VS Code? Instructions at
+                    \href{https://vkuhlmann.com/latex/installation}{\nolinkurl{vkuhlmann.com/latex/installation}}
+                }{%
+                    Nu al niet-commerci\"ele variant installeren? \url{a-es2.nl/texnicie}
+                }
             \end{column}
         \end{columns}
     \end{frame}
@@ -295,22 +341,22 @@
             \maketitle
             \section{Introduction}
     
-            Hallo iedereen!
+            ~\lang,Hello everyone!,Hallo iedereen!,~
             \end{document}
         \end{highlightblock}
     \end{saveblock}
 
-    \addtorecentlist{simpel document}
+    \addtorecentlist{\lang,simple,simpel, document}
     
     \begin{frame}
-        \frametitle{Simpel document}
+        \frametitle{\lang,Simple,Simpel, document}
     
         \begin{columns}
             \begin{column}{0.5\textwidth}
                 \useblock{baseDocument}
             \end{column}
             \begin{column}{0.5\textwidth}
-                \includegraphics[width=\linewidth]{assets/basicDocumentOutput.png}
+                \includegraphics[width=\linewidth]{assets/1_Inleiding/basicDocumentOutput.png}
             \end{column}
         \end{columns}
     \end{frame}
