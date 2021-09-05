@@ -3,13 +3,27 @@
 
 \begin{document}
 
-\section{Formules}
+\def\langsuffix{}
+\lang{\gdef\langsuffix{EN}}{}
+
+\lang{
+	\section{Formulas}
+}{
+	\section{Formules}
+}
 
 \clearrecentlist
 
 \begin{saveblock}{formDocFrag}
 	\begin{highlightblock}[gobble=8,linewidth=25em,linewidth=\textwidth]
 		De trigonometrische identiteit
+		is $ \sin^2(\theta) + \cos^2(\theta) = 1 $.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{formDocFragEN}
+	\begin{highlightblock}[gobble=8,linewidth=25em,linewidth=\textwidth]
+		The trigonometric identity
 		is $ \sin^2(\theta) + \cos^2(\theta) = 1 $.
 	\end{highlightblock}
 \end{saveblock}
@@ -23,15 +37,18 @@
 
 \addtorecentlist{\$ \$}
 
-\begin{frame}{Formules}
+\begin{frame}{\lang,Formulas,Formules,}
 	\centering
 	\adjustbox{cfbox=red!80!black 1.5pt 3pt}{
-		De trigonometrische identiteit is $ \sin^2(\theta) + \cos^2(\theta) = 1 $.
+		\lang
+		{The trigonometric identity is}
+		{De trigonometrische identiteit is}
+		$ \sin^2(\theta) + \cos^2(\theta) = 1 $.
 	}
 	
 	\vspace{10pt}
 	\begin{center}%
-		\uncover<2->{\useblock{formDocFrag}}%
+		\uncover<2->{\useblock{formDocFrag\langsuffix}}%
 		% \adjustbox{set height=2cm,margin=2px}{%
 		% 	\only<2->{\useblock{formDocFrag}}%
 		% }%
@@ -48,11 +65,11 @@
 \addtorecentlist{\textasciicircum}
 \addtorecentlist{\_}
 
-\begin{frame}{Formules: Basis}%
+\begin{frame}{\lang,Formulas: The basics,Formules: Basis,}%
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.5\textwidth}{ll}
 		\toprule
-		Formule {\global\showcount=1\relax}& Code\\
+		\lang,Formula,Formule, {\global\showcount=1\relax}& Code\\
 		\midrule
 		\showformula{$ \sqrt{2} $}{\\sqrt\{2\}}\\
 		\showformula{$ \frac{2}{3} $}{\\frac\{2\}\{3\}}\\
@@ -62,7 +79,7 @@
 	\end{tabularx}%
 	\begin{tabularx}{0.5\textwidth}{ll}
 		\toprule
-		Formule {\global\showcount=5\relax}& Code\\
+		\lang,Formula,Formule, {\global\showcount=5\relax}& Code\\
 		\midrule
 		\showformula{$ \sqrt[3]{8} $}{\\sqrt[3]\{8\}}\\
 		%\showformula{$ x_1 + \dots + x_n $}{x_1 + \\dots + x_n}\\
@@ -82,11 +99,11 @@
 	\fi
 \end{frame}
 
-\begin{frame}{Formules: Symbolen}%
+\begin{frame}{\lang,Formulas: Symbols,Formules: Symbolen,}%
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.6\textwidth}{ll}
 		\toprule
-		Formule {\global\showcount=1\relax}& Code\\
+		\lang,Formula,Formule, {\global\showcount=1\relax}& Code\\
 		\midrule
 		\showformula{$ x_1,\dots,x_n $}{x_1,\\dots,x_n}\\
 		\showformula{$ \alpha,\beta,\gamma $}{\\alpha,\\beta,\\gamma}\\
@@ -96,7 +113,7 @@
 	\end{tabularx}%
 	\begin{tabularx}{0.4\textwidth}{ll}
 		\toprule
-		Formule {\global\showcount=5\relax}& Code\\
+		\lang,Formula,Formule, {\global\showcount=5\relax}& Code\\
 		\midrule
 		\showformula{$ 5\cdot 6 $}{5\\cdot 6}\\
 		%\showformula{$ x_1 + \dots + x_n $}{x_1 + \\dots + x_n}\\
@@ -117,7 +134,7 @@
 
 \addtorecentlist{\textbackslash vec}
 
-\begin{frame}<7>{Formules: Vectoren}
+\begin{frame}<7>{\lang,Formulas: Vectors,Formules: Vectoren,}
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.42\textwidth}{ll}
 		\toprule
@@ -156,7 +173,7 @@
 \addtorecentlist{\textbackslash dod}
 
 \begin{frame}
-	{Formules: Integraalrekening}
+	{\lang,Formulas: Calculus,Formules: Integraalrekening,}
 
 	\hll|\\usepackage\{commath\}|
 
@@ -211,11 +228,11 @@
 
 \addtorecentlist{\textbackslash neq}
 
-\begin{frame}{Formules: Wiskundige relaties}
+\begin{frame}{\lang,Formulas: Mathematical relations,Formules: Wiskundige relaties,}
 	\renewcommand{\arraystretch}{1.5}%
 	\begin{tabularx}{0.5\textwidth}{ll}
 		\toprule
-		Formule {\global\showcount=1\relax}& Code\\
+		\lang,Formula,Formule, {\global\showcount=1\relax}& Code\\
 		\midrule
 		\showformulaa{$ a\leq b $}{a \\leq b}\\
 		\showformulaa{$ a < b  $}{a < b}\\
@@ -227,7 +244,7 @@
 	\end{tabularx}%
 	\begin{tabularx}{0.5\textwidth}{ll}
 		\toprule
-		Formule {\global\showcount=1\relax}& Code\\
+		\lang,Formula,Formule, {\global\showcount=1\relax}& Code\\
 		\midrule
 		\showformulaa{$ a\geq b  $}{a \\geq b}\\
 		\showformulaa{$ a > b $}{a > b}\\
@@ -253,7 +270,7 @@
 \addtorecentlist{x\textbackslash to 0}
 
 \begin{frame}
-	{Formules: Pijltjes en operatoren}
+	{\lang,Formulas: Arrows and operators,Formules: Pijltjes en operatoren,}
 
 	\consumeblock{pijltjes}
 
@@ -271,11 +288,11 @@
 
 \begin{frame}
 	\begin{center}
-		Zo veel! En nog veel meer :-)
-	\end{center}		
+		\lang,So many! And there are lots more :-), Zo veel! En nog veel meer :-),
+	\end{center}
 
 	\begin{center}
-		CTAN symbolenlijst:\par
+		\lang,CTAN symbol list:,CTAN symbolenlijst:,\par
 		\url{http://mirrors.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}
 	\end{center}
 	
@@ -327,6 +344,19 @@
 	\end{highlightblock}
 \end{saveblock}
 
+\begin{saveblock}{equationEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The trigonometric identity is
+		$ \sin^2(\theta) + \cos^2(\theta) = 1 $.
+
+		The trigonometric identity is
+		\begin{equation}
+			\sin^2(\theta) + \cos^2(\theta) = 1.
+		\end{equation}
+	\end{highlightblock}
+\end{saveblock}
+
 % Daarmee kunnen we de
 % verdubbelingsformule herschrijven
 % als
@@ -340,10 +370,10 @@
 \addtorecentlist{equation}
 
 \begin{frame}{Equation}
+	\useblock{equation\langsuffix}
 
-	\useblock{equation}
-
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathEquation.pdf}
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/5_Formules/mathEquation\langsuffix.pdf}
 
 	% \begin{columns}
 	% 	\begin{column}{0.6\textwidth}
@@ -375,12 +405,24 @@
 	\end{highlightblock}
 \end{saveblock}
 
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The double-angle formula can now be rewritten as
+		\begin{align}
+			\cos(2\theta) = \cos^2(\theta) - \sin^2(\theta)\\
+			= 2\cos^2(\theta)-1.
+		\end{align}
+	\end{highlightblock}
+\end{saveblock}
+
 \addtorecentlist{align}
 
 \begin{frame}{Align}
-	\useblock{align}
+	\useblock{align\langsuffix}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathAlignUnaligned.pdf}
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/5_Formules/mathAlignUnaligned\langsuffix.pdf}
 \end{frame}
 
 \begin{saveblock}{align}
@@ -394,10 +436,22 @@
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}{Align}
-	\useblock{align}
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The double-angle formula can now be rewritten as
+		\begin{align}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+			&= 2\cos^2(\theta)-1.
+		\end{align}
+	\end{highlightblock}
+\end{saveblock}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathAlignDoubleNumber.pdf}
+\begin{frame}{Align}
+	\useblock{align\langsuffix}
+
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/5_Formules/mathAlignDoubleNumber\langsuffix.pdf}
 \end{frame}
 
 \updatehighlight{
@@ -425,12 +479,26 @@
 	\end{highlightblock}
 \end{saveblock}
 
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The double-angle formula can now be rewritten as
+		\begin{align}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
+			\nonumber\\
+			&= 2\cos^2(\theta)-1.
+		\end{align}
+	\end{highlightblock}
+\end{saveblock}
+
+
 \addtorecentlist{\textbackslash nonumber}
 
 \begin{frame}{Align}
-	\useblock{align}
+	\useblock{align\langsuffix}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathAlignSecondNumbered.pdf}
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/5_Formules/mathAlignSecondNumbered\langsuffix.pdf}
 \end{frame}
 
 \updatehighlight{
@@ -453,12 +521,24 @@
 	\end{highlightblock}
 \end{saveblock}
 
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The double-angle formula can now be rewritten as
+		\begin{align*}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+			&= 2\cos^2(\theta)-1.
+		\end{align*}
+	\end{highlightblock}
+\end{saveblock}
+
 \addtorecentlist{align*}
 
 \begin{frame}{Align}
-	\useblock{align}
+	\useblock{align\langsuffix}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathAlignNoNumbers.pdf}
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/5_Formules/mathAlignNoNumbers\langsuffix.pdf}
 \end{frame}
 
 \updatehighlight{
@@ -484,10 +564,22 @@
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}{Align}
-	\useblock{align}
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The double-angle formula can now be rewritten as
+		\begin{align*}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+			&= 2\cos^2(\theta)-1. \tag{$ * $}
+		\end{align*}
+	\end{highlightblock}
+\end{saveblock}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathTag.pdf}
+\begin{frame}{Align}
+	\useblock{align\langsuffix}
+
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/5_Formules/mathTag\langsuffix.pdf}
 \end{frame}
 
 
@@ -495,21 +587,37 @@
 	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
 		framexleftmargin=0.25em,xleftmargin=0.25em]
 		Dit doen we met de verdubbelingsformule
-		\begin{align}
+		\begin{align*}
 			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta),
-		\end{align}
+		\end{align*}
 		die we kunnen herschrijven als
-		\begin{align}
+		\begin{align*}
 			&= \cos^2(\theta) - (1 - \cos^2(\theta))\\
 			&= 2\cos^2(\theta)-1.
-		\end{align}
+		\end{align*}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		We do this with the double-angle formula
+		\begin{align*}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta),
+		\end{align*}
+		which we can rewrite as
+		\begin{align*}
+			&= \cos^2(\theta) - (1 - \cos^2(\theta))\\
+			&= 2\cos^2(\theta)-1.
+		\end{align*}
 	\end{highlightblock}
 \end{saveblock}
 
 \begin{frame}{Align}
-	\useblock{align}
+	\useblock{align\langsuffix}
 
-	\centering\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{assets/5_Formules/mathAlignBroken.pdf}
+	\centering\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{
+		assets/5_Formules/mathAlignBroken\langsuffix.pdf}
 \end{frame}
 
 
@@ -526,12 +634,26 @@
 	\end{highlightblock}
 \end{saveblock}
 
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		We do this with the double-angle formula
+		\begin{align}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta),
+		\intertext{which we can rewrite as}
+			&= \cos^2(\theta) - (1 - \cos^2(\theta))\\
+			&= 2\cos^2(\theta)-1.
+		\end{align}
+	\end{highlightblock}
+\end{saveblock}
+
 \addtorecentlist{\textbackslash intertext}
 
 \begin{frame}{Align}
-	\useblock{align}
+	\useblock{align\langsuffix}
 
-	\centering\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/5_Formules/mathAlignIntertext.pdf}
+	\centering\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{
+		assets/5_Formules/mathAlignIntertext\langsuffix.pdf}
 \end{frame}
 
 \begin{saveblock}{otherMathNotations}
@@ -545,7 +667,7 @@
 
 \addtorecentlist{\textbackslash [ \textellipsis\textbackslash]}
 
-\begin{frame}{Ook in gebruik}
+\begin{frame}{Also in use}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\useblock{otherMathNotations}
