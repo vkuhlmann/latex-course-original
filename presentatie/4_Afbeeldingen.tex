@@ -3,7 +3,14 @@
 
 \begin{document}
 
-\section{Afbeeldingen}
+\def\langsuffix{}
+\lang{\gdef\langsuffix{EN}}{}
+
+\lang{
+	\section{Figures}
+}{
+	\section{Afbeeldingen}
+}
 
 \clearrecentlist
 
@@ -22,7 +29,15 @@
 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
 		Hier zie je een pingu~\"i~n:
 		\includegraphics[height=2cm]{pinguin.jpg}
-		Dit is een foto van het internet.
+		Foto door Sue Flood.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{exinclgraphEN}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		Here you see a penguin:
+		\includegraphics[height=2cm]{penguin.jpg}
+		Photo by Sue Flood.
 	\end{highlightblock}
 \end{saveblock}
 
@@ -68,20 +83,20 @@
 
 \begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
 	\vspace{-28px}
-	\penExCode{exinclgraph}
-	
-%	\adjustbox{}{
-%		bbb	
-%	}
+	\penExCode{exinclgraph\langsuffix}
 	
 	\begin{penExResult}
 		\only<2->{
-			Hier zie je een pinguïn:
+			\lang,Here you see a penguin:,Hier zie je een pinguïn:,
 			\includegraphics[height=2cm]{assets/pinguin.jpg}
-			Dit is een foto van het internet.
+			\lang,Photo by Sue Flood.,Foto door Sue Flood.,
+			
+			\bigskip
+			\url{https://www.pinterest.co.kr/pin/645844402812554993/}
 		}
 	\end{penExResult}
 
+	%\smash{}
 \end{frame}
 
 \begin{saveblock}{exinclgraph}
@@ -90,21 +105,31 @@
 		
 		\includegraphics[height=2cm]{pinguin.jpg}
 		
-		Dit is een foto van het internet.
+		Foto door Sue Flood.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{exinclgraphEN}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		Here you see a penguin:
+		
+		\includegraphics[height=2cm]{penguin.jpg}
+		
+		Photo by Sue Flood.
 	\end{highlightblock}
 \end{saveblock}
 
 \addtorecentlist{als alinea}
 \begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
 	\vspace{-28px}
-	\penExCode{exinclgraph}
+	\penExCode{exinclgraph\langsuffix}
 	
 	\begin{penExResult}
-		Hier zie je een pinguïn:
+		\lang,Here you see a penguin:,Hier zie je een pinguïn:,
 		
 		\includegraphics[height=2cm]{assets/pinguin.jpg}
 		
-		Dit is een foto van het internet.
+		\lang,Photo by Sue Flood.,Foto door Sue Flood.,
 	\end{penExResult}
 \end{frame}
 
@@ -115,20 +140,30 @@
 		\begin{center}
 			\includegraphics[height=2cm]{pinguin.jpg}
 		\end{center}
-		Dit is een foto van het internet.
+		Foto door Sue Flood.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{exinclgraphEN}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		Here you see a penguin:
+		\begin{center}
+			\includegraphics[height=2cm]{penguin.jpg}
+		\end{center}
+		Photo by Sue Flood.
 	\end{highlightblock}
 \end{saveblock}
 
 \begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
 	\vspace{-28px}
-	\penExCode{exinclgraph}
+	\penExCode{exinclgraph\langsuffix}
 	
 	\begin{penExResult}
-		Hier zie je een pinguïn:
+		\lang,Here you see a penguin:,Hier zie je een pinguïn:,
 		\begin{center}
 			\includegraphics[height=2cm]{assets/pinguin.jpg}
 		\end{center}
-		Dit is een foto van het internet.
+		\lang,Photo by Sue Flood.,Foto door Sue Flood.,
 	\end{penExResult}
 \end{frame}
 
@@ -138,8 +173,20 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[height=2cm]{pinguin.jpg}
-			\caption{Een schattige pingu~\"i~n. Deze foto is van
-				het internet.}\label{fig:pinguin}
+			\caption{Een schattige pingu~\"i~n. Foto door Sue Flood.}
+			\label{fig:pinguin}
+		\end{figure}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{exinclgraphEN}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		You can see a penguin in \figref{fig:penguin}.
+		\begin{figure}[h]
+			\centering
+			\includegraphics[height=2cm]{penguin.jpg}
+			\caption{A cute penguin. Photo by Sue Flood.}
+			\label{fig:penguin}
 		\end{figure}
 	\end{highlightblock}
 \end{saveblock}
@@ -147,14 +194,15 @@
 \addtorecentlist{figure}
 \begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
 	\vspace{-28px}
-	\penExCode[3cm]{exinclgraph}
+	\penExCode[3cm]{exinclgraph\langsuffix}
 	
 	\begin{penExResult}[3cm]
-		Een pinguïn zie je in Figuur~\ref{fig:pinguin}.
+		\lang,You can see a penguin in Figure,Een pinguïn zie je in Figuur,~\ref{fig:pinguin}.
 		\begin{figure}[h]
 			\centering
 			\includegraphics[height=2cm]{assets/pinguin.jpg}
-			\caption{Een schattige pinguïn. Deze foto is van het internet.}\label{fig:pinguin}
+			\caption{\lang,A cute penguin. Photo by Sue Flood.,%
+			Een schattige pinguïn. Foto door Sue Flood.,}\label{fig:pinguin}
 		\end{figure}
 	\end{penExResult}
 \end{frame}
@@ -162,21 +210,27 @@
 \addtorecentlist{htbp}
 
 \begin{frame}
-	\frametitle{Figuurplaatsing}
+	\frametitle{Figure placement}
 
 	% Een figuur wordt ergens verderop geplaatst. Soms is het dus handig om een figuur
 	% een paragraaf of twee the plaatsen voor de plek waar je hem gebruikt!
 	
 	\begin{itemize}
-		\item h \textsc{(here)}: Figuur mag hier.
-		\item t \textsc{(top)}: Figuur mag bovenaan een pagina.
-		\item b \textsc{(bottom)}: Figuur mag onderaan een pagina.
-		\item p \textsc{(page)}: Figuur mag op aparte pagina voor figuren.
-		\item H \textsc{(here)}: Geen floating, altijd hier. (\hll|\\usepackage\{float\}|)
+		\item h \textsc{(here)}: \lang,Figure can come here.,Figuur mag hier.,
+		\item t \textsc{(top)}: \lang,Figure can come at the top of the page.,%
+			Figuur mag bovenaan een pagina.,
+		\item b \textsc{(bottom)}: \lang,Figure can come at the bottom of the
+			page,Figuur mag onderaan een pagina.,
+		\item p \textsc{(page)}: \lang,Figure can come on a special page for figures.,%
+			Figuur mag op aparte pagina voor figuren.,
+		\item H \textsc{(here)}: \lang{No floating, always here.}
+		{Geen floating, altijd hier.} (\hll|\\usepackage\{float\}|)
 	\end{itemize}
 
 	\medskip
-	Te laat in output? Verplaats \hll|figure| naar voren in je bestand.
+	\lang
+	{Figure appearing too late? Try placing \hll|figure| to a point earlier in the code.}
+	{Te laat in output? Verplaats \hll|figure| naar voren in je bestand.}
 \end{frame}
 
 \begin{saveblock}{keepaspectratio}
@@ -187,17 +241,28 @@
 	\end{highlightblock}
 \end{saveblock}
 
-\begin{frame}{Dimensies}
+\begin{saveblock}{keepaspectratioEN}
+	\begin{highlightblock}[gobble=8]
+		\includegraphics[
+			width=0.9\linewidth,height=5cm,keepaspectratio
+		]{assets/penguin.jpg}
+	\end{highlightblock}
+\end{saveblock}
+
+
+\begin{frame}{Dimensions}
 	\begin{noindentlist}\setlength{\itemsep}{20pt}
-		\item Hele regelbreedte\\
+		\item \lang,Full linewidth,Hele regelbreedte,\\
 		\atleastwidth[15em]{\hll|\\includegraphics[width=\\linewidth]\{assets/pinguin.jpg\}|}
 		
 		
-		\item 90\% regelbreedte\\
+		\item \lang,90\% linewidth,90\% regelbreedte,\\
 		\atleastwidth[15em]{\hll|\\includegraphics[width=0.9\\linewidth]\{assets/pinguin.jpg\}|}
 		
-		\item Maximaal 90\% regelbreedte en maximaal 5 cm hoog
-		\useblock{keepaspectratio}
+		\item \lang
+		{Width maximally 90\% linewidth and height maximally 5 cm}
+		{Maximaal 90\% regelbreedte en maximaal 5 cm hoog}
+		\useblock{keepaspectratio\langsuffix}
 		%\atleastwidth[15em]{\hll|\\includegraphics[width=0.9\\linewidth,height=5cm,
 		%keepaspectratio]\{assets/pinguin.jpg\}|}
 	\end{noindentlist}
@@ -222,12 +287,31 @@
 	\end{highlightblock}
 \end{saveblock}
 
+\begin{saveblock}{subfigureEN}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}[b]{0.45\textwidth}
+				\includegraphics[width=\textwidth]{AA}
+				\caption{BB}
+				\label{fig:dphiExample}
+			\end{subfigure}\qquad
+			\begin{subfigure}[b]{0.45\textwidth}
+				\includegraphics[width=\textwidth]{CC}
+				\caption{CC}
+				\label{fig:fitExample}
+			\end{subfigure}
+			\caption{Multiple images next to eachother!}
+		\end{figure}
+	\end{highlightblock}
+\end{saveblock}
+
 \addtorecentlist{subfigure}
 
 \begin{frame}
 	\frametitle{Subfigure \hll|(\\usepackage\{subcaption\})|}
 
-	\useblock{subfigure}
+	\useblock{subfigure\langsuffix}
 \end{frame}
 
 \begin{frame}

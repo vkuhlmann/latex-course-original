@@ -33,7 +33,12 @@
 %\makeatother
 
 \begin{document}
-	\section{Tekstopmaak}
+	\lang{
+		\section{Text formatting}
+	}{
+		\section{Tekstopmaak}
+	}
+	
 	\clearrecentlist
 	
 	%\subsection{Test}
@@ -57,29 +62,29 @@
 	\def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
 	
 	\begin{frame}<1,2,10>
-		\frametitle{Teksteffecten}
+		\lang,\frametitle{Text effects},\frametitle{Teksteffecten},
 		
 		\renewcommand{\arraystretch}{1.5}%
 		\begin{tabularx}{0.5\textwidth}{ll}
 			\toprule
-			Resultaat {\global\showcount=1\relax}& Code\\
+			\lang,Result,Resultaat, {\global\showcount=1\relax}& Code\\
 			\midrule
-			\showlatex{\textbf{Tekst}}{\\textbf\{Tekst\}}\\
-			\showlatex{\textit{Tekst}}{\\textit\{Tekst\}}\\
-			\showlatex{\textsc{Tekst}}{\\textsc\{Tekst\}}\\
-			\showlatex{\underline{Tekst}}{\\underline\{Tekst\}}\\
+			\showlatex{\textbf{Text}}{\\textbf\{Text\}}\\
+			\showlatex{\textit{Text}}{\\textit\{Text\}}\\
+			\showlatex{\textsc{Text}}{\\textsc\{Text\}}\\
+			\showlatex{\underline{Text}}{\\underline\{Text\}}\\
 			%\showlatex{\large{Tekst}}{\\large\{Tekst\}}\\
 			\bottomrule
 		\end{tabularx}%
 		\begin{tabularx}{0.5\textwidth}{ll}
 			\toprule
-			Resultaat {\global\showcount=5\relax}& Code\\
+			\lang,Result,Resultaat, {\global\showcount=5\relax}& Code\\
 			\midrule
-			\showlatex{\texttt{Tekst}}{\\texttt\{Tekst\}}\\
+			\showlatex{\texttt{Text}}{\\texttt\{Text\}}\\
 			%\showlatex{\textsl{Tekst}}{\\textsl\{Tekst\}}\\
-			\showlatex{{\tiny Tekst}}{\{\\tiny Tekst\}}\\
-			\showlatex{{\LARGE Tekst}}{\{\\LARGE Tekst\}}\\
-			{\global\showcount=9\relax}\showlatex{\textcolor{red}{Tekst}}{\\textcolor\{red\}\{Tekst\}}\only<10->{\footnote{\hll|\\usepackage\{xcolor\}|}}\\
+			\showlatex{{\tiny Text}}{\{\\tiny Text\}}\\
+			\showlatex{{\LARGE Text}}{\{\\LARGE Text\}}\\
+			{\global\showcount=9\relax}\showlatex{\textcolor{red}{Text}}{\\textcolor\{red\}\{Text\}}\only<10->{\footnote{\hll|\\usepackage\{xcolor\}|}}\\
 			%\showlatex{{\Large Tekst}}{\{\\Large Tekst\}}\\
 			\bottomrule
 		\end{tabularx}%
@@ -132,7 +137,7 @@
 
 	\addtorecentlist{\{\}}
 
-	\begin{frame}
+	\begin{frame}<-2>
 		% \begin{columns}
 		% 	\begin{column}{0.5\textwidth}
 		% 		\useblock{braces}
@@ -178,6 +183,8 @@
 					scelerisque, {elit diam vulputate ex, semper} elementum
 					massa odio in ante.
 				}%
+				\uncover<3->{\par\medskip\hll|Lorem ipsum \\textbf dolor sit|: Lorem ipsum \textbf dolor sit\\}%
+				\uncover<4->{\hll|Lorem ipsum \\textbf\{dolor\}|\ \hll|sit|: Lorem ipsum \textbf{dolor} sit}
 			}
 		}
 	\end{frame}
@@ -273,10 +280,10 @@
 		\end{highlightblock}
 	\end{saveblock}
 
-	\addtorecentlist{\textbf{witregel}}
+	\addtorecentlist{\textbf{\lang,blank line,witregel,}}
 
 	\begin{frame}
-		\frametitle{Alinea's}
+		\frametitle{\lang,Paragraphs,Alinea's,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -315,7 +322,7 @@
 	\addtorecentlist{\textbf{parskip}}
 
 	\begin{frame}
-		\frametitle{Alinea's}
+		\frametitle{\lang,Paragraphs,Alinea's,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -345,7 +352,7 @@
 	\addtorecentlist{\textbf{\textbackslash noindent}}
 
 	\begin{frame}
-		\frametitle{Alinea's}
+		\frametitle{\lang,Paragraphs,Alinea's,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -372,7 +379,7 @@
 	\addtorecentlist{\textbf{\textbackslash vspace}}
 	
 	\begin{frame}
-		\frametitle{Alinea's}
+		\frametitle{\lang,Paragraphs,Alinea's,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -383,7 +390,7 @@
 			\end{column}
 		\end{columns}
 	
-		\par\tiny{(Steeds parskip vanaf nu)}
+		\par\tiny{(\lang{From now on, always parskip}{Steeds parskip vanaf nu})}
 	
 	\end{frame}
 
@@ -417,13 +424,29 @@
 			\end{enumerate}
 		\end{highlightblock}
 	\end{saveblock}
+
+	\begin{saveblock}{listEN}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			These are the ingredients:
+			\begin{enumerate}
+				\item Carrots
+				\item Onions
+				
+				Lipsum dolor sit amet.
+				\item Potatoes
+			\end{enumerate}
+		\end{highlightblock}
+	\end{saveblock}
+
+	\def\langsuffix{}
+	\lang{\gdef\langsuffix{EN}}{}
 	
 	\begin{frame}
-		\frametitle{Lijsten}
+		\frametitle{\lang,Lists,Lijsten,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
-				\useblock{list}
+				\lang,\useblock{listEN},\useblock{list},
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
@@ -435,7 +458,7 @@
 				% 	Lipsum dolor sit amet.
 				% 	\item Aardappelen
 				% \end{enumerate}
-				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstEnum.pdf}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstEnum\langsuffix.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -457,30 +480,34 @@
 			\end{enumerate}
 		\end{highlightblock}
 	\end{saveblock}
+
+	\begin{saveblock}{listEN}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			These are the ingredients:
+			\begin{enumerate}
+				\item Carrots
+				\begin{enumerate}
+					\item Buy
+					\item Peel
+					\item Chop
+				\end{enumerate}			
+				\item Onions
+				
+				Lipsum dolor sit amet.
+				\item Potatoes
+			\end{enumerate}
+		\end{highlightblock}
+	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Lijsten}
+		\frametitle{\lang,Lists,Lijsten,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
-				\useblock{list}
+				\lang,\useblock{listEN},\useblock{list},
 			\end{column}
 			\begin{column}{0.5\textwidth}
-				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
-				% Dit zijn de ingrediënten:
-				% \begin{enumerate}
-				% 	\item Wortels
-				% 	\begin{enumerate}
-				% 		\item Kopen
-				% 		\item Raspen
-				% 		\item Fijnsnijden
-				% 	\end{enumerate}
-				% 	\item Uien
-					
-				% 	Lipsum dolor sit amet.
-				% 	\item Aardappelen
-				% \end{enumerate}
-				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstEnumEnum.pdf}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstEnumEnum\langsuffix.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -504,30 +531,34 @@
 			\end{itemize}
 		\end{highlightblock}
 	\end{saveblock}
+
+	\begin{saveblock}{listEN}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			These are the ingredients:
+			\begin{itemize}
+				\item Carrots
+				\begin{enumerate}
+					\item Buy
+					\item Peel
+					\item Chop
+				\end{enumerate}
+				\item Onions
+				
+				Lipsum dolor sit amet.
+				\item Potatoes
+			\end{itemize}
+		\end{highlightblock}
+	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Lijsten}
+		\frametitle{\lang,Lists,Lijsten,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
-				\useblock{list}
+				\lang,\useblock{listEN},\useblock{list},
 			\end{column}
 			\begin{column}{0.5\textwidth}
-				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}
-				% Dit zijn de ingrediënten:
-				% \begin{itemize}
-				% 	\item Wortels
-				% 	\begin{enumerate}
-				% 		\item Kopen
-				% 		\item Raspen
-				% 		\item Fijnsnijden
-				% 	\end{enumerate}
-				% 	\item Uien
-					
-				% 	Lipsum dolor sit amet.
-				% 	\item Aardappelen
-				% \end{itemize}
-				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstItemEnum.pdf}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstItemEnum\langsuffix.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -549,30 +580,35 @@
 			\end{itemize}
 		\end{highlightblock}
 	\end{saveblock}
+
+	\begin{saveblock}{listEN}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			These are the ingredients:
+			\begin{itemize}
+				\item Carrots
+				\begin{itemize}
+					\item Buy
+					\item Peel
+					\item Chop
+				\end{itemize}
+				\item Onions
+				
+				Lipsum dolor sit amet.
+				\item Potatoes
+			\end{itemize}
+		\end{highlightblock}
+	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Lijsten}
+		\frametitle{\lang,Lists,Lijsten,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
-				\useblock{list}
+				\lang,\useblock{listEN},\useblock{list},
 			\end{column}
 			\begin{column}{0.5\textwidth}
-				%\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/partialNumberedStars.pdf}				
-				% Dit zijn de ingrediënten:
-				% \begin{itemize}
-				% 	\item Wortels
-				% 	\begin{itemize}
-				% 		\item[\textbullet] Kopen
-				% 		\item[\textbullet] Raspen
-				% 		\item[\textbullet] Fijnsnijden
-				% 	\end{itemize}
-				% 	\item Uien
-					
-				% 	Lipsum dolor sit amet.
-				% 	\item Aardappelen
-				% \end{itemize}
-				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/2_Tekstopmaak/lijstItemItem.pdf}
+				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]
+				{assets/2_Tekstopmaak/lijstItemItem\langsuffix.pdf}
 			\end{column}
 		\end{columns}
 	\end{frame}
@@ -580,13 +616,13 @@
 	\addtorecentlist{\textbackslash textbackslash}
 
 	\begin{frame}
-		\frametitle{Speciale tekens}
+		\frametitle{\lang,Special characters,Speciale tekens,}
 
 		\begingroup
 		\renewcommand{\arraystretch}{1}
 		\begin{tabularx}{0.45\textwidth}{ll}
 			\toprule
-			Code & Resultaat\\
+			Code & \lang,Result,Resultaat,\\
 			\midrule
 			\hll|\\\{| & \{\only<2->{\hskip-10pt\relax\adjustbox{padding=-30px 0px 0px 0px,left=2ex,set height=8pt,set depth=136pt,cfbox=red 1pt,left=0pt,set depth=0pt,set height=0pt}{}}\\
 			\hll|\\\}| & \}\\
@@ -604,118 +640,122 @@
 		\hfil
 		\begin{tabularx}{0.5\textwidth}{ll}
 			\toprule
-			Code & Resultaat\\
+			Code & \lang,Result,Resultaat,\\
 			\midrule
-			\hll|\{| & Begin groep\\
-			\hll|\}| & Eindig groep\\
+			\hll|\{| & \lang,Begin group,Begin groep,\\
+			\hll|\}| & \lang,End group,Eindig groep,\\
 			\hll|\%| & Comment\\%\footnote{verschijnt niet in output}\\
-			\hll|\_| & Betekenis voor wiskunde\\
-			\hll|^| & Betekenis voor wiskunde\\
-			\hll|\$| & Wiskundemodus\\
-			\hll|\\| & Commando\\
-			\hll|\&| & Kolomscheiding\\
+			\hll|\_| & \lang,Used in maths,Betekenis voor wiskunde,\\
+			\hll|^| & \lang,Used in maths,Betekenis voor wiskunde,\\
+			\hll|\$| & \lang,Math mode,Wiskundemodus,\\
+			\hll|\\| & \lang,Command,Commando,\\
+			\hll|\&| & \lang,Column separation,Kolomscheiding,\\
 			\hll|\#| & Parameter\\
 			\hll|>| & >\\
 			\hll|<| & <\\
 			\bottomrule
 		\end{tabularx}
 		\endgroup
-
-		% \begin{tabularx}{\textwidth}{lll}
-		% 	\toprule
-		% 	Resultaat {\global\showcount=1\relax}& Code & Zonder escapen\\
-		% 	\midrule
-		% 	\{ & \hll|\\\{| & Begin groep\\
-		% 	\} & \hll|\\\}| & Eindig groep\\
-		% 	\% & \hll|\\\%| & Comment: komt niet in output\\
-		% 	\_ & \hll|\\\_| & Betekenis voor wiskunde\\
-		% 	\^ & \hll|\\\^| & Betekenis voor wiskunde\\
-		% 	\$ & \hll|\\\$| & Wiskundemodus\\
-		% 	%\showlatex{\textbf{Tekst}}{\\textbf\{Tekst\}}\\
-		% 	%\showlatex{\textit{Tekst}}{\\textit\{Tekst\}}\\
-		% 	%\showlatex{\textsc{Tekst}}{\\textsc\{Tekst\}}\\
-		% 	%\showlatex{\underline{Tekst}}{\\underline\{Tekst\}}\\
-		% 	\bottomrule
-		% \end{tabularx}%
 	\end{frame}
 
-	% \begin{saveblock}{specSymb}
-	% 	\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
-	% 		\textbf{Hey},
-	% 		\textbackslash textbf,
-	% 		% Opmerking
-	% 		Wel 90% {van}
-	% 		de 'respondenten'
-			
-	% 		Wel 90\% {van}
-	% 		de ~\textasciigrave~respondenten'
-			
-	% 		Daarom \&, \$, \{van\},
-	% 		\textasciitilde,
-	% 		\textasciigrave respondenten
-	% 		'
-	% 	\end{highlightblock}
-	% \end{saveblock}
+	\begin{saveblock}{comments}
+		\begin{highlightblock}[linewidth=0.9\textwidth,gobble=12]
+			% Make soul package work in beamer presentations
+			% Source: https://tex.stackexchange.com/...
+			\let\UL\ul
+			\makeatletter
+			\renewcommand\ul{
+				\let\set@color\beamerorig@set@color
+				\let\reset@color\beamerorig@reset@color
+				\UL
+			}
+			...
+		\end{highlightblock}
+	\end{saveblock}
 
-	% \addtorecentlist{\textbf{speciale tekens}}
+	\begin{frame}
+		\frametitle{\lang,Comments,Comments,}
 
-	% \begin{frame}[t]
-	% 	\frametitle{Speciale tekens}
-		
-	% 	\begin{onlyenv}<1>
-	% 		\begin{columns}[t]
-	% 			\begin{column}{0.5\textwidth}
-	% 				%\raisebox{\baselineskip}{\useblock{specSymb}}
-	% 				\adjustbox{valign=t}{\useblock{specSymb}}
-	% 			\end{column}
-	% 			\begin{column}{0.5\textwidth}
-	% 				\textbf{Hey},
-	% 				\textbackslash textbf,
-	% 				% Opmerking
-	% 				Wel 90% {van}
-	% 				de 'respondenten'
-	% 			\end{column}
-	% 		\end{columns}
-	% 	\end{onlyenv}
+		\useblock{comments}
+	\end{frame}
 
-	% 	\begin{onlyenv}<2->
-	% 		\begin{columns}
-	% 			\begin{column}{0.5\textwidth}
-	% 				\useblock{specSymb}
-	% 			\end{column}
-	% 			\begin{column}{0.5\textwidth}
-	% 				\textbf{Hey},
-	% 				\textbackslash textbf,
-	% 				% Opmerking
-	% 				Wel 90% {van}
-	% 				de 'respondenten'
-					
-	% 				Wel 90\% {van}
-	% 				de `respondenten'
-					
-	% 				Daarom \&, \$, \{van\},
-	% 				\textasciitilde,
-	% 				\textasciigrave respondenten
-	% 				'
+	\begin{saveblock}{comments1}
+		\begin{highlightblock}[linewidth=0.6\textwidth,gobble=12]
+			% TODO Translate to english
+			\section{Nonsense}
 
-	% 				\only<3->{
-	% 					\medskip
-	% 					\adjustbox{scale=1.2}{
-	% 					\Huge
-	% 					'resp.. `resp..
-	% 					}
-	% 				}
-	% 			\end{column}
-	% 		\end{columns}
-	% 	\end{onlyenv}
-	% \end{frame}
+			Lorem ipsum dolor sit amet,
+			\textfb{ornare} sit amet.
 
+			\subsection{About $\sqrt{2}$}
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{comments2}
+		\begin{highlightblock}[linewidth=0.6\textwidth,gobble=12]
+			% TODO Translate to english
+			\section{Nonsense}
+
+			%Lorem ipsum dolor sit amet,
+			%\textfb{ornare} sit amet.
+            %
+			%\subsection{About $\sqrt{2}$}
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{comments3}
+		\begin{highlightblock}[linewidth=0.6\textwidth,gobble=12]
+			% TODO Translate to english
+			\section{Nonsense}
+
+			Lorem ipsum dolor sit amet,
+			\textfb{ornare} sit amet.
+            
+			%\subsection{About $\sqrt{2}$}
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{comments4}
+		\begin{highlightblock}[linewidth=0.6\textwidth,gobble=12]
+			% TODO Translate to english
+			\section{Nonsense}
+
+			Lorem ipsum dolor sit amet,
+			\textbf{ornare} sit amet.
+            
+			\subsection{About $\sqrt{2}$}
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{frame}
+		\frametitle{\lang,Comments,Comments,}
+
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\only<1>{\useblock{comments1}}
+				\only<2>{\useblock{comments2}}
+				\only<3>{\useblock{comments3}}
+				\only<4>{\useblock{comments4}}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\only<1,3>{\textcolor{red}{Error! Undefined control sequence}}
+				\only<2>{\adjustbox{frame=1pt 5pt}{\includegraphics[
+					width={\dimexpr\linewidth-12pt\relax},
+					height=0.8\textheight,keepaspectratio]
+				{assets/2_Tekstopmaak/commentDebugSuccessEmptied.pdf}}}
+				\only<4>{\adjustbox{frame=1pt 5pt}{\includegraphics[
+					width={\dimexpr\linewidth-12pt\relax},
+					height=0.8\textheight,keepaspectratio]
+				{assets/2_Tekstopmaak/commentDebugSuccess.pdf}}}
+			\end{column}
+		\end{columns}		
+	\end{frame}
 
 	\addtorecentlist{\textasciigrave \leaders\hbox{.}\hskip 10pt\textquotesingle}
 
 	%\def\showbig#1#2{\adjustbox{scale=3}{\adjustbox{scale=1.2}{#1}: #2}\par}
 	\def\showbig#1#2{\adjustbox{scale=2.5}{\large #1: #2}\par}
-	\begin{frame}{Aanhalingstekens}
+	\begin{frame}{\lang,Quotes,Aanhalingstekens,}
 		\begingroup\setlength\parskip{15pt}
 
 		\showbig{\texttt{ \textquotesingle LaTeX\textquotesingle{} }}{'LaTeX'}
@@ -748,9 +788,23 @@
 		\end{highlightblock}
 	\end{saveblock}
 
+	\begin{saveblock}{newlinewhitespaceEN}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+			Hello, my name
+			is \textellipsis.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{newlinewhitespace2EN}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+			Hello, my name%
+			is \textellipsis.
+		\end{highlightblock}
+	\end{saveblock}
+
 	\setlength\atleastlength{15em}
 
-	\begin{frame}{Spaties}
+	\begin{frame}{\lang,Whitespace,Spaties,}
 
 		\begin{noindentlist}
 			\item<+-> \atleastwidth[\atleastlength]{\texttt{a\textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace b\textvisiblespace c}}
@@ -768,29 +822,39 @@
 			\item<.-> \atleastwidth[\atleastlength]{\hll|a\\hspace\{2cm\}b|}
 			a\hspace{2cm}b
 			
-			\item<+-> \atleastwidth[\atleastlength]{\hll|Ik kan \\LaTeX schrijven!|}
-			Ik kan \LaTeX schrijven!
+			\item<+-> 
+			\atleastwidth[\atleastlength]{%
+				\lang
+				{\hll|\\LaTeX is cool!|}%
+				{\hll|Ik kan \\LaTeX schrijven!|}%
+			}
+			\lang,\LaTeX is cool!,Ik kan \LaTeX schrijven!,
 	
-			\item<.-> \atleastwidth[\atleastlength]{\hll|Vincent is lid van de \\TeX niCie.|}
-			Vincent is lid van de \TeX niCie.
+			\item<.-> \leavevmode\atleastwidth[\atleastlength]{%
+				\lang
+				{\adjustbox{scale=0.85}{\hll|Vincent is a member of the \\TeX niCie.|}}%
+				{\hll|Vincent is lid van de \\TeX niCie.|}%
+			}
+			\lang,{\scriptsize Vincent is a member of the \TeX niCie.},Vincent is lid van de \TeX niCie.,
 	
-			\item<+-> \atleastwidth[\atleastlength]{\hll|Ik kan \\LaTeX\{\}|\hll|\ schrijven!|}
-			Ik kan \LaTeX{} schrijven!
+			\item<+-> \atleastwidth[\atleastlength]{%
+				\lang
+				{\hll|\\LaTeX\{\}|\hll|\ is cool!|}%
+				{\hll|Ik kan \\LaTeX\{\}|\hll|\ schrijven!|}%
+			}
+			\lang,\LaTeX{} is cool!,Ik kan \LaTeX{} schrijven!,
 
-			\item<+-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{\useblock{newlinewhitespace}}} Hallo ik
-			ben \textellipsis.
+			\item<+-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{%
+				\lang,\useblock{newlinewhitespaceEN},\useblock{newlinewhitespace},%
+			}}
+			\lang{Hello, my name is \textellipsis}{Hallo ik
+			ben \textellipsis.}
 
-			\item<.-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{\useblock{newlinewhitespace2}}} Hallo ik%
-			ben \textellipsis.
+			\item<.-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{%
+			\lang,\useblock{newlinewhitespace2EN},\useblock{newlinewhitespace2},%
+			}}
+			\lang{Hello, my nameis \textellipsis}{Hallo ik%
+			ben \textellipsis.}
 		\end{noindentlist}
 	\end{frame}
-
-%	\begin{frame}
-%		\begin{enumerate}
-%			\item Speciale tekens
-%			\item Lijsten
-%			\item Pagina layout
-%			\item Inhoudstafel
-%		\end{enumerate}
-%	\end{frame}
 \end{document}

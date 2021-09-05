@@ -2,7 +2,11 @@
 \documentclass[presentatie.tex]{subfiles}
 
 \begin{document}
-    \section{Documentstructuur}
+	\lang{
+		\section{Document structure}
+	}{
+    	\section{Documentstructuur}
+	}
     \clearrecentlist
 
     \begin{saveblock}{baseDocumentPart1}
@@ -44,7 +48,7 @@
             \maketitle
             \section{Introduction}
     
-            Hallo iedereen!
+            ~\lang,Hello everyone!,Hallo iedereen!,~
             \end{document}
         \end{highlightblock}
     \end{saveblock}
@@ -55,7 +59,7 @@
             \maketitle
             \section{Introduction}
     
-            Hallo iedereen!
+            ~\lang,Hello everyone!,Hallo iedereen!,~
             \end{document}
         \end{highlightblock}
     \end{saveblock}
@@ -92,7 +96,7 @@
     
    	\addtorecentlist{preamble}
     \begin{frame}<1>
-        \frametitle{Simpel document}
+        \frametitle{\lang,Simple document,Simpel document,}
     
         \begin{columns}
             \begin{column}{0.5\textwidth}
@@ -146,7 +150,7 @@
 				\maketitle
 				\section{Introduction}
 				
-				Hallo iedereen!
+				~\lang,Hello everyone!,Hallo iedereen!,~
 			\end{document}
 			~~
 			~~
@@ -154,7 +158,7 @@
 	\end{saveblock}
 
     \begin{frame}
-        \frametitle{Pagina marges}
+        \frametitle{\lang,Page margins,Pagina marges,}
         \begin{columns}
             \begin{column}{0.65\textwidth}
                 \useblock{baseDocument}
@@ -193,7 +197,7 @@
 				\maketitle
 				\section{Introduction}
 				
-				Hallo iedereen!
+				~\lang,Hello everyone!,Hallo iedereen!,~
 			\end{document}
 			~~
 		\end{highlightblock}
@@ -201,7 +205,7 @@
 
 	\addtorecentlist{geometry}
     \begin{frame}
-		\frametitle{Pagina marges}
+		\frametitle{\lang,Page margins,Pagina marges,}
 		\begin{columns}
 			\begin{column}{0.65\textwidth}
 				\useblock{baseDocument}
@@ -242,7 +246,7 @@
 				\maketitle
 				\section{Introduction}
 				
-				Hallo iedereen!
+				~\lang,Hello everyone!,Hallo iedereen!,~
 			\end{document}
 		\end{highlightblock}
 	\end{saveblock}
@@ -339,7 +343,7 @@
 	\addtorecentlist{\textbackslash tableofcontents}
 
 	\begin{frame}
-		\frametitle{Inhoudsopgave}
+		\frametitle{\lang,Contents,Inhoudsopgave,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -382,7 +386,7 @@
 
 	\addtorecentlist{\textbackslash newpage}
 	\begin{frame}
-		\frametitle{Inhoudsopgave}
+		\frametitle{\lang,Contents,Inhoudsopgave,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -426,7 +430,7 @@
 	\addtorecentlist{babel}
 	
 	\begin{frame}
-		\frametitle{Inhoudsopgave}
+		\frametitle{\lang,Contents,Inhoudsopgave,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -484,7 +488,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Gedeeltelijke nummering}
+		\frametitle{\lang,Partial numbering,Gedeeltelijke nummering,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -517,7 +521,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Gedeeltelijke nummering}
+		\frametitle{\lang,Partial numbering,Gedeeltelijke nummering,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -550,7 +554,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Gedeeltelijke nummering}
+		\frametitle{\lang,Partial numbering,Gedeeltelijke nummering,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -583,7 +587,7 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Gedeeltelijke nummering}
+		\frametitle{\lang,Partial numbering,Gedeeltelijke nummering,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -632,7 +636,7 @@
 
 	\addtorecentlist{hyperref}
 	\begin{frame}
-		\frametitle{Gedeeltelijke nummering}
+		\frametitle{\lang,Partial numbering,Gedeeltelijke nummering,}
 		
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -644,7 +648,8 @@
 		\end{columns}
 	\end{frame}
 
-	\begin{frame}{Mijn favoriete package: \hll|\\usepackage[bookmarksnumbered]\{hyperref\}|}
+	\begin{frame}{%
+		\lang,My favorite package:,Mijn favoriete package:, \hll|\\usepackage[bookmarksnumbered]\{hyperref\}|}
 
 	\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio]{assets/3_Documentstructuur/hyperref2.png}
 
