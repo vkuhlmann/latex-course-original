@@ -138,7 +138,7 @@
     \end{frame}
 
     \begin{saveblock}{baseDocument}
-		\begin{highlightblock}[linewidth=0.65\textwidth,gobble=12]
+		\begin{highlightblock}[linewidth=0.67\textwidth,gobble=12]
 			\documentclass{article}
 			\usepackage[utf8]{inputenc}
 			
@@ -160,10 +160,10 @@
     \begin{frame}
         \frametitle{\lang,Page margins,Pagina marges,}
         \begin{columns}
-            \begin{column}{0.65\textwidth}
+            \begin{column}{0.67\textwidth}
                 \useblock{baseDocument}
             \end{column}
-            \begin{column}{0.35\textwidth}
+            \begin{column}{0.33\textwidth}
             	\begingroup
             	\setlength\fboxrule{1pt}
             	\setlength\fboxsep{0pt}
@@ -180,14 +180,14 @@
 
 	\updatehighlight{
 		name=accentC,
-		add={a4paper,geometry,{margin=2.5cm}}
+		add={a4paper,geometry,{margin=2.54cm}}
 	}
 
     \begin{saveblock}{baseDocument}
-		\begin{highlightblock}[linewidth=0.65\textwidth,gobble=12]
+		\begin{highlightblock}[linewidth=0.67\textwidth,gobble=12]
 			\documentclass[~~a4paper~~]{article}
 			\usepackage[utf8]{inputenc}
-			\usepackage[margin=2.5cm]{geometry}
+			\usepackage[margin=2.54cm]{geometry}
 			
 			\title{My document}
 			\author{Vincent Kuhlmann}
@@ -207,10 +207,10 @@
     \begin{frame}
 		\frametitle{\lang,Page margins,Pagina marges,}
 		\begin{columns}
-			\begin{column}{0.65\textwidth}
+			\begin{column}{0.67\textwidth}
 				\useblock{baseDocument}
 			\end{column}
-			\begin{column}{0.35\textwidth}
+			\begin{column}{0.33\textwidth}
 				\begingroup
 				\setlength\fboxrule{1pt}
 				\setlength\fboxsep{0pt}
@@ -223,7 +223,7 @@
 
 	\updatehighlight{
 		name=accentC,
-		remove={a4paper,geometry,{margin=2.5cm}},
+		remove={a4paper,geometry,{margin=2.54cm}},
 		add={{left=-0.5cm}}
 	}
 
@@ -232,10 +232,10 @@
 	}
 
     \begin{saveblock}{baseDocument}
-		\begin{highlightblock}[linewidth=0.65\textwidth,gobble=12]
+		\begin{highlightblock}[linewidth=0.67\textwidth,gobble=12]
 			\documentclass[a4paper]{article}
 			\usepackage[utf8]{inputenc}
-			\usepackage[~~marg~~in=2.5cm,left=-0.5cm]
+			\usepackage[~~marg~~in=2.54cm,left=-0.5cm]
 			{geometry}
 			
 			\title{My document}
@@ -252,12 +252,12 @@
 	\end{saveblock}
 	
 	\begin{frame}
-		\frametitle{Pagina marges}
+		\frametitle{\lang,Page margins,Pagina marges,}
 		\begin{columns}
-			\begin{column}{0.65\textwidth}
+			\begin{column}{0.67\textwidth}
 				\useblock{baseDocument}
 			\end{column}
-			\begin{column}{0.35\textwidth}
+			\begin{column}{0.33\textwidth}
 				\begingroup
 				\setlength\fboxrule{1pt}
 				\setlength\fboxsep{0pt}
@@ -661,7 +661,7 @@
 			\documentclass[a4paper]
 			{article}
 
-			\usepackage[margin=2.5cm]
+			\usepackage[margin=2.54cm]
 			{geometry}
 			\usepackage{parskip}
 			\usepackage{xcolor}

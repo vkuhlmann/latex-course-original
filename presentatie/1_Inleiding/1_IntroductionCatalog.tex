@@ -5,6 +5,9 @@
 \csname inputentrance\endcsname
 \def\named#1{}
 
+\def\langsuffix{}
+\lang{\gdef\langsuffix{EN}}{}
+
 \begin{document}
     \clearrecentlist
 
@@ -357,7 +360,9 @@
                 \useblock{baseDocument}
             \end{column}
             \begin{column}{0.5\textwidth}
-                \includegraphics[width=\linewidth]{assets/1_Inleiding/basicDocumentOutput.png}
+                \lang
+                {\includegraphics[width=\linewidth]{assets/1_Inleiding/basicDocumentOutputEN.pdf}}
+                {\includegraphics[width=\linewidth]{assets/1_Inleiding/basicDocumentOutput.png}}
             \end{column}
         \end{columns}
     \end{frame}

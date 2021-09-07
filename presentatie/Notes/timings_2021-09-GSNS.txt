@@ -2,3 +2,31 @@
 
 14:38 - ; Introduction
 
+
+2021-09-06
+
+08:44 - 08:54; Introduction.
+
+16:15 - 16:24; Figures. (9 min)
+16:24 - 16:43; Formulas. (19 min)
+
+16:48 - 16:57; Introduction. (9 min)
+16:59 - 17:12; Text formatting. (13 min)
+
+17:30 - 17:40; Document structure. (10 min)
+
+2021-09-07
+
+09:52 - 10:00; Introduction. (8 min)
+10:01 - 10:17; Text formatting. (16 min)
+10:23 - 10:33; Document structure. (10 min)
+10:34 - 10:42; Figures. (8 min)
+10:44 - 11:00; Formulas. (16 min)
+
+; Text formatting
+; Document structure
+; Figures
+; Formulas
+; Rest
+
+

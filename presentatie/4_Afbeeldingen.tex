@@ -169,7 +169,7 @@
 
 \begin{saveblock}{exinclgraph}
 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
-		Een pingu~\"i~n zie je in \figref{fig:pinguin}.
+		Een pingu~\"i~n zie je in Figure~\textasciitilde~\ref{fig:pinguin}.
 		\begin{figure}[h]
 			\centering
 			\includegraphics[height=2cm]{pinguin.jpg}
@@ -181,7 +181,7 @@
 
 \begin{saveblock}{exinclgraphEN}
 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
-		You can see a penguin in \figref{fig:penguin}.
+		You can see a penguin in Figure~\textasciitilde~\ref{fig:penguin}.
 		\begin{figure}[h]
 			\centering
 			\includegraphics[height=2cm]{penguin.jpg}
@@ -204,8 +204,6 @@
 			\caption{\lang,A cute penguin. Photo by Sue Flood.,%
 			Een schattige pinguïn. Foto door Sue Flood.,}\label{fig:pinguin}
 		\end{figure}
-		\rlap{(\hll|\\figref\{xx\}| is defined by \hll|\\usepackage\{commath\}|. Use
-		\hll|Figure~\\ref\{xx\}| as an alternative.)}
 	\end{penExResult}
 \end{frame}
 
@@ -233,6 +231,8 @@
 	\lang
 	{Figure appearing too late? Try placing \hll|figure| to a point earlier in the code.}
 	{Te laat in output? Verplaats \hll|figure| naar voren in je bestand.}
+
+	\uncover<2->{When working with images: \hll|\\usepackage\{graphicx\}|}
 \end{frame}
 
 \begin{saveblock}{keepaspectratio}
