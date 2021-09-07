@@ -32,7 +32,17 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{environ}
-\usepackage[dutch]{babel}
+\usepackage{etoolbox}
+
+\newbool{english}
+\booltrue{english}
+
+
+\ifbool{english}{
+	\usepackage[english]{babel}
+}{
+	\usepackage[dutch]{babel}
+}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyvrb}
 \usepackage{marvosym}
@@ -42,13 +52,11 @@
 %\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xkeyval}
-\usepackage{etoolbox}
+
 \usepackage{ragged2e}
 
 \usepackage{inputslide}
 
-\newbool{english}
-\booltrue{english}
 
 \newcommand{\TeXniCie}{\TeX niCie}
 
