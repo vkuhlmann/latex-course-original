@@ -1,0 +1,34 @@
+\begin{saveblock}{keepaspectratio}
+	\begin{highlightblock}[gobble=8]
+		\includegraphics[
+			width=0.9\linewidth,height=5cm,keepaspectratio
+		]{assets/pinguin.jpg}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{keepaspectratioEN}
+	\begin{highlightblock}[gobble=8]
+		\includegraphics[
+			width=0.9\linewidth,height=5cm,keepaspectratio
+		]{assets/penguin.jpg}
+	\end{highlightblock}
+\end{saveblock}
+
+
+\begin{frame}{Dimensions}
+	\begin{noindentlist}\setlength{\itemsep}{20pt}
+		\item \lang,Full linewidth,Hele regelbreedte,\\
+		\atleastwidth[15em]{\hll|\\includegraphics[width=\\linewidth]\{assets/pinguin.jpg\}|}
+		
+		
+		\item \lang,90\% linewidth,90\% regelbreedte,\\
+		\atleastwidth[15em]{\hll|\\includegraphics[width=0.9\\linewidth]\{assets/pinguin.jpg\}|}
+		
+		\item \lang
+		{Width maximally 90\% linewidth and height maximally 5 cm}
+		{Maximaal 90\% regelbreedte en maximaal 5 cm hoog}
+		\useblock{keepaspectratio\langsuffix}
+		%\atleastwidth[15em]{\hll|\\includegraphics[width=0.9\\linewidth,height=5cm,
+		%keepaspectratio]\{assets/pinguin.jpg\}|}
+	\end{noindentlist}
+\end{frame}

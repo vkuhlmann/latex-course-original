@@ -1,0 +1,35 @@
+\input{helper-penEx.tex}
+
+\begin{saveblock}{exinclgraph}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		Hier zie je een pingu~\"i~n:
+		
+		\includegraphics[height=2cm]{pinguin.jpg}
+		
+		Foto door Sue Flood.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{exinclgraphEN}
+	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+		Here you see a penguin:
+		
+		\includegraphics[height=2cm]{penguin.jpg}
+		
+		Photo by Sue Flood.
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\lang,as paragraph,als alinea,}
+\begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
+	\vspace{-28px}
+	\penExCode{exinclgraph\langsuffix}
+	
+	\begin{penExResult}
+		\lang,Here you see a penguin:,Hier zie je een pinguïn:,
+		
+		\includegraphics[height=2cm]{assets/pinguin.jpg}
+		
+		\lang,Photo by Sue Flood.,Foto door Sue Flood.,
+	\end{penExResult}
+\end{frame}

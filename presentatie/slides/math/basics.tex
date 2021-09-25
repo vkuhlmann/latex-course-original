@@ -1,0 +1,39 @@
+\def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
+\def\es#1{\adjustbox{scale=0.8}{#1}}
+
+\addtorecentlist{\textasciicircum}
+\addtorecentlist{\_}
+
+\begin{frame}{\lang,Formulas: The basics,Formules: Basis,}%
+	\renewcommand{\arraystretch}{1.5}%
+	\begin{tabularx}{0.5\textwidth}{ll}
+		\toprule
+		\lang,Formula,Formule, {\global\showcount=1\relax}& Code\\
+		\midrule
+		\showformula{$ \sqrt{2} $}{\\sqrt\{2\}}\\
+		\showformula{$ \frac{2}{3} $}{\\frac\{2\}\{3\}}\\
+		\showformula{$ 6\geq 3 $}{6\\geq 3}\\
+		\showformula{$ a^2 + b^2 $}{a^2 + b^2}\\
+		\bottomrule
+	\end{tabularx}%
+	\begin{tabularx}{0.5\textwidth}{ll}
+		\toprule
+		\lang,Formula,Formule, {\global\showcount=5\relax}& Code\\
+		\midrule
+		\showformula{$ \sqrt[3]{8} $}{\\sqrt[3]\{8\}}\\
+		%\showformula{$ x_1 + \dots + x_n $}{x_1 + \\dots + x_n}\\
+		\showformula{$ x_1 $}{x_1}\\
+		\showformula{$ x_1^2 $}{x_1^2}\\
+		\showformula{$ a^{2+b^2} $}{a^\{2 + b^2\}}\\
+		%\showformula{$ f(\{3, 6\}) $}{f(\\\{3, 6\\\})}\\
+		\bottomrule
+	\end{tabularx}%
+	\par\addvspace{0.5\baselineskip}
+	\unless\ifishandout
+		\only<10->{
+			\hll|$ x^22 $|\,: \es{$ x^22 $}
+			\only<11->{\extraslistsep\hll|$ x^\{22\} $|\,: \es{$ x^{22} $}}
+			%\only<12->{\extraslistsep\hll|$ \{x + 3^\{2\}\} \{\} + 9 $|\,: \es{$ {x + 3^{2}} {} + 9 $}}
+		}%
+	\fi
+\end{frame}

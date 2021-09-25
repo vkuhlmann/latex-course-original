@@ -1,0 +1,27 @@
+\addtorecentlist{htbp}
+
+\begin{frame}
+	\frametitle{Figure placement}
+
+	% Een figuur wordt ergens verderop geplaatst. Soms is het dus handig om een figuur
+	% een paragraaf of twee the plaatsen voor de plek waar je hem gebruikt!
+	
+	\begin{itemize}
+		\item h \textsc{(here)}: \lang,Figure can come here.,Figuur mag hier.,
+		\item t \textsc{(top)}: \lang,Figure can come at the top of the page.,%
+			Figuur mag bovenaan een pagina.,
+		\item b \textsc{(bottom)}: \lang,Figure can come at the bottom of the
+			page,Figuur mag onderaan een pagina.,
+		\item p \textsc{(page)}: \lang,Figure can come on a special page for figures.,%
+			Figuur mag op aparte pagina voor figuren.,
+		\item H \textsc{(here)}: \lang{No floating, always here.}
+		{Geen floating, altijd hier.} (\hll|\\usepackage\{float\}|)
+	\end{itemize}
+
+	\medskip
+	\lang
+	{Figure appearing too late? Try placing \hll|figure| to a point earlier in the code.}
+	{Te laat in output? Verplaats \hll|figure| naar voren in je bestand.}
+
+	\uncover<2->{When working with images: \hll|\\usepackage\{graphicx\}|}
+\end{frame}

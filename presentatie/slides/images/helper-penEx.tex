@@ -1,0 +1,44 @@
+
+\ifx\penExCode\somethingUndefined
+
+\newcommand\penExCode[2][2.5cm]{%
+%\adjustbox{max totalheight=2.5cm,set depth={\dimexpr 2.5cm-\height\relax},
+\adjustbox{%left=0.95\textwidth,bgcolor=gray!10!white,
+    raise={-\height},set height=0cm,set depth=#1}{%
+%		\parbox{\linewidth}{%
+%			\hspace{-0.25em}\vrule width \dimexpr 0.95\textwidth+0.25em\relax depth 0px height 5.5px\par
+%			\vspace{-\baselineskip}%
+%			%
+        \adjustbox{
+            max totalheight=#1,
+        %\adjustbox{max totalheight=2.5cm,min totalheight=2.5cm,raise={\depth},
+            %bgcolor=red!5!white
+        }{%
+            \useblock{#2}%
+            %\vfill%\leavevmode
+        }%
+%			\par
+%			\hspace{-0.25em}\vrule width \dimexpr 0.95\textwidth+0.25em\relax depth 0px height 1px%
+%		}
+}
+\par%\addvspace{0.0\baselineskip}%
+{\hspace{0.075\textwidth}\textcolor{red!30!white}{\rule{0.8\textwidth}{1px}}}\par
+\vspace{-\baselineskip}\vspace{0.3\baselineskip}%
+%%\par\addvspace{0.0\baselineskip}
+}
+
+
+\NewEnviron{penExResult}[1][3.5cm]{%
+%\adjustbox{raise={\depth},max height=4cm,set height=4cm,bgcolor=blue!5!white}{%
+%\adjustbox{max totalheight=3.5cm,set depth={\dimexpr 3.5cm-\height\relax},
+%\adjustbox{max totalheight=3.5cm,raise={\depth},set height=3.5cm,set depth=0pt,
+\adjustbox{max totalheight=#1,raise={-\height},set height=0cm,set depth=#1,
+    %bgcolor=blue!5!white
+}{%
+    \parbox{0.95\textwidth}{%
+        \BODY
+    }%
+}%
+}
+
+\fi

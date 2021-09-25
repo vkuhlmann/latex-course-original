@@ -1,0 +1,36 @@
+
+\updatehighlight{
+	name=accentC,
+	add={\tag}
+}
+
+\addtorecentlist{\textbackslash tag}
+
+\begin{saveblock}{align}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		De verdubbelingsformule herschrijven we nu als
+		\begin{align*}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+			&= 2\cos^2(\theta)-1. \tag{$ * $}
+		\end{align*}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{alignEN}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
+		framexleftmargin=0.25em,xleftmargin=0.25em]
+		The double-angle formula can now be rewritten as
+		\begin{align*}
+			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+			&= 2\cos^2(\theta)-1. \tag{$ * $}
+		\end{align*}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Align}
+	\useblock{align\langsuffix}
+
+	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+		assets/mathTag\langsuffix.pdf}
+\end{frame}

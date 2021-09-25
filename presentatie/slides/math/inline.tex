@@ -1,0 +1,45 @@
+
+\begin{saveblock}{formDocFrag}
+	\begin{highlightblock}[gobble=8,linewidth=25em,linewidth=\textwidth]
+		De trigonometrische identiteit
+		is $ \sin^2(\theta) + \cos^2(\theta) = 1 $.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{formDocFragEN}
+	\begin{highlightblock}[gobble=8,linewidth=25em,linewidth=\textwidth]
+		The trigonometric identity
+		is $ \sin^2(\theta) + \cos^2(\theta) = 1 $.
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{mathPackages}
+	\begin{highlightblock}[gobble=8,linewidth=\textwidth]
+		\usepackage{amsmath,amssymb}
+		\usepackage{commath,mathtools}
+	\end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\$ \$}
+
+\begin{frame}{\lang,Formulas,Formules,}
+	\centering
+	\adjustbox{cfbox=red!80!black 1.5pt 3pt}{
+		\lang
+		{The trigonometric identity is}
+		{De trigonometrische identiteit is}
+		$ \sin^2(\theta) + \cos^2(\theta) = 1 $.
+	}
+	
+	\vspace{10pt}
+	\begin{center}%
+		\uncover<2->{\useblock{formDocFrag\langsuffix}}%
+		% \adjustbox{set height=2cm,margin=2px}{%
+		% 	\only<2->{\useblock{formDocFrag}}%
+		% }%
+	\end{center}
+
+	\begin{center}
+		\only<3->{\useblock{mathPackages}}
+	\end{center}
+\end{frame}

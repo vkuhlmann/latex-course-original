@@ -1,0 +1,47 @@
+% \input{helper-penEx.tex}
+
+% \begin{saveblock}{exinclgraph}
+% 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+% 		Een pingu~\"i~n zie je in Figure~\textasciitilde~\ref{fig:pinguin}.
+% 		\begin{figure}[h]
+% 			\centering
+% 			\includegraphics[height=2cm]{pinguin.jpg}
+% 			\caption{Een schattige pingu~\"i~n. Foto door Sue Flood.}
+% 			\label{fig:pinguin}
+% 		\end{figure}
+% 	\end{highlightblock}
+% \end{saveblock}
+
+% \begin{saveblock}{exinclgraphEN}
+% 	\begin{highlightblock}[linewidth=0.95\textwidth,framexleftmargin=0.25em]
+% 		You can see a penguin in Figure~\textasciitilde~\ref{fig:penguin}.
+% 		\begin{figure}[h]
+% 			\centering
+% 			\includegraphics[height=2cm]{penguin.jpg}
+% 			\caption{A cute penguin. Photo by Sue Flood.}
+% 			\label{fig:penguin}
+% 		\end{figure}
+% 	\end{highlightblock}
+% \end{saveblock}
+
+% \addtorecentlist{figure}
+% \begin{frame}{\adjustbox{raise=8px}{\hll|\\includegraphics|}}
+% 	\vspace{-28px}
+% 	\penExCode[3cm]{exinclgraph\langsuffix}
+	
+% 	\begin{penExResult}[3cm]
+% 		\lang,You can see a penguin in Figure,Een pinguïn zie je in Figuur,~\ref{fig:pinguin}.
+% 		\begin{figure}[h]
+% 			\centering
+% 			\includegraphics[height=2cm]{assets/pinguin.jpg}
+% 			\caption{\lang,A cute penguin. Photo by Sue Flood.,%
+% 			Een schattige pinguïn. Foto door Sue Flood.,}\label{fig:pinguin}
+% 		\end{figure}
+% 	\end{penExResult}
+% \end{frame}
+
+\def\isIncludeGraphicsSeries{1}
+
+\input{figure.tex}
+
+\let\isIncludeGraphicsSeries\iffalse
