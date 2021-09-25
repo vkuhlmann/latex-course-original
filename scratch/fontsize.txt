@@ -1,0 +1,9 @@
+	%\begin{frame}
+	%	\frametitle{Teksteffecten}
+	%	
+	%	\hll|\{\\fontsize\{50\}\{60\}\\selectfont Hi!\}|
+	%	\par\addvspace{10px}
+	%	
+	%	{\centering {\fontsize{150}{130}\selectfont Hi!}}
+	%\end{frame}
+	

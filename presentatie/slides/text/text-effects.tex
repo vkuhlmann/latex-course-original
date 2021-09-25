@@ -1,0 +1,50 @@
+%\addtorecentlist{\hll|\\textbf|}
+\addtorecentlist{\textbf{\textbackslash textbf}}
+
+\def\extraslistsep{\hspace{0.5em}\textcolor{red!80!black}{\vrule width 1pt height 0.6\baselineskip\relax}\hspace{0.5em}}
+
+\begin{frame}<1,2,10>
+    \lang,\frametitle{Text effects},\frametitle{Teksteffecten},
+    
+    \renewcommand{\arraystretch}{1.5}%
+    \begin{tabularx}{0.5\textwidth}{ll}
+        \toprule
+        \lang,Result,Resultaat, {\global\showcount=1\relax}& Code\\
+        \midrule
+        \showlatex{\textbf{Text}}{\\textbf\{Text\}}\\
+        \showlatex{\textit{Text}}{\\textit\{Text\}}\\
+        \showlatex{\textsc{Text}}{\\textsc\{Text\}}\\
+        \showlatex{\underline{Text}}{\\underline\{Text\}}\\
+        %\showlatex{\large{Tekst}}{\\large\{Tekst\}}\\
+        \bottomrule
+    \end{tabularx}%
+    \begin{tabularx}{0.5\textwidth}{ll}
+        \toprule
+        \lang,Result,Resultaat, {\global\showcount=5\relax}& Code\\
+        \midrule
+        \showlatex{\texttt{Text}}{\\texttt\{Text\}}\\
+        %\showlatex{\textsl{Tekst}}{\\textsl\{Tekst\}}\\
+        \showlatex{{\tiny Text}}{\{\\tiny Text\}}\\
+        \showlatex{{\LARGE Text}}{\{\\LARGE Text\}}\\
+        {\global\showcount=9\relax}\showlatex{\textcolor{red}{Text}}{\\textcolor\{red\}\{Text\}}\only<10->{\footnote{\hll|\\usepackage\{xcolor\}|}}\\
+        %\showlatex{{\Large Tekst}}{\{\\Large Tekst\}}\\
+        \bottomrule
+    \end{tabularx}%
+    \par\addvspace{0.5\baselineskip}
+    \unless\ifishandout
+    %
+        \only<2>{\textbf{bf} = \textbf{b}old\textbf{f}ace%
+        \extraslistsep\textbf{it} = \textbf{it}alics%
+        \extraslistsep\textbf{sc} = \textbf{s}mall\textbf{c}aps%
+        \extraslistsep\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}%
+    %
+        % \only<-8>{\adjustbox{raise={-\height},set depth=20pt}{
+        % 	\only<2>{\textbf{bf} = \textbf{b}old\textbf{f}ace}%
+        % 	\only<3>{\textbf{it} = \textbf{it}alics}%
+        % 	\only<4>{\textbf{sc} = \textbf{s}mall\textbf{c}aps}%
+        % 	\only<6>{\textbf{tt} = \textbf{t}ele\textbf{t}ype (a.k.a. monospace)}
+        % }}
+    \fi
+    \only<9->{\Huge Huge, \huge huge, \LARGE LARGE, \Large Large, \large large, \normalsize
+    normalsize, \small small, \footnotesize footnotesize, \scriptsize scriptsize, \tiny tiny}
+\end{frame}

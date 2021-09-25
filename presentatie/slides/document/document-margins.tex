@@ -1,0 +1,135 @@
+\begin{saveblock}{baseDocument}
+    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
+        \documentclass{article}
+        \usepackage[utf8]{inputenc}
+        
+        \title{My document}
+        \author{Vincent Kuhlmann}
+        \date{1 May 2021}
+        
+        \begin{document}
+            \maketitle
+            \section{Introduction}
+            
+            ~\lang,Hello everyone!,Hallo iedereen!,~
+        \end{document}
+        ~~
+        ~~
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+    \frametitle{\lang,Page margins,Pagina marges,}
+    \begin{columns}
+        \begin{column}{0.67\textwidth}
+            \useblock{baseDocument}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begingroup
+            \setlength\fboxrule{1pt}
+            \setlength\fboxsep{0pt}
+            \fbox{\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio]
+                {assets/basicDocumentLargeMargins.pdf}}
+            \endgroup
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\lstset{
+    alsoletter={$@_!|?4$},
+}
+
+\updatehighlight{
+    name=accentC,
+    add={a4paper,geometry,{margin=2.54cm}}
+}
+
+\begin{saveblock}{baseDocument}
+    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
+        \documentclass[~~a4paper~~]{article}
+        \usepackage[utf8]{inputenc}
+        \usepackage[margin=2.54cm]{geometry}
+        
+        \title{My document}
+        \author{Vincent Kuhlmann}
+        \date{1 May 2021}
+        
+        \begin{document}
+            \maketitle
+            \section{Introduction}
+            
+            ~\lang,Hello everyone!,Hallo iedereen!,~
+        \end{document}
+        ~~
+    \end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{geometry}
+\begin{frame}
+    \frametitle{\lang,Page margins,Pagina marges,}
+    \begin{columns}
+        \begin{column}{0.67\textwidth}
+            \useblock{baseDocument}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begingroup
+            \setlength\fboxrule{1pt}
+            \setlength\fboxsep{0pt}
+            \fbox{\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio]
+                {assets/basicDocumentNormalMargins.pdf}}
+            \endgroup
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\updatehighlight{
+    name=accentC,
+    remove={a4paper,geometry,{margin=2.54cm}},
+    add={{left=-0.5cm}}
+}
+
+\lstset{
+    alsoletter={$@_!|?$},
+}
+
+\begin{saveblock}{baseDocument}
+    \begin{highlightblock}[linewidth=0.67\textwidth,gobble=8]
+        \documentclass[a4paper]{article}
+        \usepackage[utf8]{inputenc}
+        \usepackage[~~marg~~in=2.54cm,left=-0.5cm]
+        {geometry}
+        
+        \title{My document}
+        \author{Vincent Kuhlmann}
+        \date{1 May 2021}
+        
+        \begin{document}
+            \maketitle
+            \section{Introduction}
+            
+            ~\lang,Hello everyone!,Hallo iedereen!,~
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+    \frametitle{\lang,Page margins,Pagina marges,}
+    \begin{columns}
+        \begin{column}{0.67\textwidth}
+            \useblock{baseDocument}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begingroup
+            \setlength\fboxrule{1pt}
+            \setlength\fboxsep{0pt}
+            \fbox{\includegraphics[height=0.8\textheight,width=\linewidth,keepaspectratio]
+                {assets/basicDocumentCrazyMargins.pdf}}
+            \endgroup
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\updatehighlight{
+    name=accentC,
+    remove={{left=-0.5cm}}
+}

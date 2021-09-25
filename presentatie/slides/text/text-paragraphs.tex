@@ -1,0 +1,110 @@
+\begin{saveblock}{paragraphs}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+        Hallo!
+        Hoe gaat het? 
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{paragraphs2}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+        Hallo!\\
+        Hoe gaat het? 
+    \end{highlightblock}
+\end{saveblock}
+
+% \addtorecentlist{\textbf{\textbackslash\textbackslash}}
+
+% \begin{frame}
+% 	\frametitle{Alinea's en regels}
+    
+% 	\begin{columns}
+% 		\begin{column}{0.5\textwidth}
+% 			\useblock{paragraphs}
+% 		\end{column}
+% 		\begin{column}{0.5\textwidth}
+% 			\only<2->{
+% 				\begin{bluebox}
+% 					\setlength{\parindent}{15pt}
+% 					Hallo!
+% 					Hoe gaat het?
+% 				\end{bluebox}
+% 			}
+% 		\end{column}
+% 	\end{columns}
+
+% 	\pause
+% 	\pause
+    
+% 	\medskip
+% 	Nieuwe regel in je code? Wordt genegeerd. Een nieuwe regel kan je forceren met \hll|\\\\|.
+% 	\medskip
+
+% 	\pause
+
+% 	\begin{columns}
+% 		\begin{column}{0.5\textwidth}
+% 			\useblock{paragraphs2}
+% 		\end{column}
+% 		\begin{column}{0.5\textwidth}
+% 			\only<5->{
+% 				\bgroup
+% 				%\setlength{\parskip}{6pt}
+% 				\begin{bluebox}
+% 					\setlength{\parindent}{15pt}
+% 					Hallo!\\
+% 					Hoe gaat het?
+% 				\end{bluebox}
+% 				\egroup
+% 			}
+% 		\end{column}
+% 	\end{columns}
+
+% 	\pause
+% 	\pause
+    
+% 	Huh?
+% \end{frame}
+
+\begin{saveblock}{paragraphs}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+        Lorem ipsum dolor sit amet,
+        ... ornare sit amet.
+        In ipsum ante, sollicitudin
+        ... sit amet augue.
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{paragraphs2}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+        Lorem ipsum dolor sit amet,
+        ... ornare sit amet.
+        
+        In ipsum ante, sollicitudin
+        ... sit amet augue.
+    \end{highlightblock}
+\end{saveblock}
+
+\addtorecentlist{\textbf{\lang,blank line,witregel,}}
+
+\begin{frame}
+    \frametitle{\lang,Paragraphs,Alinea's,}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \useblock{paragraphs}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/singleParagraph2.pdf}
+        \end{column}
+    \end{columns}
+    \pause
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \useblock{paragraphs2}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \only<3->{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/doubleParagraph.pdf}}
+        \end{column}
+    \end{columns}
+    \pause
+\end{frame}

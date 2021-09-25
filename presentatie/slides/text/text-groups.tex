@@ -1,0 +1,84 @@
+
+	\colorlet{curlyBrackets}{red}
+
+	\begin{saveblock}{braces}
+		\begin{highlightblock}[
+			linewidth=\textwidth,gobble=12,
+			framexleftmargin=0.25em,xleftmargin=0.25em
+		]
+			Lorem ipsum \tiny dolor sit amet, consectetur adipiscing
+			elit. Phasellus elementum, lacus quis tempus
+			scelerisque, elit diam vulputate ex, semper elementum
+			massa odio in ante.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\begin{saveblock}{braces2}
+		\begin{highlightblock}[
+			linewidth=\textwidth,gobble=12,
+			framexleftmargin=0.25em,xleftmargin=0.25em
+		]
+			Lorem {ipsum \tiny dolor sit ame}t, consectetur
+			adipiscing elit. Phasellus {elementum}, lacus quis
+			tempus scelerisque, {elit diam vulputate ex, semper}
+			elementum massa odio in ante.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\colorlet{curlyBrackets}{red!50!blue}
+
+	\addtorecentlist{\{\}}
+
+	\begin{frame}<-2>
+		% \begin{columns}
+		% 	\begin{column}{0.5\textwidth}
+		% 		\useblock{braces}
+		% 	\end{column}
+		% 	\begin{column}{0.5\textwidth}
+		% 		\only<-1>{
+		% 			\bgroup
+		% 			Lorem ipsum \tiny dolor sit amet, consectetur adipiscing elit.
+		% 			Phasellus elementum, lacus quis tempus scelerisque, elit diam
+		% 			vulputate ex, semper elementum massa odio in ante.
+		% 			\egroup
+		% 		}
+		% 	\end{column}
+		% \end{columns}
+		\adjustbox{set depth=0.4\textheight-\height}{%
+			\unless\ifishandout
+				\only<1>{%
+					\useblock{braces}%
+				}%
+			\fi
+			\only<2->{%
+				\useblock{braces2}%
+			}%
+		}
+
+		\medskip
+
+		\adjustbox{set depth=0.4\textheight-\height}{%
+			\parbox{\linewidth}{%
+				\unless\ifishandout
+				\only<-1>{%
+					\bgroup
+						Lorem ipsum \tiny dolor sit amet, consectetur adipiscing
+						elit. Phasellus elementum, lacus quis tempus
+						scelerisque, elit diam vulputate ex, semper elementum
+						massa odio in ante.
+					\egroup
+				}%
+				\fi
+				\only<2->{%
+					Lorem {ipsum \tiny dolor sit ame}t, consectetur adipiscing
+					elit. Phasellus {elementum}, lacus quis tempus
+					scelerisque, {elit diam vulputate ex, semper} elementum
+					massa odio in ante.
+				}%
+				\uncover<3->{\par\medskip\hll|Lorem ipsum \\textbf dolor sit|: Lorem ipsum \textbf dolor sit\\}%
+				\uncover<4->{\hll|Lorem ipsum \\textbf\{dolor\}|\ \hll|sit|: Lorem ipsum \textbf{dolor} sit}
+			}
+		}
+	\end{frame}
+
+    

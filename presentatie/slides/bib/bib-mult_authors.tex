@@ -1,0 +1,77 @@
+\updatehighlight{
+	name=accentC,
+	add={and}
+}
+
+\begin{saveblock}{codebox}%
+	\begin{highlightblock}
+		author = {A. Smith and B. Doe and E. Dropper}
+	\end{highlightblock}
+\end{saveblock}
+
+
+
+\begin{frame}{Meerdere auteurs}
+	In je \hll|.bib|-bestand, scheid auteurs met \hll|and|:
+	\par\medskip\useblock{codebox}
+	
+	\medskip
+	Zo kan \hll|biblatex| controleren hoeveel auteurs het toont.
+	\begin{enumerate}
+		\item Voor ``... door Peter Adams et al. [1]'' kan je doen met \hll|... door \\textcite\{adams\}|.
+		Meer dan \hll|maxnames| [default: 3] (\hll|biblatex| package option) namen, dan
+		\hll|minnames| [default: 1] namen.
+		\item Voor je bibliografie: meer dan \hll|maxbibnames| [default: \hll|maxnames|], dan
+		\hll|minbibnames| [default: \lstinline|minnames|] namen.
+	\end{enumerate}
+
+	%Voorbeeld: Peter Adams et al.	
+\end{frame}
+
+\updatehighlight{
+	name=accentC,
+	remove={and}
+}
+
+\updatehighlight{
+	name=accentC,
+	add={@article}
+}
+
+\begin{saveblock}{codebox}%
+	\begin{highlightblock}
+		@article{Smith1994,
+			author = {A. Smith and B. Doe and E. Dropper},
+			title = {Titel},
+			journal = {Opt. Lett.},
+			year = 1994,
+			volume = 19,
+			number = 11,
+			pages = {780-782}
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\updatehighlight{
+	name=accentC,
+	add={{ and }}
+}
+
+\begin{saveblock}{codeboxB}%
+	\begin{highlightblock}
+		@article{Smith1994,
+			author = {A. Smith and B. Doe and E. Dropper},
+			title = {Titel},
+			journal = {Opt. Lett.},
+			year = 1994,
+			volume = 19,
+			number = 11,
+			pages = {780-782}
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\updatehighlight{
+	name=accentC,
+	remove={@article}
+}

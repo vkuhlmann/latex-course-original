@@ -1,0 +1,42 @@
+
+\begin{saveblock}{codebox}
+	\begin{highlightblock}[linewidth=0.4\textwidth]
+		% File: bibfile.bib
+		@article {...
+			...
+		}
+	
+		@book {...
+			...
+		}
+		...
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{codeboxB}
+	\begin{highlightblock}[linewidth=0.6\textwidth]
+		% File: document.tex
+		\documentclass[a4paper]{article}
+		\usepackage{biblatex}
+		\addbibresource{bibfile.bib}
+		
+		\begin{document}
+			...
+			\printbibliography
+		\end{document}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Overzicht}
+	Je hebt dus twee bestanden, die er minimaal zo uitzien.
+	
+	\bigskip\medskip
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\useblock{codebox}
+		\end{column}%
+		\begin{column}{0.6\textwidth}
+			\useblock{codeboxB}
+		\end{column}
+	\end{columns}
+\end{frame}

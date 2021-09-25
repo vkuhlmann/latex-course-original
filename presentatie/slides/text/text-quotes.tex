@@ -1,0 +1,22 @@
+\addtorecentlist{\textasciigrave \leaders\hbox{.}\hskip 10pt\textquotesingle}
+
+%\def\showbig#1#2{\adjustbox{scale=3}{\adjustbox{scale=1.2}{#1}: #2}\par}
+\def\showbig#1#2{\adjustbox{scale=2.5}{\large #1: #2}\par}
+\begin{frame}{\lang,Quotes,Aanhalingstekens,}
+    \begingroup\setlength\parskip{15pt}
+
+    \showbig{\texttt{ \textquotesingle LaTeX\textquotesingle{} }}{'LaTeX'}
+    \showbig{\texttt{ \textasciigrave LaTeX\textquotesingle{} }}{`LaTeX'}
+    \showbig{\texttt{\textasciigrave\textasciigrave LaTeX\textquotesingle\textquotesingle}}{``LaTeX''}
+
+    %\adjustbox{scale=3}{\adjustbox{scale=1.2}{\hll|'LaTeX'|}: 'LaTeX'}%\adjustbox{scale=1.2}{\Huge `LaTeX'}
+
+    %\adjustbox{scale=3}{\adjustbox{scale=1.2}{\hll|`LaTeX'|}: `LaTeX'}
+
+    %\hll|`LaTeX'|: \adjustbox{scale=1.2}{\Huge `LaTeX'}
+
+    %\hll|``LaTeX''|: \adjustbox{scale=1.2}{\Huge `LaTeX'}
+
+    %\hll|``LaTeX" ee|: \adjustbox{scale=1.2}{\Huge ``LaTeX" ee}
+    \endgroup
+\end{frame}

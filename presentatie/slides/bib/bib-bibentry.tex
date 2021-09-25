@@ -1,0 +1,56 @@
+
+\updatehighlight{
+    name=accentB,
+    add={@book,@article}
+}
+
+\begin{saveblock}{codebox}
+	\begin{highlightblock}[linewidth=0.55\textwidth]
+		@book{babington,
+			author = {Peter Babington},
+			title = {Some work},
+			publisher = {Publisher},
+			year = 1993,
+			volume = 4,
+			series = 10,
+			address = {The address},
+			edition = 3,
+			month = 7,
+			note = {An optional note},
+			isbn = {3257227892}
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{codeboxB}
+	\begin{highlightblock}[linewidth=0.55\textwidth]
+		@article{adams,
+			author  = {Peter Adams
+				and Hugh Adamsson},
+			title   = {Title},
+			journal = {Journal},
+			year    = 1993,
+			number  = 2,
+			pages   = {201-213},
+			month   = 7,
+			note    = {My note}, 
+			volume  = 4
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Referentielijst items II}
+	Een item ziet er zo uit:
+	
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			\useblock{codebox}
+		\end{column}
+		\begin{column}{0.35\textwidth}%
+			\lstinline|\\cite\{babington\}|: [1]
+			
+			\lstinline|\\fullcite\{babington\}|:\\
+			\fullcite{babington}
+		\end{column}
+	\end{columns}
+\end{frame}

@@ -1,0 +1,35 @@
+
+\newbox\sizetestbox
+\savebox\sizetestbox{\lstinline|\\cite[See chapter 3 of][]\{mysource\}|}
+
+\newlength\columnfakewidth
+\setlength\columnfakewidth{\wd\sizetestbox}
+%\setlength\columnfakewidth{\dimexpr\columnfakewidth + 1em\relax}
+
+%\newcommand\firstpart[1]{\atleastwidth[5cm]{#1}}
+\newcommand\firstpart[1]{\atleastwidth[\columnfakewidth]{#1}}
+
+
+\begin{frame}[<+->]{Citatiecommando II}
+	Variaties in gebruik:
+	
+	%	\begin{tabular}{ll}
+	%		\lstinline|\\cite\{mysource\}|&[1]\\
+	%		\only<2->{\lstinline|\\cite[21]\{mysource\}|&[1, p. 21]\\}
+	%		\only<3->{\lstinline|\\cite[21--30,8]\{mysource\}|& [1, pp. 21--30, 8]\\}
+	%		\only<4->{\lstinline|\\cite[See][21--30,8]\{mysource\}|& [See 1, pp. 21--30, 8]\\}
+	%		\only<5->{\lstinline|\\cite[See chapter 3 of][]\{mysource\}|& [See chapter 3 of 1]\\}
+	%		\only<6->{\lstinline|\\cite[See chapter 3 of]\{mysource\}|& [1, See chapter 3 of]\\}
+	%		\phantom{\lstinline|\\cite[See chapter 3 of]\{mysource\}|}&\phantom{[1, See chapter 3 of]}
+	%	\end{tabular}
+	\begin{itemize}
+		\item \firstpart{\lstinline|\\cite\{mysource\}|}  [1]
+		\item \firstpart{\lstinline|\\cite[21]\{mysource\}|}  [1, p. 21]
+		\item \firstpart{\lstinline|\\cite[21--30,8]\{mysource\}|}  [1, pp. 21--30, 8]
+		\item \firstpart{\lstinline|\\cite[See][21--30,8]\{mysource\}|}  [See 1, pp. 21--30, 8]
+		\item \firstpart{\lstinline|\\cite[See chapter 3 of][]\{mysource\}|}  [See chapter 3 of 1]
+		\item \firstpart{\lstinline|\\cite[See chapter 3 of]\{mysource\}|}  [1, See chapter 3 of]
+		\item \firstpart{\lstinline|\\cites\{mysource\}\{othsource\}|}  [1, 7]
+	\end{itemize}
+	
+\end{frame}

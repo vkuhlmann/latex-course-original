@@ -1,0 +1,83 @@
+\begin{saveblock}{newlinewhitespace}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+        Hallo ik
+        ben \textellipsis.
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{newlinewhitespace2}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+        Hallo ik%
+        ben \textellipsis.
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{newlinewhitespaceEN}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+        Hello, my name
+        is \textellipsis.
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{newlinewhitespace2EN}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=12,showspaces=true]
+        Hello, my name%
+        is \textellipsis.
+    \end{highlightblock}
+\end{saveblock}
+
+\setlength\atleastlength{15em}
+
+\begin{frame}{\lang,Whitespace,Spaties,}
+
+    \begin{noindentlist}
+        \item<+-> \atleastwidth[\atleastlength]{\texttt{a\textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace b\textvisiblespace c}}
+        a    b c.
+        
+        \item<+-> \leavevmode\atleastwidth[\atleastlength]{\texttt{a\hll|\\|\textvisiblespace
+        \hll|\\|\textvisiblespace
+        \hll|\\|\textvisiblespace
+        \hll|\\|\textvisiblespace b\textvisiblespace c}}
+        a\ \ \ \ b c.
+
+        \item<+-> \atleastwidth[\atleastlength]{\hll|a\\quad b c\\,d\\;e|}
+        a\quad b c\,d\;e
+
+        \item<.-> \atleastwidth[\atleastlength]{\hll|a\\hspace\{2cm\}b|}
+        a\hspace{2cm}b
+        
+        \item<+-> 
+        \atleastwidth[\atleastlength]{%
+            \lang
+            {\hll|\\LaTeX is cool!|}%
+            {\hll|Ik kan \\LaTeX schrijven!|}%
+        }
+        \lang,\LaTeX is cool!,Ik kan \LaTeX schrijven!,
+
+        \item<.-> \leavevmode\atleastwidth[\atleastlength]{%
+            \lang
+            {\adjustbox{scale=0.85}{\hll|Vincent is a member of the \\TeX niCie.|}}%
+            {\hll|Vincent is lid van de \\TeX niCie.|}%
+        }
+        \lang,{\scriptsize Vincent is a member of the \TeX niCie.},Vincent is lid van de \TeX niCie.,
+
+        \item<+-> \atleastwidth[\atleastlength]{%
+            \lang
+            {\hll|\\LaTeX\{\}|\hll|\ is cool!|}%
+            {\hll|Ik kan \\LaTeX\{\}|\hll|\ schrijven!|}%
+        }
+        \lang,\LaTeX{} is cool!,Ik kan \LaTeX{} schrijven!,
+
+        \item<+-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{%
+            \lang,\useblock{newlinewhitespaceEN},\useblock{newlinewhitespace},%
+        }}
+        \lang{Hello, my name is \textellipsis}{Hallo ik
+        ben \textellipsis.}
+
+        \item<.-> \adjustbox{valign=T,raise=10pt}{\atleastwidth[\textwidth/2]{%
+        \lang,\useblock{newlinewhitespace2EN},\useblock{newlinewhitespace2},%
+        }}
+        \lang{Hello, my nameis \textellipsis}{Hallo ik%
+        ben \textellipsis.}
+    \end{noindentlist}
+\end{frame}

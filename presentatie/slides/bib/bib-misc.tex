@@ -1,0 +1,32 @@
+\begin{saveblock}{codebox}
+	\begin{highlightblock}[linewidth=\dimexpr\linewidth - 21.9pt\relax]
+		\addcontentsline{toc}{section}{References}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Opmerkingen}%Goed om te weten I}
+	\begin{itemize}
+		\item Referentielijst is, net zoals \hll|\\tableofcontents|, niet standaard opgenomen in je
+		inhoudstabel. Dit fix je met
+		\useblock{codebox}
+		
+		\item Enkel citaties die je hebt gebruikt verschijnen in je \hll|\\printbibliography|.
+		\item Voor bijvoorbeeld experimenten alles uit je \hll|.bib|-bestand in je referentielijst?
+		Gebruik \hll|\\nocite\{*\}|, of specifiek item in plaats van ster.
+	\end{itemize}
+\end{frame}
+
+% \begin{frame}{Goed om te weten II}
+% 	\hll|biber| verzorgt een groot deel van de refentielijst, maar wordt niet bij elke compilatie
+% 	aangeroepen. Het wordt aangeroepen als	
+% 	\begin{itemize}
+% 		\item De hulpbestanden (.aux, .bbl, ...) nog genoeg missen.
+% 		\item Je in TeXstudio gebruikt \hll|Tools > Bibliography| (F8).
+% 		\item Je een nieuwe bron gebruikt in je \hll|.tex|-bestand.
+% 		\item TeXstudio ziet dat \hll|.bib|-bestand aangepast is.
+% 	\end{itemize}
+
+% 	Maar dus \emph{niet} gewoon omdat je de een paragraaf verwijdert die de laatste citatie van een
+% 	referentie had. Doe je zoiets op het laatste moment voor inleveren, compileer, F8, en compileer
+% 	nogmaals.
+% \end{frame}

@@ -1,0 +1,127 @@
+\begin{saveblock}{baseDocumentPart1}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8,frame=t]
+        \documentclass{article}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{baseDocumentPart2}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8,frame=none]
+        \usepackage[utf8]{inputenc}
+
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{baseDocumentPart3}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8,frame=none]
+        \title{My document}
+        \author{Vincent Kuhlmann}
+        \date{1 May 2021}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{baseDocumentPreamble}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8,frame=t]
+        \documentclass{article}
+
+        \usepackage[utf8]{inputenc}
+
+        \title{My document}
+        \author{Vincent Kuhlmann}
+        \date{1 May 2021}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{baseDocumentPart4}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8,frame=b]
+        \begin{document}
+        \maketitle
+        \section{Introduction}
+
+        ~\lang,Hello everyone!,Hallo iedereen!,~
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{baseDocumentPartDocument}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8,frame=b]
+        \begin{document}
+        \maketitle
+        \section{Introduction}
+
+        ~\lang,Hello everyone!,Hallo iedereen!,~
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\makeatletter
+
+\newsavebox\preamblebox
+\savebox\preamblebox{%
+    \useblock{baseDocumentPreamble}\hskip 2pt\relax
+    %\the\ht\@codebox@baseDocumentPreamble\relax
+    \textcolor{red!70!black}{\rule{1pt}{\ht\@codebox@baseDocumentPreamble - 2pt}\;%
+    \adjustbox{set depth=\dimexpr(\ht\@codebox@baseDocumentPreamble) / 2\relax,valign=B}{Preamble}}%
+    % \adjustbox{height=\dimexpr \ht\@codebox@baseDocumentPreamble\relax}{%
+    % 	\}%
+    % }%
+}
+
+\newsavebox\documentbox
+\savebox\documentbox{%
+    \useblock{baseDocumentPartDocument}\hskip 2pt\relax
+    %\the\ht\@codebox@baseDocumentPreamble\relax
+    \textcolor{red!70!black}{%
+        \adjustbox{raise=10pt}{%
+            \rule{1pt}{\ht\@codebox@baseDocumentPartDocument - 26pt}\;%
+        }%
+        \adjustbox{set depth=\dimexpr(\ht\@codebox@baseDocumentPartDocument) / 2\relax,valign=B}{Document}%
+    }%
+    % \adjustbox{height=\dimexpr \ht\@codebox@baseDocumentPreamble\relax}{%
+    % 	\}%
+    % }%
+}
+
+\makeatother
+
+   \addtorecentlist{preamble}
+\begin{frame}<1>
+    \frametitle{\lang,Simple document,Simpel document,}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            % \adjustbox{valign=T,raise={-0.1cm}}{
+            %     %\vspace{2.1cm+10pt}
+            %     A\,\vrule width 1pt height 1em\relax
+            % }
+            % \rlap{\adjustbox{valign=T}{\useblock{baseDocument}}}
+            % \useblock{baseDocumentPart1}\vspace{-5px}
+            % \useblock{baseDocumentPart2}\vspace{-5px}
+            % \useblock{baseDocumentPart3}
+            % \begingroup\useblock{baseDocumentPreamble}\makeatletter \adjustbox{
+            % 	height=\dimexpr \ht\@codebox@baseDocumentPreamble\relax}{\}}
+            % \endgroup
+
+            \usebox\preamblebox
+
+            \usebox\documentbox
+            %\useblock{baseDocumentPart4}
+
+            %\vbox{\smash{A\vrule width 1pt depth 5cm\relax}}\useblock{baseDocument}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            % \only<2->{
+            %     \begin{itemize}
+            %         % \item Preamble: Documentclass
+            %         % \item Preamble: \hll|\\usepackage|'s
+            %         % \item Preamble: Configuratie
+            % 		\item Preamble
+            %         \item Document
+            %     \end{itemize}
+            % }
+            \only<1,3>{
+                %\includegraphics[width=\linewidth]{assets/basicDocumentOutput.png}
+                \includegraphics[width=\linewidth]{assets/3_Documentstructuur/simpleDocCropped.pdf}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}

@@ -1,0 +1,45 @@
+\addtorecentlist{\textbackslash textbackslash}
+
+\begin{frame}
+    \frametitle{\lang,Special characters,Speciale tekens,}
+
+    \begingroup
+    \renewcommand{\arraystretch}{1}
+    \begin{tabularx}{0.45\textwidth}{ll}
+        \toprule
+        Code & \lang,Result,Resultaat,\\
+        \midrule
+        \hll|\\\{| & \{\only<2->{\hskip-10pt\relax\adjustbox{padding=-30px 0px 0px 0px,left=2ex,set height=8pt,set depth=136pt,cfbox=red 1pt,left=0pt,set depth=0pt,set height=0pt}{}}\\
+        \hll|\\\}| & \}\\
+        \hll|\\\%| & \%\\
+        \hll|\\\_| & \_\\
+        \hll|\\textasciicircum| & \textasciicircum\\
+        \hll|\\\$| & \$\\
+        \hll|\\textbackslash| & \textbackslash\\
+        \hll|\\\&| & \&\\
+        \hll|\\\#| & \#\\
+        \hll|\\textgreater| & \textgreater\\
+        \hll|\\textless| & \textless\\
+        \bottomrule
+    \end{tabularx}%
+    \hfil
+    \begin{tabularx}{0.5\textwidth}{ll}
+        \toprule
+        Code & \lang,Result,Resultaat,\\
+        \midrule
+        \hll|\{| & \lang,Begin group,Begin groep,\\
+        \hll|\}| & \lang,End group,Eindig groep,\\
+        \hll|\%| & Comment\\%\footnote{verschijnt niet in output}\\
+        \hll|\_| & \lang,Used in maths,Betekenis voor wiskunde,\\
+        \hll|^| & \lang,Used in maths,Betekenis voor wiskunde,\\
+        \hll|\$| & \lang,Math mode,Wiskundemodus,\\
+        \hll|\\| & \lang,Command,Commando,\\
+        \hll|\&| & \lang,Column separation,Kolomscheiding,\\
+        \hll|\#| & Parameter\\
+        \hll|>| & >\\
+        \hll|<| & <\\
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+\end{frame}
+

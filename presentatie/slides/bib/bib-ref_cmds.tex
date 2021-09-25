@@ -1,0 +1,39 @@
+
+\lstset{
+    alsoletter={$@_!|?$},
+}
+
+\updatehighlight{
+    name=accentC,
+    color=orange,
+    add={??}
+}
+
+\begin{frame}{Citatiecommando I}
+	%We gebruiken dus
+	\begingroup
+
+%	\only<2->{\revealcitcmdtrue}
+	
+	\begin{tabular}{ll}
+		\lstinline|as shown in Figure~\\ref\{fig:myPlot\}| & as shown in Figure~1\\
+		\lstinline|as shown in \\figref\{fig:myPlot\}| & as shown in Figure~1\\
+		\lstinline|as shown in \\autoref\{fig:myPlot\}| & as shown in Figure~1\\
+		\lstinline|for this, we use \\eqref\{eq:itsequal\}| & for this, we use (1)\\
+		\lstinline|for this, we use \\autoref\{eq:itsequal\}| & for this, we use Equation~1\\
+		%\lstinline|this result is well-established ??.| & this result is well-established [1].
+		\ifishandout
+			\lstinline|is well-established \\cite\{mysource\}.|%
+		\else
+			\only<1>{\lstinline|is well-established ??.|}\only<2>{\lstinline|is well-established \\cite\{mysource\}.|}% 
+		\fi
+		%\only<1>{\lstinline|is well-established ??.|}\only<2>{\lstinline|is well-established \\cite\{mysource\}.|} 
+%		{\ifrevealcitcmd
+%			\lstinline|is well-established \\cite\{mysource\}.|%
+%		\else
+%			\lstinline|is well-established ??.|%
+%		\fi}
+		& is well-established [1].
+	\end{tabular}
+	\endgroup
+\end{frame}

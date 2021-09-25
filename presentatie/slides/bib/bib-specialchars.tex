@@ -1,0 +1,79 @@
+\updatehighlight{
+	name=accentB,
+	add={@article}
+}
+
+\begin{saveblock}{codebox}%
+	%	\begin{latexlight}
+	%		@article{Einstein1905
+	%			author = "A. Einstein",
+	%			title = "{\"U}ber die von der
+	%			molekularkinetischen Theorie der W{\"a}rme
+	%			geforderte Bewegung von in ruhenden
+	%			Fl{\"u}ssigkeiten suspendierten Teilchen",
+	%			journal = "Annalen der Physik",
+	%			year = "1905",
+	%			volume = "322",
+	%			number = "8",
+	%			pages = "549-560"
+	%		}
+	%	\end{latexlight}
+	\begin{highlightblock}
+		@article{Einstein1905,
+			author = {A. Einstein},
+			title = {\"Uber die von der
+				molekularkinetischen Theorie der W\"arme
+				geforderte Bewegung von in ruhenden
+				Fl\"ussigkeiten suspendierten Teilchen},
+			journal = {Annalen der Physik},
+			year = 1905,
+			volume = 322,
+			number = 8,
+			pages = {549-560}
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Speciale tekens I}
+	%Hoe ziet een bib-bestand eruit?
+	%\begin{center}
+	
+	%\bigskip
+	\useblock{codebox}\medskip
+	
+	%\LaTeX{} in citaties: gebruik \textcolor{red}{"{} "{}} én \textcolor{red}{ \{ \} }
+	%\end{center}
+\end{frame}
+
+\begin{saveblock}{codebox}%
+	\begin{highlightblock}
+		@article{Einstein1905,
+			author = "A. Einstein",
+			title = "{\"U}ber die von der
+				molekularkinetischen Theorie der W{\"a}rme
+				geforderte Bewegung von in ruhenden
+				Fl{\"u}ssigkeiten suspendierten Teilchen",
+			journal = "Annalen der Physik",
+			year = "1905",
+			volume = "322",
+			number = "8",
+			pages = "549-560"
+		}
+	\end{highlightblock}
+\end{saveblock}
+
+\updatehighlight{
+	name=accentB,
+	remove={@article}
+}
+
+\begin{frame}{Speciale tekens II}
+	%Hoe ziet een bib-bestand eruit?
+	%\begin{center}
+	
+	%\bigskip
+	\useblock{codebox}\medskip
+	
+	%\LaTeX{} in citaties: gebruik \textcolor{red}{"{} "{}} én \textcolor{red}{ \{ \} }
+	%\end{center}
+\end{frame}

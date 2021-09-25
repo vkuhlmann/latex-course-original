@@ -1,0 +1,27 @@
+
+	\begin{saveblock}{paragraphs}
+		\begin{highlightblock}[linewidth=0.5\textwidth,gobble=12]
+			\noindent Lorem ipsum dolor
+			sit amet, ... ornare sit
+			amet.
+			
+			In ipsum ante, sollicitudin
+			... sit amet augue.
+		\end{highlightblock}
+	\end{saveblock}
+
+	\addtorecentlist{\textbf{\textbackslash noindent}}
+
+	\begin{frame}
+		\frametitle{\lang,Paragraphs,Alinea's,}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\useblock{paragraphs}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\only<2->{\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{assets/paragraphsNoIndent.pdf}}
+			\end{column}
+		\end{columns}
+	\end{frame}
+    
