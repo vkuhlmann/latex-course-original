@@ -1,9 +1,13 @@
 %% !TeX program = pdflatex
 \input{preamble.tex}
 
+\def\importslide#1#2{%
+	\import{slides/#1}{#2}
+}
+
 \title{\LaTeX{}-cursus}
 \author{Vincent}
-\date{25 september 2021}
+\date{27 september 2021}
 
 % Door bij te dragen aan de presentatie, stel je je broncode beschikbaar
 % aan de TeXniCie onder MIT licentie.
@@ -36,7 +40,7 @@
 	\end{itemize}
 \end{frame}
 
-\subfile{1_Inleiding/1_Inleiding.tex}
+\subfile{1_Inleiding.tex}
 
 \subfile{2_Tekstopmaak.tex}
 
@@ -50,6 +54,7 @@
 
 \subfile{7_GoedOmTeWeten.tex}
 
+\ifishandout
 \begin{frame}
 	\frametitle{\lang,License,Licentie,}
 
@@ -107,6 +112,7 @@
 		}
 	\end{center}
 \end{frame}
+\fi
 
 %\subfile{8_Extras/extras.tex}
 

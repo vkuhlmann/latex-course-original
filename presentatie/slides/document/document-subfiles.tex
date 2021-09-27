@@ -1,0 +1,50 @@
+\begin{saveblock}{files}
+    \begin{highlightblock}[gobble=8,linewidth=0.5\textwidth,framexleftmargin=0.25em]
+        thesis.tex
+        section1.tex
+        section2.tex
+        ...
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{subfilesMain}
+    \begin{highlightblock}[gobble=8,linewidth=0.5\textwidth,framexleftmargin=0.25em]
+        % File: thesis.tex
+        \documentclass
+            [a4paper]{article}
+        \usepackage{subfiles}
+        
+        \begin{document}
+            ...
+            \subfile{section1.tex}
+            \subfile{section2.tex}
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{saveblock}{subfilesElement}
+    \begin{highlightblock}[gobble=8,linewidth=0.5\textwidth,framexleftmargin=0.25em]
+        % File: section1.tex
+        % !TEX root=section1.tex
+        \documentclass
+            [thesis.tex]{subfiles}
+        \begin{document}
+            \section{Section 1}
+            ...
+        \end{document}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}{Subfiles}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \useblock{files}
+            
+            \par\bigskip		
+            \useblock{subfilesElement}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \useblock{subfilesMain}
+        \end{column}
+    \end{columns}
+\end{frame}

@@ -1,15 +1,9 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'presentatie.blg'
-[360] biber-MSWIN64:340> INFO - === 
-[468] Biber.pm:415> INFO - Reading 'presentatie.bcf'
-[631] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
-[653] Biber.pm:4340> INFO - Processing section 0
-[686] Biber.pm:4531> INFO - Looking for bibtex format file 'assets/fakebib.bib' for section 0
-[790] bibtex.pm:1689> INFO - LaTeX decoding ...
-[811] bibtex.pm:1494> INFO - Found BibTeX data source 'assets/fakebib.bib'
-[1006] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1008] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1008] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'nl-NL'
-[1009] Biber.pm:4174> INFO - No sort tailoring available for locale 'nl-NL'
-[1013] bbl.pm:654> INFO - Writing 'presentatie.bbl' with encoding 'UTF-8'
-[1014] bbl.pm:757> INFO - Output to presentatie.bbl
+[0] Config.pm:314> INFO - Logfile is 'd:/Projects/latexcursus/presentatie/presentatie.blg'
+[248] biber-MSWIN64:340> INFO - === 
+[303] Biber.pm:415> INFO - Reading 'd:/Projects/latexcursus/presentatie/presentatie.bcf'
+[482] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
+[489] Utils.pm:395> WARN - The file 'd:/Projects/latexcursus/presentatie/presentatie.bcf' does not contain any citations!
+[505] bbl.pm:654> INFO - Writing 'd:/Projects/latexcursus/presentatie/presentatie.bbl' with encoding 'UTF-8'
+[505] bbl.pm:757> INFO - Output to d:/Projects/latexcursus/presentatie/presentatie.bbl
+[507] Biber.pm:128> INFO - WARNINGS: 1

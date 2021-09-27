@@ -1,0 +1,13 @@
+\ifx\frameselection\somethingundefined
+    \def\frameselection{1-}
+\fi
+
+\def\pasteframeselection#1{\begin{frame}<#1>}%
+    \expandafter\pasteframeselection\expandafter{\frameselection}%
+    \frametitle{Code vs Visueel}
+
+    \only<-1>{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{\assetdir/wordkader2.png}}
+    \unless\ifishandout
+    \only<2->{\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{\assetdir/wordkaderRand.png}}
+    \fi
+\end{frame}

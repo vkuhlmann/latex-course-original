@@ -78,5 +78,8 @@
     <requires type="dynamic">
       <file>1_Inleiding.bcf</file>
     </requires>
+    <requires type="editable">
+      <file>assets/fakebib.bib</file>
+    </requires>
   </external>
 </requests>
