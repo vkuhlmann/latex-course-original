@@ -1,0 +1,231 @@
+%% !TeX program = pdflatex
+
+\def\rootpath{../../..}
+
+\makeatletter
+    \edef\input@path{{\rootpath}}
+\makeatother
+
+\documentclass{cursuspresentatie}
+
+%\input{preamble.tex}
+
+\def\importslide#1#2{%
+	\import{\rootpath/slides/#1}{#2}
+}
+
+\title{\LaTeX{}-cursus 2021}
+\author{\TeX niCie}
+\date{28 september 2021}
+
+% Door bij te dragen aan de presentatie, stel je je broncode beschikbaar aan de 
+% TeXniCie onder MIT licentie.
+
+\begin{document}
+
+% ---- INTRODUCTIE ----
+
+\lang{
+	\section{Introduction}
+}{
+	\section{Introductie}
+}
+
+\begin{frame}
+	\titlepage
+	\centering
+\end{frame}
+
+\begin{frame}
+	\frametitle{\lang,Schedule,Agenda,}
+	
+	\begin{itemize}
+		\item \lang,Introduction,Introductie,
+		\item \lang,Basic document,Basisdocument,
+		\item \lang,Formulas,Formules,
+		\item \lang,Image,Afbeelding,
+		\item $ \mathbf\langle $\lang,Exercises!,Oefeningen!,$ \rangle $
+	\end{itemize}
+\end{frame}
+
+	\clearrecentlist
+
+    \def\assetdir{assets}
+	
+    \importslide{intro}{intro-wordcomp-doc.tex}
+
+    \def\frameselection{2}
+	\importslide{intro}{intro-wordcomp-ondermotorkap.tex}
+
+    \def\frameselection{3}
+	\importslide{intro}{intro-visueelcomp.tex}
+
+    \importslide{intro}{intro-visueelcomp-lemmaproof.tex}
+
+    \def\frameselection{5,7}
+    \importslide{intro}{intro-visueelcomp.tex}
+
+    \importslide{intro}{intro-overleaf.tex}
+
+	\importslide{misc}{misc-installation.tex}
+
+	\lang{
+	\section{Basic document}
+}{
+	\section{Basisdocument}
+}
+
+    \importslide{intro}{intro-simpledoc.tex}
+
+% ---- SECTIONS ----
+
+\begin{saveblock}{simpleContents}
+    \begin{highlightblock}[linewidth=0.5\textwidth,gobble=8]
+        \section{AA}
+		Lorem ipsum dolor sit amet,
+		consectetur adipiscing elit.
+        
+        \section{BB}
+        \subsection{CC}
+        \subsubsection{DD}
+        \subsection{EE}
+        \textbf{Opdracht:} Nullam
+		a risus at arcu lobortis
+		\textit{viverra vel}.
+        
+        \section{FF}
+        \subsubsection{GG}
+    \end{highlightblock}
+\end{saveblock}
+
+\begin{frame}
+	\frametitle{Simpele inhoud}
+
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\useblock{simpleContents}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/outdir/simpleContents.pdf}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Heel veel packages}
+
+	Nodig voor voorbeelden uit de presentatie.
+
+	\medskip
+
+	Verbeteren pagina marges, wiskunde, paragraaf inspringing, taal,
+	afbeeldingen en meer.
+
+	\medskip
+	
+	Je kan lijst van belangrijke packages halen van Vincents website, op
+	\begin{center}
+		\href{https://vkuhlmann.com/latex/example}{\ul{\texttt{vkuhlmann.com/latex/example}}}
+	\end{center}
+\end{frame}
+
+%\importslide{document}{document-sections.tex}
+
+% ---- FORMULES ----
+
+\lang{
+	\section{Formulas}
+}{
+	\section{Formules}
+}
+
+\importslide{math}{inline.tex}
+\importslide{math}{basics.tex}
+
+% \begin{frame}
+% 	\begin{align*}
+% 		\int_0^{\infty} e^{-x}\dif x &= -\eval{e^{-x}}_{0}^{\infty} = -(0 - 1) = 1\\
+% 		%\int_0^{\pi}\sin^2(x)\dif x &= \int_0^{\pi}\frac{1-(\cos^2(x)-\sin^2(x))}{2}
+% 		%= \int_0^{\pi}\frac{1-\cos(2x)}{2}\\
+% 		%&= \pi/2 - \frac{\sin()}{}
+% 	\end{align*}
+% \end{frame}
+
+\importslide{math}{symbols.tex}
+\importslide{math}{vectors.tex}
+
+\begin{frame}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\adjustbox{scale=4}{$ sin(x) $}\par
+			\adjustbox{scale=4}{$ \vec{F}_{tot} $}
+
+			\bigskip
+			\adjustbox{scale=1.5}{\hll|$ sin(x) $|}\par
+			\adjustbox{scale=1.5}{\hll|$ \\vec\{F\}_\{tot\} $|}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\adjustbox{scale=4}{$ \sin(x) $}\par
+			\adjustbox{scale=4}{$ \vec{F}_{\text{tot}} $}\par
+
+			\bigskip
+			\adjustbox{scale=1.5}{\hll|$ \\sin(x) $|}\par
+			\adjustbox{scale=1.5}{\hll|$ \\vec\{F\}_\{\\text\{tot\}\} $|}
+		\end{column}
+	\end{columns}
+
+	% \adjustbox{scale=4}{$ sin(x) $\quad $ \sin(x) $}\par
+	% %\adjustbox{scale=4}{$ \text{sin}(x) $}
+	% \adjustbox{scale=4}{$ \vec{F}_{tot} $\quad $ \vec{F}_{\text{tot}} $}
+
+	% \medskip
+
+	% \hll|$ sin(x) $|\quad\hll|$ \\sin(x) $| of \hll|$ \\text\{sin\}(x) $|\par
+	% \hll|$ \\vec\{F\}_\{tot\} $|\quad\hll|$ \\vec\{F\}_\{\\text\{tot\}\} $|
+\end{frame}
+
+\importslide{math}{calculus.tex}
+
+\importslide{math}{relations.tex}
+\importslide{math}{arrows.tex}
+\importslide{math}{symbols-ref.tex}
+
+\importslide{math}{math-vscode_snippet_view.tex}
+
+\importslide{math}{equation.tex}
+
+\addtorecentlist{align}
+\importslide{math}{align-unaligned.tex}
+\importslide{math}{align-numbers.tex}
+
+\importslide{math}{left_right.tex}
+\importslide{math}{left_right-delimeter_point.tex}
+
+\importslide{math}{structures.tex}
+
+\section{Afbeeldingen}
+
+\addtorecentlist{\textbackslash includegraphics}
+
+\importslide{images}{includegraphics-inline.tex}
+\importslide{images}{includegraphics-asparagraph.tex}
+
+\section{\texorpdfstring{}{Misc}}
+
+\importslide{misc}{misc-contact.tex}
+
+\begin{frame}
+	Volgende keer:
+
+	\textellipsis
+\end{frame}
+
+\begin{frame}
+	Oefeningen!
+\end{frame}
+
+\ifishandout
+	\importslide{misc}{misc-license.tex}
+\fi
+	
+\end{document}
