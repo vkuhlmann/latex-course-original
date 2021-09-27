@@ -1,0 +1,2 @@
+cd auxdir
+del *.fmt

@@ -1,0 +1,558 @@
+%\section{Inleiding}
+
+%\begin{frame}
+%	\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+%		%\dimexpr 0.5\textheight-\height\relax
+%		\adjustbox{padding={0pt {\dimexpr (0.5\textheight-\height)/2\relax} {0pt} {\dimexpr (0.5\textheight-\height)/2\relax}},bgcolor=blue!5!white}{
+%			Websites
+%		} & \adjustbox{}{
+%			Apps
+%		}\\
+%		\adjustbox{}{
+%			Wikipedia
+%		} & \adjustbox{}{
+%			\LaTeX
+%		}
+%	\end{tabular}
+%\end{frame}
+
+    % \begin{frame}%
+    %     \begin{colT}[0.8\textheight]{0.5\textwidth}
+    %         aa
+    %     \end{colT}\hfil
+    %     \begin{colT}[0.8\textheight]{0.5\textwidth}
+    %         % bb
+
+    %         %     \vspace{3cm}
+
+    %         % cc
+    %         \begin{colC}{\linewidth}
+    %             bb
+
+    %             \vspace{3cm}
+
+    %             cc
+    %         \end{colC}
+    %     \end{colT}
+    % \end{frame}
+
+    % \begin{frame}
+    %     \parbox[t]{0.5\textwidth}{
+    %         aa
+    %     }\hfil
+    %     \parbox[t][0.8\textheight][c]{0.5\textwidth}{
+    %         bb
+
+    %         \vspace{3cm}
+
+    %         cc
+    %     }
+    % \end{frame}
+
+    % \newsavebox\testbox
+
+    % \begin{frame}
+    %     \global\setbox\testbox=\hbox{
+    %     \begin{columns}
+    %         \begin{column}{0.5\textwidth}
+    %             aa
+    %         \end{column}
+    %         \begin{column}{0.5\textwidth}
+    %             bb
+
+    %             \vspace{3cm}
+
+    %             cc
+    %         \end{column}
+    %     \end{columns}
+    %     }%
+    %     \fbox{\usebox\testbox}
+    % \end{frame}
+
+    % \begin{frame}
+
+    %     \the\ht\testbox, \the\wd\testbox, \the\dp\testbox, \the\textheight, \the\textwidth
+    % \end{frame}
+
+
+   % \begin{frame}
+    %     \frametitle{Tekst vs Visueel}
+
+    %     \begin{columns}
+    %         \begin{column}{0.35\textwidth}
+    %             \adjustbox{set depth=0.5\textheight-\height
+    %             }{%
+    %                 \parbox{\linewidth}{%
+    %                     \begin{itemize}\setlength{\itemsep}{10pt}
+    %                         \item Websites \& Apps
+                            
+    %                         \only<3->{\textbf{Complex}}
+                            
+                            
+    %                         \only<4->{\item Wikipedia}
+                            
+    %                         \only<5->{\textbf{Consistent}}
+
+
+    %                         \only<5->{\item WhatsApp}
+                            
+    %                         \only<6->{\textbf{Uitbreidbaar}}
+    %                     \end{itemize}%           
+    %                 }%
+    %             }
+    %         \end{column}
+    %         \begin{column}{0.65\textwidth}
+    %             \unless\ifishandout
+    %             \only<1>{
+    %                 \includegraphics[
+    %                     width=\linewidth,height=0.8\textheight,keepaspectratio
+    %                 ]{assets/websiteVisual.png}
+    %             }
+    %             \only<2>{
+    %                 \adjustbox{
+    %                     trim=0pt {0.5\height} {0.5\width} 0pt,clip,width=\linewidth
+    %                 }{
+    %                     \includegraphics[
+    %                         width=\linewidth,height=0.8\textheight,keepaspectratio
+    %                     ]{assets/websiteVisual.png}
+    %                 }
+    %             }
+    %             \fi
+    %             \only<3>{
+    %                 \includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]{assets/wikipediaVisual}
+    %             }
+    %             \only<4>{
+
+    %             }
+    %         \end{column}
+    %     \end{columns}
+
+    %     % \begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    % 	% 	%\adjustbox{padding={0pt {\dimexpr (0.5\textheight-\height)/2\relax} {0pt} {\dimexpr (0.5\textheight-\height)/2\relax}},bgcolor=blue!5!white}{
+    % 	% 		Websites\& Apps
+    % 	% 	%}
+    %     %     & \adjustbox{}{
+    % 	% 		\includegraphics[width=\linewidth,height=]{assets/websiteVisual.png}
+    % 	% 	}\\
+    % 	% 	\adjustbox{}{
+    % 	% 		Wikipedia
+    % 	% 	} & \adjustbox{}{
+    % 	% 		\LaTeX
+    % 	% 	}\\
+    %     %     \adjustbox{}{
+    %     %         WhatsApp
+    %     %     }
+    % 	% \end{tabular}
+    % \end{frame}
+
+
+    \addtorecentlist{complex}
+
+    \begin{frame}
+        \frametitle{Websites \& Apps: Tekst vs Visueel}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \vspace{10px}
+                %\adjustbox{set height=4cm,left=\textwidth,bgcolor=gray,margin=10pt}{}
+                \unless\ifishandout
+                    \only<-1>{\includegraphics[width=\linewidth]{assets/websiteVisual.png}}
+                \fi
+                \only<2->{\includegraphics[width=\linewidth]{assets/websiteSource.png}}
+            \end{column}
+            \begin{column}{0.45\textwidth}
+                \only<1->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Complex} $\leftrightarrow $ \Lightning{} UI (Knoppen)}
+                \begin{itemize}
+                    \item Aanpassen aan schermgroottes
+                    \item Interactiviteit
+                    \item Dynamische inhoud
+                    \item Precisie over vormgeving
+                \end{itemize}
+
+                \medskip
+                \only<3->{
+                    \LaTeX{} ook:
+                    \begin{itemize}
+                        \item Formules
+                        \item Diagrammen
+                        \item Precisie over vormgeving
+                    \end{itemize}
+                }
+            \end{column}
+        \end{columns}
+        % \vspace{10pt}
+
+        % \LaTeX{} ook: formules, diagrammen, precisie over vormgeving.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Wikipedia: Tekst vs Visueel}
+        \begin{columns}
+            \begin{column}{0.4\textwidth}
+                %\adjustbox{set height=4cm,left=\textwidth,bgcolor=gray,margin=10pt}{}
+                \includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]{assets/wikipediaVisual}
+            \end{column}
+            \begin{column}{0.6\textwidth}
+                
+                \includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]{assets/wikipediaVisual3}
+                %
+    %			{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Tekst = Informatie}}
+    %			\begin{itemize}
+    %				\item Focus op betekenis
+    %				\item Stijl komt achteraf \textrightarrow{} Consistent en flexibel
+    %			\end{itemize}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{saveblock}{ninglinspoSource1}
+        \begin{Verbatim}[tabsize=4,gobble=8]
+        {{Infobox rivier
+                | naam          = Ninglinspo
+                | afbeelding    = Ninglinspo - arrivée du cours d'eau à Sedoz.jpg
+                | onderschrift  = De Ninglinspo niet ver van haar monding in de Amblève
+                | lengte        = 15
+                | hoogte        = 420
+                | hoogtemonding = 270
+                | verhang       = 
+                | debiet        = 
+                | oppervlakte   = 5m^3
+                | oorsprong     = Vert-Buisson ([[Theux]])
+                | uitmonding    = [[Amblève (rivier)|Amblève]]
+                | stroomgebied  = [[stroomgebied van de Maas|Maas]]
+                | stroomtdoor   = [[Luik (provincie)|Luik]]
+                | zijrivieren   = 
+                | plaatsen      = 
+                | bevaarbaar    = 
+                | afbeelding2   = Ninglinspo,_Nonceveux,_ruisseau_de_Belgique,_cascade,_vallée_Amblève.jpg
+                | onderschrift2 = Bad van Diana
+                | afbeelding3   = 
+                | onderschrift3 = 
+        }}
+
+        De '''Ninglinspo''' is een zijriviertje van de [[Amblève (rivier)|Amblève]] nabij het [[Luik
+        (provincie)|Luikse]] plaatsje [[Nonceveux]] bij [[Remouchamps]] in de gemeente [[Aywaille]]
+        en vormt de benedenloop van de (Ruisseau de) Hornay die ten zuiden van het plaatsje Vert
+        Buisson in de gemeente [[Theux]] ontspringt.
+        
+        De rivier dankt haar vreemde naam aan een fout door de Franse cartografen in 1876. Ze
+        verwarden de naam van de rivier met die van een veld waar de rivier in de Amblève stroomt.
+        De oorspronkelijke naam is eigenlijk de "Doulneux" welke aangeeft dat het afkomstig is van
+        een Els. Er werd reeds gesproken over de rivier in 647 met de oorspronkelijke naam in het
+        charter van [[Sigibert III]]. <ref>informatiebord aan de monding van de Ninglinspo</ref>
+        \end{Verbatim}
+    \end{saveblock}
+    \begin{saveblock}{ninglinspoSource2}
+        \begin{Verbatim}[tabsize=4,gobble=8]
+        De Ninglinspo is de enige [[Bergrivier (geologie)|bergrivier]] van België. Zij stroomt door
+        een gebied dat sinds 1949 beschermd gebied is. De loop van de Ninglinspo daalt van 420 meter
+        naar 170 meter, is 3 kilometer lang en heeft hierdoor een gemiddeld verval van
+        8%. Ze overbrugt een hoogteverschil van 250 meter. De grootste waterval in de rivier is de
+        [[Waterval van de Chaudière]], ze mondt uit in de Amblève net nadat deze in de Fonds de
+        Quarreux overgaat. Door de erosie van het snelle en wervelende water ontstonden er enkele
+        diepe, nauwe uithollingen die de bassins onderling verbinden. Deze bassins kregen poëtische
+        namen zoals "bad van het hert", "Bad van Diana", "Bubbels van de ketel", "Bad van de
+        waternimfen", "Bad van Venus",...
+        
+        <gallery>
+        Bestand:Ninglinspo-Point de vue Drouet (3).jpg|Uitzichtspunt Drouet, op 315 meter hoogte
+        Bestand:Ninglinspo-Point de vue Drouet (2).jpg|Uitzicht over de vallei van de Ninglinspo 
+        vanaf uitzichtspunt Drouet
+        Bestand:Ninglinspo-Point de vue Drouet (1).jpg|Uitzicht over de vallei van de Ninglinspo 
+        vanaf uitzichtspunt Drouet
+        </gallery>
+        
+        == Externe links ==
+        * [http://www.360cities.net/search/ninglinspo 360° surroundfoto's van de Ninglinspo op 
+        360cities]
+        * [https://www.openstreetmap.org/way/581386904#map=15/50.4621/5.7590&layers=N De Ninglinspo
+        op OpenStreetMap]
+        
+        == Referenties ==
+        {{References}}
+        
+        {{Commonscat}}
+        {{Coor title dms|50|28|7.51|N|5|44|48.82|E|scale:12500_type:river_region:BE}}
+        
+        [[Categorie:Rivier in Luik (provincie)]]
+        [[Categorie:Aywaille]]
+        [[Categorie:Beschermd erfgoed in Wallonië]]
+        \end{Verbatim}
+    \end{saveblock}
+    
+    \begin{frame}
+    %	\adjustbox{max height=0.9\textheight,max width=0.9\textwidth}{
+    %		\useblock{ninglinspoSource1}
+    %	}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \adjustbox{max height=0.9\textheight,max width=0.6\textwidth}{
+                    \useblock{ninglinspoSource1}
+                }
+            \end{column}
+            \begin{column}{0.6\textwidth}
+                \adjustbox{max height=0.9\textheight,max width=0.6\textwidth}{
+                    \useblock{ninglinspoSource2}
+                }
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    % \begin{saveblock}{ninglinspoFragment1}
+    %     \begin{Verbatim}[tabsize=4,gobble=8]
+    %     {{Infobox rivier
+    %             | naam          = Ninglinspo
+    %             | afbeelding    = Ninglinspo - arrivée d
+    %             | onderschrift  = De Ninglinspo niet ver
+    %             | lengte        = 15
+    %             | hoogte        = 420
+    %             | hoogtemonding = 270
+    %             | verhang       = 
+    %             | debiet        = 
+    %     \end{Verbatim}
+    % \end{saveblock}
+
+    % \begin{saveblock}{ninglinspoFragment2}
+    %     \begin{Verbatim}[tabsize=4,gobble=8]
+    %     De oorspronkelijke naam is eigenlijk de "Doulneu
+    %     een Els. Er werd reeds gesproken over de rivier
+    %     charter van [[Sigibert III]].
+    %     <ref>informatiebord aan de monding van de Ningli
+    %     \end{Verbatim}
+    % \end{saveblock}
+
+    % \begin{frame}
+    %     \frametitle{Wikipedia: Tekst vs Visueel}
+
+    %     % \begin{columns}
+    %     %    \begin{column}{0.45\textwidth}
+    %     %\centering
+    %     \adjustbox{
+    %         trim=0pt 0pt 5em 0pt,
+    %         max height=0.9\textheight,max width=0.5\linewidth,
+    %         %fbox=1pt 0pt 2pt,
+    %         cframe=green!50!white 0.5pt 0pt 2pt,
+    %         valign=M
+    %     }{
+    %         \useblock{ninglinspoFragment1}
+    %     }%
+    %     %\hspace{2pt}%
+    %     \adjustbox{
+    %         cframe=blue!50!white 0.5pt 0pt 0pt,
+    %         valign=M
+    %     }{%
+    %         \includegraphics[
+    %             trim=7pt 0pt 7pt 0pt,clip,
+    %             height=0.5\textheight,width=0.5\linewidth,keepaspectratio]{assets/1_Inleiding/wikipediaInfobox.png}%
+    %     }
+    %     \vspace{5pt}
+
+    %     \adjustbox{
+    %         trim=0pt 0pt 5em 0pt,
+    %         max height=0.9\textheight, max width=0.5\linewidth,
+    %         %fbox=1pt 0pt 2pt,
+    %         cframe=green!50!white 0.5pt 0pt 2pt,
+    %         valign=M
+    %     }{
+    %         \useblock{ninglinspoFragment2}
+    %     }%
+    %     \adjustbox{
+    %         cframe=blue!50!white 0.5pt 0pt 0pt,
+    %         valign=M
+    %     }{%
+    %         \includegraphics[height=0.5\textheight,width=0.5\linewidth,keepaspectratio]{assets/1_Inleiding/wikipediaHyperAndFootnotes.png}%
+    %     }
+    % \end{frame}
+
+    
+    \addtorecentlist{consistent}
+    
+    \begin{frame}
+        \frametitle{Wikipedia: Tekst vs Visueel}
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \centering
+                \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{assets/wikipediaVisual}
+            \end{column}
+            % \begin{column}{0.4\textwidth}
+            %     \adjustbox{max height=0.9\textheight,max width=\linewidth}{
+            %         \useblock{ninglinspoFragment1}
+            %     }
+            % \end{column}
+            \begin{column}{0.5\textwidth}
+                \only<1->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Consistent} $\leftrightarrow $ \Lightning{} Eindresultaat}
+                \begin{itemize}
+                    \item Focus op betekenis
+                    \item Stijl komt achteraf
+                \end{itemize}
+
+                \medskip
+                \only<2->{\LaTeX{} ook:
+                \begin{itemize}
+                    \item Nummeringen
+                    \item Inhoudsopgave: paragrafen, figuren, index
+                    \item Definieer environments voor herhalende onderdelen
+                \end{itemize}
+                }
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    % \begin{frame}    
+    %     \begin{itemize}
+    %         \item Complex $\leftrightarrow $ \Lightning UI (Knoppen)
+    %         \item Consistent $\leftrightarrow$ \Lightning Eindresultaat
+    %         \item Uitbreidbaar $\leftrightarrow$ \Lightning UI (Knoppen)
+    %     \end{itemize}
+    % \end{frame}
+
+    %    \begin{frame}
+%	\frametitle{\LaTeX{} vs Word}
+%	
+%	\begin{columns}
+%			\begin{column}{0.5\textwidth}
+%				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocWordSnippet.png}
+%			\end{column}
+%			\begin{column}{0.5\textwidth}
+%				\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{assets/basicDocLaTeXSnippet.png}
+%			\end{column}
+%		\end{columns}
+%	\end{frame}
+
+% \addtorecentlist{tekst}
+
+% \begin{frame}
+%     \frametitle{\LaTeX{} vs Word}
+    
+%     Andere aanpak: Tekst!
+%     \pause
+%     \bigskip
+%     \useblock{basicDocCode}
+% \end{frame}
+
+    % \addtorecentlist{uitbreidbaar}
+    
+    % \begin{frame}
+    %     \frametitle{WhatsApp: Tekst vs Visueel}
+    %     \begin{columns}
+    %         \begin{column}{0.5\textwidth}
+    %             %\adjustbox{set height=4cm,left=\textwidth,bgcolor=gray,margin=10pt}{}
+    %             \includegraphics[width=\linewidth]{assets/whatsappStyles2.png}
+                
+    %             \bigskip
+                
+    %             %\includegraphics[width=\linewidth]{whatsappStylesResultCropped.jpg}
+    %             \includegraphics[width=\linewidth]{assets/whatsappStylesResult2.png}
+    %         \end{column}
+    %         \begin{column}{0.5\textwidth}
+    %             \only<1->{\setul{1.5pt}{1pt}\setulcolor{red}\ul{Uitbreidbaar} $\leftrightarrow $ \Lightning{} UI (knoppen)}
+    %             \begin{itemize}
+    %                 %\item Inzichtelijk
+    %                 %\item Beperk aantal knoppen op het scherm
+    %                 \item Eenvoud voor programmeur
+    %             \end{itemize}
+    %             \medskip
+
+    %             Ook in \LaTeX:
+    %             \begin{itemize}
+    %                 \item Packages voor allerlei aanpassingen
+    %             \end{itemize}
+    %         \end{column}
+    %     \end{columns}
+    % \end{frame}
+    
+    % \begin{frame}
+    %     \begin{columns}
+    %         \begin{column}{0.5\textwidth}\centering
+    %             \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{assets/teletekst.png}
+    %         \end{column}
+    %         \begin{column}{0.5\textwidth}\centering
+    %             \includegraphics[width=\linewidth]{assets/commandPrompt.png}
+                
+    %             \medskip
+    %             \includegraphics[trim={0px 90px 0px 5px},clip,width=\linewidth,height=0.4\textheight,keepaspectratio]{assets/consoleOutput.png}
+    %         \end{column}
+    %     \end{columns}
+    % \end{frame}
+
+    % \addtorecentlist{\LaTeX}
+
+    % \begin{frame}
+    %     \frametitle{\LaTeX: Tekst vs Visueel}
+        
+    %     \begin{itemize}
+    %     	\item Veel informatie
+    %     	\begin{itemize}
+    %     		\item Formules
+    %     		\item Diagrammen
+    %     		\item {\setul{1pt}{1pt}\setulcolor{green}\ul{Fanciness}} {\setul{0pt}{1pt}\st{Fancyness}}
+    %     	\end{itemize}
+        
+    %     	\item Minimalistische informatie
+    %     	\begin{itemize}
+    %     		\item Herhalende elementen
+    %     		\item Consistentie
+    %     	\end{itemize}
+        	
+    %     	\item Simpele informatie
+    %     	\begin{itemize}
+    %     		\item Veel packages voor allerlei aanpassingen, allerlei \adjustbox{scale={1}{-1},valign=b}{\setul{1pt}{1pt}\setulcolor{blue}\ul{Fanciness}}.
+    %     	\end{itemize}
+        	
+    %         %\item \textfrak{\so{S{ch}u{tz}vorri{ch}tung}}
+    %     \end{itemize}
+    
+    % 	\pause
+    % 	Maar: \"F\textsl{\H{a}nc}\^{\i}\~ne\c{s}s is vaak DIY, en kost al snel veel moeite!
+    % \end{frame}
+    
+    % \begin{frame}
+    %     \frametitle{Word: Tekst vs Visueel}
+        
+    %     \begin{itemize}
+    %         \item Gaat kopiëren van een tabel wel goed? Blijft de opmaak dan goed behouden?
+    %         \item Waar komt die witruimte opeens vandaan?
+    %         \item Waarom wil Word de volgende regel opeens in bold?
+    %     \end{itemize}
+    
+    % \end{frame}
+    
+    %\begin{frame}
+    %	\LaTeX{} $ \simeq $ Word
+    %\end{frame}
+    %
+    %\begin{frame}
+    %	Websites niet via Word
+    %\end{frame}
+    %
+    %\begin{frame}
+    %	Apps niet via Word
+    %\end{frame}
+    %
+    %\begin{frame}
+    %	Wikipedia niet via Word
+    %\end{frame}
+    
+    %\begin{frame}[<+->]
+    %	Problemen met Word:
+    %	\begin{enumerate}
+    %		\item Informatie $\leftrightarrow$ Visueel
+    %			\begin{itemize}
+    %				\item Formules
+    %				\item Geavanceerde diagramplaatsing
+    %				\item Buiten documenten: schermgrootte, website links, \textellipsis
+    %			\end{itemize}
+    %		\item Betekenis $ \leftrightarrow $ Visueel
+    %			\begin{itemize}
+    %				\item Vaste elementen (bv. `Voorbeeld' of `Opmerking' boxen)
+    %				\item Geen verspringende opmaken of spookwitruimte
+    %				\item Door code: gebruik een package voor een bijzondere wens, of schrijf code zelf.
+    %			\end{itemize}
+    %	\end{enumerate}
+    %\end{frame}
+    
+    
+    % \begin{frame}
+    % 	\frametitle{Overleaf}
+    
+    % 	\includegraphics[height=0.85\textheight]{texnicieWebsiteOverleafTeXstudio.png}
+    % \end{frame}

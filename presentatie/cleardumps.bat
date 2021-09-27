@@ -1,2 +1,0 @@
-cd auxdir
-del *.fmt

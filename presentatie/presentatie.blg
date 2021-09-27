@@ -1,9 +1,0 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'd:/Projects/latexcursus/presentatie/presentatie.blg'
-[248] biber-MSWIN64:340> INFO - === 
-[303] Biber.pm:415> INFO - Reading 'd:/Projects/latexcursus/presentatie/presentatie.bcf'
-[482] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
-[489] Utils.pm:395> WARN - The file 'd:/Projects/latexcursus/presentatie/presentatie.bcf' does not contain any citations!
-[505] bbl.pm:654> INFO - Writing 'd:/Projects/latexcursus/presentatie/presentatie.bbl' with encoding 'UTF-8'
-[505] bbl.pm:757> INFO - Output to d:/Projects/latexcursus/presentatie/presentatie.bbl
-[507] Biber.pm:128> INFO - WARNINGS: 1

@@ -1,0 +1,100 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{inputslide}[2021/09/03 inputslide v0.1.0]
+
+%% Copyright (c) 2021 Vincent Kuhlmann
+
+\RequirePackage{xkeyval}
+\RequirePackage{graphicx}
+\RequirePackage{pdfpages}
+\RequirePackage{etoolbox}
+\RequirePackage{adjustbox}
+\RequirePackage{xcolor}
+\RequirePackage{xstring}
+
+\let\bracechar={
+\iffalse}\fi
+
+\def\@inputslide@slidesource{}
+
+\def\SetSlideSource#1{%
+    \def\@inputslide@slidesource{#1}%
+}
+
+\newbool{@inputslide@wasSlideFound}
+
+\newcommand\inputslide[2][\@inputslide@slidesource]{%
+    \IfFileExists{#1}{%
+        \begingroup
+        \expandafter\let\expandafter\inputentrance\csname fi\endcsname
+        %\newbool{usingframe}%
+        % \def\afterframeend{%
+        %     %\csname iffalse\endcsname
+        % }%
+        \def\inputexit{%
+            \csname iffalse\endcsname
+        }%
+        %
+        % \AtBeginEnvironment{frame}{%
+        % }%
+        % \AfterEndEnvironment{frame}{%
+        %     \csname afterframeend\endcsname
+        % }%
+        \let\documentclass\inputexit
+        %
+        % \expandafter\let\expandafter\@inputslide@orig@end\csname end \endcsname
+        % \def\@inputslide@end####1{%
+        %     \typeout{Environment name was ####1}%
+        %     \@inputslide@orig@end{####1}%
+        %     \def\@doafter{}%
+        %     \IfStrEq{####1}{frame}{%
+        %         \typeout{Hit a frame, skipping!}
+        %         \def\@doafter{\csname iffalse\endcsname}%
+        %     }{}%
+        %     \@doafter
+        % }%
+        % \expandafter\let\csname end \endcsname\@inputslide@end
+
+        % BEGIN Based on: https://tex.stackexchange.com/questions/226319/run-a-command-at-end-of-each-frame
+        \patchcmd{\beamer@doseveralframes}%
+            {\beamer@reseteecodes}%
+            {\beamer@reseteecodes
+                \inputexit
+            }%
+            {}{}%
+        % END
+
+        %\PackageWarning{DEBUG}{end is \expandafter\meaning\csname end\endcsname}%
+        %
+        \def\named####1{%
+            \def\aftercom{}%
+            \IfStrEq{#2}{####1}{%
+                \global\booltrue{@inputslide@wasSlideFound}
+            }{%
+                \def\aftercom{\csname iffalse\endcsname}%
+            }%
+            \aftercom
+        }%
+        \global\boolfalse{@inputslide@wasSlideFound}
+        \expandafter%\iffalse
+        \input{#1}%
+            % \inputentrance%\csname iffalse\endcsname
+            % \begin{frame}
+            %     ccc
+            % \end{frame}
+            % \inputexit
+            %\csname iffalse\endcsname
+        %
+        %\fi
+        \endgroup
+        \ifbool{@inputslide@wasSlideFound}%
+        {}%
+        {%
+            \PackageError{inputslide}{InputSlide could not find slide `#2'}{}%
+        }%
+        \let\frameselection\somethingundefined
+        %\PackageWarning{DEBUG}{Documentclass is \meaning\documentclass}
+    }{%
+        \PackageError{inputslide}{Input file not found}{}%
+    }%
+}
