@@ -39,6 +39,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{environ}
 \RequirePackage{etoolbox}
+\RequirePackage{yfonts}
 
 \newbool{english}
 %\booltrue{english}
@@ -66,6 +67,7 @@
 
 \RequirePackage{import}
 \RequirePackage{inputslide}
+\RequirePackage{multicol}
 
 
 \newcommand{\TeXniCie}{\TeX niCie}

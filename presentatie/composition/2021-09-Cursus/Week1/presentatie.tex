@@ -1,3 +1,4 @@
+%&presentatie
 %% !TeX program = pdflatex
 
 \def\rootpath{../../..}
@@ -14,7 +15,11 @@
 	\import{\rootpath/slides/#1}{#2}
 }
 
-\title{\LaTeX{}-cursus 2021}
+\title[LaTeX-cursus 2021 -- Week 1]{%
+	\texorpdfstring{\LaTeX{}-cursus 2021\\Week 1: Getting started}{%
+		Week 1 -- LaTeX-cursus 2021%
+	}%
+}
 \author{\TeX niCie}
 \date{28 september 2021}
 
@@ -31,10 +36,15 @@
 	\section{Introductie}
 }
 
+% \expandafter\let\expandafter\origtitle\csname title\endcsname
+% \expandafter\def\csname @title\endcsname{Test!}
+
 \begin{frame}
 	\titlepage
 	\centering
 \end{frame}
+
+%\expandafter\let\csname title\endcsname\origtitle
 
 \begin{frame}
 	\frametitle{\lang,Schedule,Agenda,}
@@ -57,13 +67,22 @@
     \def\frameselection{2}
 	\importslide{intro}{intro-wordcomp-ondermotorkap.tex}
 
-    \def\frameselection{3}
-	\importslide{intro}{intro-visueelcomp.tex}
+	\def\frameselection{1-4}
+	\importslide{intro}{intro-visueelcomp_2.tex}
 
-    \importslide{intro}{intro-visueelcomp-lemmaproof.tex}
+	\importslide{intro}{intro-visueelcomp-lemmaproof.tex}
+	\importslide{intro}{intro-visueelcomp-wiki_example.tex}
 
-    \def\frameselection{5,7}
-    \importslide{intro}{intro-visueelcomp.tex}
+	\def\frameselection{5-}
+	\importslide{intro}{intro-visueelcomp_2.tex}
+
+%     \def\frameselection{3}
+% 	\importslide{intro}{intro-visueelcomp.tex}
+
+%     \importslide{intro}{intro-visueelcomp-lemmaproof.tex}
+
+%     \def\frameselection{5,7}
+%     \importslide{intro}{intro-visueelcomp.tex}
 
     \importslide{intro}{intro-overleaf.tex}
 
@@ -196,6 +215,10 @@
 
 \addtorecentlist{align}
 \importslide{math}{align-unaligned.tex}
+
+\providebool{skipNonumber}
+\booltrue{skipNonumber}
+
 \importslide{math}{align-numbers.tex}
 
 \importslide{math}{left_right.tex}
@@ -215,9 +238,31 @@
 \importslide{misc}{misc-contact.tex}
 
 \begin{frame}
-	Volgende keer:
+	\frametitle{Volgende keer -- Week 2 (ma 4 okt): Essentieel}
 
-	\textellipsis
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item Figuren
+			\item Lijsten
+			\item Referenties
+			\item Pagina-layout
+			\item Tekstkleuren
+			\item Tekstgroottes
+			\item Tabellen
+			\item `Stelling', `Lemma'
+			\item Meer
+		\end{itemize}\par
+		\vfill
+		\leavevmode
+	\end{multicols}
+
+	Voorbeeld van wat je bereikt is te vinden op
+	\begin{center}
+		\href{https://a-eskwadraat.nl/latex}{\ul{\texttt{a-eskwadraat.nl/latex}}}
+	\end{center}
+
+	\medskip
+	Inschrijven nog mogelijk!
 \end{frame}
 
 \begin{frame}

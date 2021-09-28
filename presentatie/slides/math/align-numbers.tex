@@ -1,132 +1,134 @@
 \updatehighlight{
-	name=accentC,
-	add={align},
-	%
-	name=default,
-	add={}
+    name=accentC,
+    add={align},
+    %
+    name=default,
+    add={}
 }
 
 \begin{saveblock}{align}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		De verdubbelingsformule herschrijven we nu als
-		\begin{align}
-			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-			&= 2\cos^2(\theta)-1.
-		\end{align}
-	\end{highlightblock}
+    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+        framexleftmargin=0.25em,xleftmargin=0.25em]
+        De verdubbelingsformule herschrijven we nu als
+        \begin{align}
+            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+            &= 2\cos^2(\theta)-1.
+        \end{align}
+    \end{highlightblock}
 \end{saveblock}
 
 \begin{saveblock}{alignEN}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		The double-angle formula can now be rewritten as
-		\begin{align}
-			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-			&= 2\cos^2(\theta)-1.
-		\end{align}
-	\end{highlightblock}
+    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+        framexleftmargin=0.25em,xleftmargin=0.25em]
+        The double-angle formula can now be rewritten as
+        \begin{align}
+            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+            &= 2\cos^2(\theta)-1.
+        \end{align}
+    \end{highlightblock}
 \end{saveblock}
 
 \begin{frame}{Align}
-	\useblock{align\langsuffix}
+    \useblock{align\langsuffix}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
-		assets/mathAlignDoubleNumber\langsuffix.pdf}
+    \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+        assets/mathAlignDoubleNumber\langsuffix.pdf}
 \end{frame}
 
 \updatehighlight{
-	name=accentC,
-	remove={align},
-	add={\nonumber},
-	%
-	name=default,
-	add={},
-	%
-	name=accentBlack,
-	color=black,
-	add={align}
+    name=accentC,
+    remove={align},
+    add={\nonumber},
+    %
+    name=default,
+    add={},
+    %
+    name=accentBlack,
+    color=black,
+    add={align}
 }
 
-\begin{saveblock}{align}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		De verdubbelingsformule herschrijven we nu als
-		\begin{align}
-			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
-			\nonumber\\
-			&= 2\cos^2(\theta)-1.
-		\end{align}
-	\end{highlightblock}
-\end{saveblock}
+\providebool{skipNonumber}
+\unless\ifskipNonumber
+    \begin{saveblock}{align}
+        \begin{highlightblock}[gobble=12,linewidth=\textwidth,
+            framexleftmargin=0.25em,xleftmargin=0.25em]
+            De verdubbelingsformule herschrijven we nu als
+            \begin{align}
+                \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
+                \nonumber\\
+                &= 2\cos^2(\theta)-1.
+            \end{align}
+        \end{highlightblock}
+    \end{saveblock}
 
-\begin{saveblock}{alignEN}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		The double-angle formula can now be rewritten as
-		\begin{align}
-			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
-			\nonumber\\
-			&= 2\cos^2(\theta)-1.
-		\end{align}
-	\end{highlightblock}
-\end{saveblock}
+    \begin{saveblock}{alignEN}
+        \begin{highlightblock}[gobble=12,linewidth=\textwidth,
+            framexleftmargin=0.25em,xleftmargin=0.25em]
+            The double-angle formula can now be rewritten as
+            \begin{align}
+                \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)
+                \nonumber\\
+                &= 2\cos^2(\theta)-1.
+            \end{align}
+        \end{highlightblock}
+    \end{saveblock}
 
+    \addtorecentlist{\textbackslash nonumber}
 
-\addtorecentlist{\textbackslash nonumber}
+    \begin{frame}{Align}
+        \useblock{align\langsuffix}
 
-\begin{frame}{Align}
-	\useblock{align\langsuffix}
-
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
-		assets/mathAlignSecondNumbered\langsuffix.pdf}
-\end{frame}
+        \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+            assets/mathAlignSecondNumbered\langsuffix.pdf}
+    \end{frame}
+\fi
 
 \updatehighlight{
-	name=accentC,
-	remove={\nonumber},
-	add={*},
-	%
-	name=default,
-	add={\nonumber}
+    name=accentC,
+    remove={\nonumber},
+    add={*},
+    %
+    name=default,
+    add={\nonumber}
 }
 
 \begin{saveblock}{align}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		De verdubbelingsformule herschrijven we nu als
-		\begin{align*}
-			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-			&= 2\cos^2(\theta)-1.
-		\end{align*}
-	\end{highlightblock}
+    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+        framexleftmargin=0.25em,xleftmargin=0.25em]
+        De verdubbelingsformule herschrijven we nu als
+        \begin{align*}
+            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+            &= 2\cos^2(\theta)-1.
+        \end{align*}
+    \end{highlightblock}
 \end{saveblock}
 
 \begin{saveblock}{alignEN}
-	\begin{highlightblock}[gobble=8,linewidth=\textwidth,
-		framexleftmargin=0.25em,xleftmargin=0.25em]
-		The double-angle formula can now be rewritten as
-		\begin{align*}
-			\cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
-			&= 2\cos^2(\theta)-1.
-		\end{align*}
-	\end{highlightblock}
+    \begin{highlightblock}[gobble=8,linewidth=\textwidth,
+        framexleftmargin=0.25em,xleftmargin=0.25em]
+        The double-angle formula can now be rewritten as
+        \begin{align*}
+            \cos(2\theta) &= \cos^2(\theta) - \sin^2(\theta)\\
+            &= 2\cos^2(\theta)-1.
+        \end{align*}
+    \end{highlightblock}
 \end{saveblock}
 
 \addtorecentlist{align*}
 
 \begin{frame}{Align}
-	\useblock{align\langsuffix}
+    \useblock{align\langsuffix}
 
-	\includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
-		assets/mathAlignNoNumbers\langsuffix.pdf}
+    \includegraphics[width=\linewidth,height=0.4\textheight,keepaspectratio]{%
+        assets/mathAlignNoNumbers\langsuffix.pdf}
 \end{frame}
 
 \updatehighlight{
-	name=accentC,
-	remove={*},
-	%
-	name=accentBlack,
-	color=black,
-	add={*}
+    name=accentC,
+    remove={*},
+    %
+    name=accentBlack,
+    color=black,
+    add={*}
 }
